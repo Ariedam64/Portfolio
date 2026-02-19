@@ -28,8 +28,8 @@
       "work": [
         {
           "date": "2024 - present",
-          "company": "Freelance",
-          "role": "Independent",
+          "company": "Personal & community projects",
+          "role": "Independent developer",
           "desc": "Client-side development (JS & C#), web automation (Puppeteer, Selenium, Tampermonkey), reverse engineering"
         },
         {
@@ -76,13 +76,8 @@
     "skills": [
       {
         "key": "html",
-        "title": "HTML",
-        "desc": "Markup language for web pages"
-      },
-      {
-        "key": "css",
-        "title": "CSS",
-        "desc": "Style and layout of web pages"
+        "title": "HTML / CSS",
+        "desc": "Structure and styling of web pages"
       },
       {
         "key": "javascript",
@@ -120,39 +115,14 @@
         "desc": "User scripts for web automation"
       },
       {
-        "key": "vba",
-        "title": "Excel VBA",
-        "desc": "Task automation and macros in Excel"
-      },
-      {
-        "key": "powershell",
-        "title": "PowerShell",
-        "desc": "Windows administration and automation with PowerShell scripts"
-      },
-      {
         "key": "dnSpy",
         "title": "dnSpy",
         "desc": "Debugger and .NET assembly editor for reverse engineering"
       },
       {
-        "key": "mongodb",
-        "title": "MongoDB",
-        "desc": "NoSQL database for modern applications"
-      },
-      {
         "key": "postgresql",
         "title": "PostgreSQL",
         "desc": "Relational database management system"
-      },
-      {
-        "key": "git",
-        "title": "Git",
-        "desc": "Distributed version control system"
-      },
-      {
-        "key": "trello",
-        "title": "Trello",
-        "desc": "Kanban project management tool"
       }
     ],
     "projects": {

@@ -11,7 +11,15 @@ export default function Projects() {
 
   const projects = [
   {
-    images: ['/img/mayaya_nodegif.gif','/img/mayaya_python1.png','/img/mayaya_node1.png', '/img/mayaya_overlay3.png', '/img/mayaya_python5.png' ],
+    images: ['/img/ariesmod1.png','/img/ariesmod2.png','/img/ariesmod3.png','/img/ariesmod4.png','/img/ariesmod5.png'],
+    title: 'Arie\'s Mod',
+    description: t("portfolio.projects.ariesmod.description"),
+    technologies: ['Tampermonkey','TypeScript','JavaScript','HTML','CSS'],
+    detailsUrl: 'portfolio/projects/ariesmod',
+    sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
+  },
+  {
+    images: ['/img/mayaya_nodegif.gif','/img/mayaya_python1.png','/img/mayaya_node1.png','/img/mayaya_overlay3.png','/img/mayaya_python5.png'],
     title: 'Mayaya',
     description: t("portfolio.projects.mayaya.description"),
     technologies: ['Node.js', 'JavaScript', 'Python', 'PostgreSQL', 'jQuery', 'Socket.IO','OpenAI API'],
@@ -19,12 +27,7 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/Bombparty-Bot'
   },
   {
-    images: [ "/img/arie.gif",
-              "/img/arie1.png",
-              "/img/arie2.png",
-              "/img/arie3.png",
-              "/img/arie4.png",
-              "/img/arie5.png", ],
+    images: ["/img/arie.gif","/img/arie1.png","/img/arie2.png","/img/arie3.png","/img/arie4.png","/img/arie5.png"],
     title: 'Arie',
     description: t("portfolio.projects.arie.description"),
     technologies: ['Node.js', 'Discord.js', 'Express', 'PostgreSQL', 'YTDL-Core', 'OpenAI', 'DALL-E', 'Heroku'],
@@ -38,14 +41,6 @@ export default function Projects() {
     technologies: ['JavaScript','Node.js','Puppeteer','Tampermonkey','MacroDroid'],
     detailsUrl: 'portfolio/projects/snapscore',
     sourceUrl: 'https://github.com/Ariedam64/SnapScore-V2'
-  },
-  {
-    images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],
-    title: 'Arie\'s Mod',
-    description: t("portfolio.projects.ariesmod.description"),
-    technologies: ['Tampermonkey','TypeScript','JavaScript','HTML','CSS'],
-    detailsUrl: 'portfolio/projects/ariesmod',
-    sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
   },
   {
     images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],

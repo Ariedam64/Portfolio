@@ -28,8 +28,8 @@
       "work": [
         {
           "date": "2024 - présent",
-          "company": "Freelance",
-          "role": "Indépendant",
+          "company": "Projets personnels & communautaires",
+          "role": "Développeur indépendant",
           "desc": "Développement client (JS & C#), automatisation web (puppeteer, selenium, Tampermonkey), reverse engineering"
         },
         {
@@ -76,13 +76,8 @@
     "skills": [
       {
         "key": "html",
-        "title": "HTML",
-        "desc": "Langage de balisage pour les pages Web"
-      },
-      {
-        "key": "css",
-        "title": "CSS",
-        "desc": "Style et mise en page des pages Web"
+        "title": "HTML / CSS",
+        "desc": "Structure et style des pages Web"
       },
       {
         "key": "javascript",
@@ -120,39 +115,14 @@
         "desc": "Scripts utilisateurs pour automatisation web"
       },
       {
-        "key": "vba",
-        "title": "Excel VBA",
-        "desc": "Automatisation de tâches et macros dans Excel"
-      },
-      {
-        "key": "powershell",
-        "title": "PowerShell",
-        "desc": "Automatisation et administration Windows via scripts PowerShell"
-      },
-      {
         "key": "dnSpy",
         "title": "dnSpy",
-        "desc": "Débogueur et éditeur d'assemblages .NET pour le reverse engineering"
-      },
-      {
-        "key": "mongodb",
-        "title": "MongoDB",
-        "desc": "Base de données NoSQL pour applications modernes"
+        "desc": "Débogueur et éditeur d’assemblages .NET pour le reverse engineering"
       },
       {
         "key": "postgresql",
         "title": "PostgreSQL",
         "desc": "Système de gestion de base de données relationnelle"
-      },
-      {
-        "key": "git",
-        "title": "Git",
-        "desc": "Système de gestion de versions distribué"
-      },
-      {
-        "key": "trello",
-        "title": "Trello",
-        "desc": "Outil de gestion de projet Kanban"
       }
     ],
     "projects": {
