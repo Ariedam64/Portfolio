@@ -5,6 +5,7 @@ import {
   ErrorPrimitive,
   MessagePrimitive,
   ThreadPrimitive,
+  type ToolCallContentPartComponent,
 } from "@assistant-ui/react";
 import type { FC } from "react";
 import {
@@ -13,6 +14,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   CopyIcon,
+  Loader2Icon,
   PencilIcon,
   RefreshCwIcon,
   SendHorizontalIcon,
@@ -205,11 +207,26 @@ const EditComposer: FC = () => {
   );
 };
 
+const PortfolioSearchToolUI: ToolCallContentPartComponent = ({ status }) => {
+  if (status.type !== "running") return null;
+  return (
+    <div className="flex items-center gap-2 py-1 text-sm text-[#a3a3a3]">
+      <Loader2Icon className="size-3.5 animate-spin" />
+      <span>Recherche dans le portfolio…</span>
+    </div>
+  );
+};
+
 const AssistantMessage: FC = () => {
   return (
     <MessagePrimitive.Root className="grid grid-cols-[auto_auto_1fr] grid-rows-[auto_1fr] relative w-full max-w-[var(--thread-max-width)] py-4">
       <div className="text-[#d4d4d4] max-w-[calc(var(--thread-max-width)*0.8)] break-words leading-7 col-span-2 col-start-2 row-start-1 my-1.5">
-        <MessagePrimitive.Content components={{ Text: MarkdownText }} />
+        <MessagePrimitive.Content
+          components={{
+            Text: MarkdownText,
+            tools: { by_name: { portfolioSearch: PortfolioSearchToolUI } },
+          }}
+        />
         <MessageError />
       </div>
 

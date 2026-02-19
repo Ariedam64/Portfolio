@@ -45,6 +45,15 @@ Pages de détail des projets :
   - "Quelles fonctionnalités a ton bot Discord ?"
   - "Comment tu gères musique + IA dans un seul bot ?"
 
+4) Projet Aries Mod (userscript Tampermonkey pour Magic Garden)
+- Lien : https://ariedam.fr/portfolio/projects/ariesmod
+- Contenu : description d'Aries Mod, userscript communautaire pour le jeu Magic Garden, avec backend VPS, hub communautaire, 10 000+ joueurs. Architecture en 3 modules : client (Tampermonkey), backend (Node.js/PostgreSQL/VPS), et Gemini (refonte next-gen).
+- Utilité : répondre aux questions sur :
+  - "C'est quoi Aries Mod ?"
+  - "Comment fonctionne le backend d'Aries Mod ?"
+  - "C'est quoi Gemini ?"
+  - "Comment Romann a géré 10 000 utilisateurs sur un VPS à 3,6€/mois ?"
+
 3) Projet SnapScore+ (orchestrateur Snapchat)
 - Lien : https://ariedam.fr/portfolio/projects/snapscore
 - Contenu : description de SnapScore+, orchestrateur local multi-compte pour Snapchat, architecture technique (Node.js, Puppeteer), gestion des ressources, performances, limites et conclusions.
@@ -62,6 +71,7 @@ Résumé d’usage pour l’assistant :
   - Liste des projets : section #section-projects
 
 - Pour accéder aux détails d’un projet précis :
+  - Aries Mod : /portfolio/projects/ariesmod
   - Mayaya : /portfolio/projects/mayaya
   - Arie : /portfolio/projects/arie
   - SnapScore+ : /portfolio/projects/snapscore

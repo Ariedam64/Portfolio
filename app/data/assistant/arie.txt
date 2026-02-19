@@ -1,27 +1,27 @@
 Projet : Arie — Bot Discord multifonction personnel
 
-Arie est un bot Discord multifonction que j’ai développé pour notre serveur. Il regroupe mini-jeux, musique, IA, utilitaires et automatisations diverses. L’idée est de remplacer toute une armée de petits bots par un seul bot bien conçu et customisé.
+Arie est un bot Discord multifonction que Romann a développé pour son serveur. Il regroupe mini-jeux, musique, IA, utilitaires et automatisations diverses. L'idée est de remplacer toute une armée de petits bots par un seul bot bien conçu et customisé.
 
 Contexte : Discord
 
-Discord est une plateforme de discussion (texte, voix, vidéo) utilisée par des communautés de joueurs, d’étudiants et de projets. Les serveurs sont organisés en salons et peuvent accueillir des bots. Les bots Discord sont des comptes automatisés capables de réagir à des commandes et d’ajouter des fonctionnalités (jeux, modération, musique…).
+Discord est une plateforme de discussion (texte, voix, vidéo) utilisée par des communautés de joueurs, d'étudiants et de projets. Les serveurs sont organisés en salons et peuvent accueillir des bots. Les bots Discord sont des comptes automatisés capables de réagir à des commandes et d'ajouter des fonctionnalités (jeux, modération, musique…).
 
-Origine d’Arie :
+Origine d'Arie :
 
-Sur notre serveur, la multiplication de bots spécialisés (musique, mini-jeux, GPT, giveaways, etc.) est devenue ingérable : maintenance compliquée, permissions réparties partout, pannes fréquentes (surtout côté musique basées sur YouTube).
-L’objectif d’Arie : tout regrouper dans un seul bot fiable.
+Sur le serveur de Romann, la multiplication de bots spécialisés (musique, mini-jeux, GPT, giveaways, etc.) était devenue ingérable : maintenance compliquée, permissions réparties partout, pannes fréquentes (surtout côté musique basées sur YouTube).
+L'objectif d'Arie : tout regrouper dans un seul bot fiable.
 
 Les trois axes principaux :
 
 Centralisation : rassembler les fonctionnalités réellement utiles dans un seul bot.
 
-Personnalisation : offrir une expérience sur-mesure (personnalités GPT, commandes adaptées à notre communauté, private jokes, etc.).
+Personnalisation : offrir une expérience sur-mesure (personnalités GPT, commandes adaptées à la communauté, private jokes, etc.).
 
 Fiabilité : assurer une disponibilité 24/7, avec une UX propre (slash commands, boutons, embeds).
 
 Module principal : Bot Discord Arie
 
-Objectif : Créer et maintenir un bot unique, évolutif, open-source, couvrant 100 % de nos besoins quotidiens sur Discord (jeux, musique, IA, utilitaires) tout en restant simple à déployer et à faire évoluer.
+Objectif : Créer et maintenir un bot unique, évolutif, open-source, couvrant 100 % des besoins quotidiens sur Discord (jeux, musique, IA, utilitaires) tout en restant simple à déployer et à faire évoluer.
 
 Stack :
 
@@ -35,15 +35,15 @@ YTDL-Core pour la musique
 
 OpenAI API
 
-DALL·E pour la génération d’images
+DALL·E pour la génération d'images
 
-Heroku pour l’hébergement
+Heroku pour l'hébergement
 
 Fonctionnalités principales :
 
 Mini-jeux intégrés : Puissance 4 multijoueur via embeds et boutons, avec IA Minimax.
 
-IA conversationnelle : GPT-3.5 / GPT-4 avec personnalités interchangeables et génération d’images via DALL·E.
+IA conversationnelle : GPT-3.5 / GPT-4 avec personnalités interchangeables et génération d'images via DALL·E.
 
 Lecteur musique : commandes complètes, gestion de playlists persistantes, recherche multi-plateforme et affichage des paroles.
 
@@ -53,15 +53,15 @@ DevOps : déploiement automatisé sur Heroku, uptime 24/7 assuré via UptimeRobo
 
 Limites :
 
-L’audio repose sur YTDL-Core, qui reste sensible aux changements côté plateformes de streaming.
+L'audio repose sur YTDL-Core, qui reste sensible aux changements côté plateformes de streaming.
 
-Les coûts liés à l’IA (GPT) peuvent augmenter avec un usage intensif.
+Les coûts liés à l'IA (GPT) peuvent augmenter avec un usage intensif.
 
-L’interface mobile pourrait être encore améliorée pour l’ergonomie des boutons.
+L'interface mobile pourrait être encore améliorée pour l'ergonomie des boutons.
 
-Pistes d’évolution :
+Pistes d'évolution :
 
-Ajouter d’autres mini-jeux interactifs (pendu, quiz, etc.).
+Ajouter d'autres mini-jeux interactifs (pendu, quiz, etc.).
 
 Intégrer des commandes connectées à des API externes (animes, météo, actualités).
 

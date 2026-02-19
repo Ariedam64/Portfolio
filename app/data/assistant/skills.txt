@@ -1,10 +1,8 @@
 Compétences principales :
 
-Je travaille principalement autour du développement web, de l’automatisation, des bots et d’outils orientés productivité ou expérimentation technique. Voici un résumé de mes compétences et outils :
+Romann travaille principalement autour du développement web, de l'automatisation, des bots et d'outils orientés productivité ou expérimentation technique. Voici un résumé de ses compétences et outils :
 
-HTML : langage de balisage pour structurer des pages web.
-
-CSS : création de styles, mises en page, responsive design.
+HTML / CSS : structuration de pages web et création de styles, mises en page et responsive design.
 
 JavaScript : langage principal côté front et côté back pour le web, scripts, automatisations et bots.
 
@@ -12,7 +10,7 @@ React.js : bibliothèque pour concevoir des interfaces web dynamiques et réacti
 
 Next.js : framework basé sur React pour des applications web modernes, avec rendu côté serveur et routage avancé.
 
-Node.js : environnement d’exécution JavaScript côté serveur, utilisé pour des API, bots, orchestrateurs et scripts d’automatisation.
+Node.js : environnement d'exécution JavaScript côté serveur, utilisé pour des API, bots, orchestrateurs et scripts d'automatisation.
 
 Python : langage de haut niveau utilisé pour des scripts, prototypes, outils internes et automatisations.
 
@@ -20,16 +18,6 @@ C# : langage orienté objet, utilisé pour certaines applications clients et out
 
 Tampermonkey : développement de scripts utilisateurs pour automatiser et enrichir des interfaces web côté client.
 
-Excel VBA : automatisation de tâches dans Excel, création de macros pour accélérer des workflows métiers.
-
-PowerShell : scripts d’administration et d’automatisation sur Windows.
-
-dnSpy : outil pour le reverse engineering et le débogage d’assemblages .NET.
-
-MongoDB : base de données NoSQL utilisée pour des applications modernes et des prototypes rapides.
+dnSpy : outil pour le reverse engineering et le débogage d'assemblages .NET.
 
 PostgreSQL : base de données relationnelle robuste, utilisée pour des bots, outils et applications persistantes.
-
-Git : système de gestion de versions distribué pour gérer et versionner le code.
-
-Trello : outil de gestion de projet en mode Kanban pour organiser tâches, roadmap et suivi.

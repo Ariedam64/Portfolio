@@ -1,59 +1,77 @@
-Je m’appelle MADEIRA Romann, j’ai 24 ans et je suis développeur basé à Salies-de-Béarn (64270), en France. Je code depuis environ 8 ans et je suis particulièrement intéressé par l’intelligence artificielle, l’automatisation et les projets techniques un peu exigeants.
+CV - MADEIRA Romann
 
-Je suis titulaire d’une Licence Professionnelle Programmation Avancée et d’un DUT Informatique. Je suis actuellement à la recherche d’un emploi stable dans le développement. Mon profil : sérieux, flexible, exigeant avec moi-même, avec un vrai goût du challenge et une bonne capacité à prendre des responsabilités.
+IDENTITÉ
+Nom: MADEIRA Romann
+Âge: 24 ans
+Titre: Développeur (web / backend / temps réel / automatisation)
+Localisation: Salies-de-Béarn (64270), France
+Permis: Permis B
 
-Coordonnées principales :
-- Téléphone : +33 6 80 74 61 19
-- Email : ariedam.romann@gmail.com
-- Permis B, véhicule léger
+CONTACT
+Email: ariedam.romann@gmail.com
+Téléphone: +33 6 80 74 61 19
+Portfolio: www.ariedam.fr/portfolio
+Adresse: 2 rue Saint Vincent, 64270 Salies-de-Béarn, France
 
-Compétences générales :
-- Gestion, organisation, restitution : Trello, GitHub, Excel, PowerPoint, Word
-- Développement : Visual Studio, Python, SQL / MySQL, VBA, JavaScript, HTML
-- Automatisation et scripts : VBS, BAT, PowerShell, Tampermonkey
-- Réseaux / supervision : utilisation intensive du protocole SNMP pour récupérer des données d’équipements réseau
-- Multimédia : Photoshop, Premiere Pro
-- Langues : Français (natif), Anglais intermédiaire (TOEIC 715 points)
+RÉSUMÉ (POUR EMBEDDING)
+Je m'appelle MADEIRA Romann, j'ai 24 ans. Développeur orienté produits et performance, spécialisé en TypeScript/Node/React, API REST et systèmes temps réel (WebSocket). J’ai conçu et opéré des projets utilisés en production par une communauté active (overlay, backend, DB, infra). À l’aise avec le reverse engineering, l’instrumentation d’événements, l’automatisation, et l’optimisation de coûts/latence. Je cherche un emploi stable en développement logiciel.
 
-Expériences professionnelles principales :
+COMPÉTENCES TECHNIQUES
+Langages: TypeScript, JavaScript, Python, C#, SQL
+Front-end: React
+Back-end: Express.js, REST API, WebSocket
+Données: PostgreSQL, MySQL (conception, requêtes, maintenance)
+Réseau/collecte: SNMP (collecte de télémétrie)
+Outils: Git, Docker, VS Code, Postman, Claude Code
+Pratiques: instrumentation temps réel, automatisations (scripts / tâches planifiées), documentation (installation, utilisation, technique)
 
-- 2024 – présent · Freelance · Indépendant · Salies-de-Béarn (64), France  
-  Développement de petits projets orientés client, scripts et outils sur mesure.  
-  Travaux typiques :  
-  - Développement client en JavaScript et C#  
-  - Automatisation web (Puppeteer, Selenium, Tampermonkey)  
-  - Reverse engineering d’applications ou de protocoles  
-  - Utilisation de nombreuses API REST  
-  - Gestion de bases de données (création, ajout, suppression, modification, utilisation)  
-  - Analyse et définition des besoins d’un commanditaire  
-  - Gestion de projet informatique (cahier des charges, planning prévisionnel)
+COMPÉTENCES HUMAINES
+Flexible
+Curieux
+Goût du challenge
+Sens des responsabilités
 
-- 2021 – 2022 · Apprenti Développeur · Burographic · Anglet (64), France  
-  - Développement client en Python avec usage intensif du protocole SNMP pour interroger des équipements réseau  
-  - Automatisation de tâches via scripts (VBS, BAT, PowerShell)  
-  - Création de macros en VBA pour automatiser des fichiers Excel  
-  - Utilisation du planificateur de tâches pour automatiser certains processus  
-  - Rédaction de documentation (manuel utilisateur, manuel d’installation, description du code)  
-  - Support technique, assistance sur site, participation à la gestion de projets internes
+LANGUES
+Anglais: Intermédiaire (TOEIC 715/990)
 
-- 2021 · Développeur stagiaire · Burographic · Anglet (64), France  
-  - Développement VBA et automatisation de tâches métier  
-  - Mise en place de macros et outils internes  
-  - Documentation technique pour faciliter la maintenance
+EXPÉRIENCES PROFESSIONNELLES
+2022 - présent | Développeur - Projets communautaires & modding | Salies-de-Béarn (64), France
+Projet: Arie’s Mod (MagicGarden / MagicCircle) - extension client temps réel (web + Discord Activity)
+- Script injectant un HUD/overlay: outils QoL, panels et dashboard en temps réel
+- Instrumentation via hook WebSocket (capture/interception d’événements) + automatisations
+- Reverse engineering du client + connexion aux WebSockets pour récupérer l’état du jeu
+- Refonte UX: panels clairs, navigation rapide, features orientées communauté
+- Backend pour synchroniser données et fonctionnalités sociales
+- Produit en production: ~400 utilisateurs/jour, ~500k requêtes/jour
+- Monétisation & contrôle d’accès: abonnements/licences, prévention des abus
+- Maîtrise des coûts: migration vers infra auto-hébergée (VPS + domaine)
+- V2 en cours: refonte architecture (API/DB), optimisation perf, nouvelle UI responsive (desktop/mobile)
 
-- 2024 – 2025 · Intérimaire / Manutentionnaire · Samsic · Orthez (64), France  
-  - Manutention, travail physique, missions variées  
-  - Adaptation rapide au terrain et aux contraintes horaires
+Projet: Mayaya - bot temps réel & overlay (BombParty)
+- Bot communautaire + adversaire adaptatif, piloté via une interface de contrôle
+- Reverse engineering du client + intégration WebSocket pour récupérer l’état et réagir
+- Hébergement 24/7 pendant 2 ans, 30+ commandes (aide, stats, modération…)
+- Suivi/persistance des statistiques (progression, performance) via PostgreSQL
+- Apprentissage automatique basé sur l’observation des parties en cours
+- Plusieurs concepts d’overlay repris ensuite et intégrés nativement par l’équipe du jeu (retour d’adoption)
 
-- Ouvrier agricole (éclaircissage de kiwis) · Bibaye · Labatut (64), France  
-  - Travail saisonnier en extérieur  
-  - Rythme soutenu, rigueur et endurance
+2024 - 2025 | Intérimaire | Samsic | Orthez (64), France
+- Ouvrier agricole, opérateur de production, manutention / logistique
 
-Projets de programmation personnels (en cours et passés) :
+2021 - 2022 | Apprenti développeur (1 an) | Burographic | Anglet (64), France
+- Pilotage & développement d’un outil de supervision déployé chez les clients
+- Collecte en temps réel de données de copieurs (parc installé, état, remontées techniques) pour accélérer le dépannage
+- Projets orientés client + automatisations (scripts, tâches planifiées, macros) pour fiabiliser et réduire le manuel
+- Base de données MySQL/SQL: conception, requêtes, maintenance + intégrations via API
+- Collecte réseau (SNMP), travail en équipe, documentation (installation, utilisation, descriptions techniques)
 
-J’ai développé plusieurs projets orientés client ou expérimentation technique, notamment :
-- Un bot interactif pour un jeu de recherche de mots basé sur des syllabes (capable de trouver des mots en fonction des syllabes et du mode de jeu, d’aider les nouveaux joueurs avec une personnalité dédiée, d’intégrer des mini-jeux comme le pendu ou un Puissance 4 avec IA Minimax, de gérer une base de données et plusieurs API).
-- Des scripts d’automatisation (VBA, PowerShell, VBS, BAT) pour accélérer des tâches récurrentes.
-- Des projets web et outils internes utilisant Node.js, APIs REST, bases de données et automatisation.
+FORMATIONS
+2021 - 2022 | Licence professionnelle Programmation Avancée | IUT de Bayonne et du Pays Basque (64)
+2019 - 2021 | DUT Informatique | IUT de Bayonne et du Pays Basque (64)
+2016 - 2019 | Baccalauréat Technologique | Lycée Louis-de-Foix (64)
+- Option mécanique, mention Assez Bien
 
-En résumé, je suis un développeur orienté pratique : j’aime comprendre un besoin concret, concevoir une solution, l’implémenter, l’optimiser, et si possible l’automatiser au maximum.
+CENTRES D’INTÉRÊT
+Intelligence artificielle
+Sciences
+Bowling

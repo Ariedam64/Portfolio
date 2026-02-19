@@ -134,12 +134,12 @@
         "game_desc": "BombParty est un jeu en ligne où rapidité et vocabulaire font la paire. À chaque tour, une syllabe s’affiche (exemple : \"tra\");les joueurs ont quelques secondes pour taper un mot la contenant (\"travail\", \"contrat\", etc.) avant que la bombe virtuelle n’explose.Simple à prendre en main, le défi réside dans la pression du chrono !",
         "origin": {
           "title": "Origine de Mayaya",
-          "description": "Tout est parti d’un constat simple : sur BombParty, impossible de jouer seul ou de s’entraîner. Pas de mode solo, juste des parties publiques, avec des joueurs aléatoires. Frustré par ces limites (et un peu par ennui, soyons honnête), j’ai lancé un petit bot pour m’amuser",
+          "description": "Tout est parti d’un constat simple: sur BombParty, impossible de jouer seul ou de s’entraîner. Pas de mode solo, juste des parties publiques, avec des joueurs aléatoires. Frustré par ces limites (et un peu par ennui, soyons honnête), j’ai lancé un petit bot pour m’amuser",
           "steps": [
             {
               "icon": "😂",
               "title": "Un troll",
-              "desc": "À l’origine, c’était juste une blague : un bot qui balançait “feur” dès que quelqu’un écrivait “quoi” dans le chat"
+              "desc": "À l’origine, c’était juste une blague: un bot qui balançait “feur” dès que quelqu’un écrivait “quoi” dans le chat"
             },
             {
               "icon": "💾",
@@ -173,14 +173,14 @@
             "features": [
               "Interface visuelle intuitive pour gérer les bots et rejoindre un salon",
               "Lecture des syllabes via WebSocket et réponse automatique via un dictionnaire local",
-              "Options diverses : autojoin, easter eggs, réponses IA conversationnelles"
+              "Options diverses: autojoin, easter eggs, réponses IA conversationnelles"
             ],
             "limits": [
               "Pas de persistance des données",
               "Reconnexion manuelle en cas de crash",
               "Absence de gestion des erreurs",
               "Exécutable non signé, bloqué par certains antivirus",
-              "Maintenance lourde : recompile manuelle à chaque modifications"
+              "Maintenance lourde: recompile manuelle à chaque modifications"
             ]
           },
           "node": {
@@ -195,7 +195,7 @@
             ],
             "features": [
               "Salon principal accessible en permanence",
-              "Plus de 30 commandes disponibles : statistiques, aide, modération…",
+              "Plus de 30 commandes disponibles: statistiques, aide, modération…",
               "Mode d'entraînement compétitif avec suivi du WPM, du temps de réaction et de la précision",
               "Apprentissage automatique de nouveaux mots en observant les parties en cours",
               "Dialogue interactif en temps réel avec le bot",
@@ -204,7 +204,7 @@
               "Instances secondaires sans impacter la room principale"
             ],
             "limits": [
-              "Absence de dashboard visuel : tout se gère via le chat du jeu",
+              "Absence de dashboard visuel: tout se gère via le chat du jeu",
               "Accès à la base PostgreSQL limité à l’interface textuelle"
             ]
           },
@@ -221,21 +221,21 @@
             "features": [
               "Tableau de stats personnalisable (WPM, temps de réaction, taux d’erreur…)​",
               "Module d’entraînement filtrable (aléatoire, occurrences, regex…) avec surlignage dynamique",
-              "Bots intégrés : entraînement et personnel, directement en jeu",
+              "Bots intégrés: entraînement et personnel, directement en jeu",
               "Persistance des préférences utilisateur (GM_setValue)",
               "Interface clavier-first, modulaire et accessible",
               "Profil joueur enrichi",
               "100 % client-side, sans aucune requête serveur"
             ],
             "limits": [
-              "Abandonné avant version finale : l’équipe de BombParty a intégré les principales idées en natif",
+              "Abandonné avant version finale: l’équipe de BombParty a intégré les principales idées en natif",
               "Très sensible aux changements DOM",
               "Pas de prise en charge mobile"
             ]
           }
         },
         "funFact": {
-          "title": "Fun Fact : La guerre d’usure contre Maca",
+          "title": "Fun Fact: La guerre d’usure contre Maca",
           "intro": "Quand j’ai lancé Mayaya, Maca, le bras armé du staff BombParty, est devenu un véritable barrage :",
           "items": [
             {
@@ -255,7 +255,7 @@
           "warSteps": [
             {
               "icon": "🤖",
-              "text": "Contournement du reCAPTCHA : en simulant des requêtes HTTP et des interactions utilisateur"
+              "text": "Contournement du reCAPTCHA: en simulant des requêtes HTTP et des interactions utilisateur"
             },
             {
               "icon": "🔍",
@@ -341,8 +341,8 @@
           "title": "À propos de Snapchat",
           "description": "Snapchat est un réseau social centré sur l'envoi de photos et de vidéos éphémères. Le Snap Score augmente en reproduisant deux gestes simples :",
           "rules": [
-            "Ouvrir un snap reçu : +1",
-            "Quelqu'un ouvre votre snap : +1"
+            "Ouvrir un snap reçu: +1",
+            "Quelqu'un ouvre votre snap: +1"
           ],
           "context": "Dans un usage manuel, la plupart des comptes restent dans les centaines ou quelques milliers de points. Dépasser les millions reste rare."
         },
@@ -360,10 +360,10 @@
             },
             {
               "title": "Orchestrateur Node.js/Puppeteer",
-              "desc": "Pilotage multi-fenêtres (double session principale + assistants) avec verrous, pauses courtes et règles de redémarrage : le bureau reste utilisable tout en montant à ~460 points/min sur neuf fenêtres."
+              "desc": "Pilotage multi-fenêtres (double session principale + assistants) avec verrous, pauses courtes et règles de redémarrage: le bureau reste utilisable tout en montant à ~460 points/min sur neuf fenêtres."
             }
           ],
-          "focus": "L'orchestrateur change tout : il coordonne la visibilité, évite les collisions et se rétablit automatiquement."
+          "focus": "L'orchestrateur change tout: il coordonne la visibilité, évite les collisions et se rétablit automatiquement."
         },
         "architecture": {
           "title": "Architecture technique",
@@ -377,15 +377,15 @@
           ],
           "resourceManagementTitle": "Règles de gestion des ressources",
           "resourceManagement": [
-            "Verrou caméra : un seul envoi à la fois sur le compte principal.",
-            "Backlog contrôlé : pause automatique au-delà de 25 snaps non lus pour résorber la file.",
-            "Redémarrages seuils : une fenêtre repart quand la latence envoi/lecture dépasse ~1 s, ce qui ramène les lectures à ~500 ms et les envois à ~700 ms après reset.",
-            "Garde-fous de visibilité : chaque action attend que l'élément ciblé existe et soit visible, plus rapide en moyenne et sans temporisateurs arbitraires."
+            "Verrou caméra: un seul envoi à la fois sur le compte principal.",
+            "Backlog contrôlé: pause automatique au-delà de 25 snaps non lus pour résorber la file.",
+            "Redémarrages seuils: une fenêtre repart quand la latence envoi/lecture dépasse ~1 s, ce qui ramène les lectures à ~500 ms et les envois à ~700 ms après reset.",
+            "Garde-fous de visibilité: chaque action attend que l'élément ciblé existe et soit visible, plus rapide en moyenne et sans temporisateurs arbitraires."
           ],
           "observabilityTitle": "Observabilité et contrôles",
           "observability": [
-            "Compteurs par fenêtre : envois/lectures réussis, taille de file et latences p50/p95.",
-            "Boucle startCheckingIssues : agrège les moyennes, calcule les points/min et déclenche les redémarrages ciblés (principal, assistants ou global).",
+            "Compteurs par fenêtre: envois/lectures réussis, taille de file et latences p50/p95.",
+            "Boucle startCheckingIssues: agrège les moyennes, calcule les points/min et déclenche les redémarrages ciblés (principal, assistants ou global).",
             "Logs structurés (startLog) avec durée de session, moyennes envoi/lecture, backlog et états bloqués/sains.",
             "Ralentissements automatiques ou redémarrages dès que la p95 dérive."
           ],
@@ -400,7 +400,7 @@
         "modules": {
           "mobile": {
             "label": "Prototype mobile",
-            "objective": "Valider l'idée : synchroniser un téléphone qui envoie et un autre qui ouvre pour mesurer le gain réel.",
+            "objective": "Valider l'idée: synchroniser un téléphone qui envoie et un autre qui ouvre pour mesurer le gain réel.",
             "tech": [
               "MacroDroid"
             ],
@@ -417,7 +417,7 @@
           },
           "web": {
             "label": "Userscript web",
-            "objective": "Accélérer proprement : automatiser via le navigateur pour enchaîner les envois/lectures tout en gardant une visibilité en direct.",
+            "objective": "Accélérer proprement: automatiser via le navigateur pour enchaîner les envois/lectures tout en gardant une visibilité en direct.",
             "tech": [
               "JavaScript",
               "Tampermonkey"
@@ -429,15 +429,15 @@
             "limits": [
               "PC monopolisé sans second écran.",
               "Au moindre changement d'interface Snapchat, l'automatisation casse.",
-              "Défenses côté plateforme : rythme bridé, sessions qui sautent.",
+              "Défenses côté plateforme: rythme bridé, sessions qui sautent.",
               "Caméra et micro monopolisés par le navigateur, conflits possibles.",
-              "Sur de longues sessions : ralentissements et mémoire qui gonfle."
+              "Sur de longues sessions: ralentissements et mémoire qui gonfle."
             ],
             "perf": "~60 points/min"
           },
           "puppeteer": {
             "label": "Orchestrateur Puppeteer",
-            "objective": "Maximiser le score : faire tourner plusieurs comptes en parallèle sur une même machine avec des règles simples, des priorités et un suivi continu.",
+            "objective": "Maximiser le score: faire tourner plusieurs comptes en parallèle sur une même machine avec des règles simples, des priorités et un suivi continu.",
             "tech": [
               "Node.js",
               "JavaScript",
@@ -446,12 +446,12 @@
             "advantages": [
               "Chaque compte est isolé avec reconnexion automatique.",
               "Fenêtres visibles ou discrètes, lancements planifiés et contrôles réguliers.",
-              "Gestion fine des ressources : qui prend la caméra, quand redémarrer, comment éviter les bouchons.",
+              "Gestion fine des ressources: qui prend la caméra, quand redémarrer, comment éviter les bouchons.",
               "Suivi centralisé avec indicateurs clairs mis à jour toutes les secondes.",
               "Peut se déployer sur d'autres machines si besoin."
             ],
             "limits": [
-              "Performances dépendantes du matériel : CPU, RAM, disque, encodage vidéo.",
+              "Performances dépendantes du matériel: CPU, RAM, disque, encodage vidéo.",
               "La mémoire grimpe avec le nombre d'instances."
             ],
             "perf": "~430 points/min sur ma configuration avec 2 comptes principaux et 7 assistants"
@@ -464,13 +464,13 @@
             "Laisser une session ouverte trop longtemps finit par ralentir tout le monde.",
             "La caméra ne peut pas être utilisée par deux instances simultanément."
           ],
-          "conclusion": "Ces constats ont guidé les règles : limiter la durée des sessions, mettre la caméra en file d'attente et redémarrer dès que les métriques dérivent."
+          "conclusion": "Ces constats ont guidé les règles: limiter la durée des sessions, mettre la caméra en file d'attente et redémarrer dès que les métriques dérivent."
         },
         "operating_title": "Logique de fonctionnement",
         "management": {
           "title": "Gestion des instances",
           "items": [
-            "Un AccountManager supervise les comptes : connexion, vérification d'état et attribution des rôles.",
+            "Un AccountManager supervise les comptes: connexion, vérification d'état et attribution des rôles.",
             "Chaque compte possède son profil navigateur avec cookies sauvegardés pour se reconnecter automatiquement.",
             "Les comptes principaux envoient les snaps, les assistants les ouvrent."
           ]
@@ -486,10 +486,10 @@
         "rules": {
           "title": "Règles de ressources",
           "items": [
-            "Verrou caméra : un seul compte a accès à la caméra à la fois.",
-            "File d'attente contrôlée : pause dès que plus de 25 snaps restent non lus.",
+            "Verrou caméra: un seul compte a accès à la caméra à la fois.",
+            "File d'attente contrôlée: pause dès que plus de 25 snaps restent non lus.",
             "Redémarrages ciblés quand les moyennes d'envoi ou d'ouverture dérivent.",
-            "Auto-reconnexion : si une fenêtre se ferme ou si les chiffres partent en vrille, on coupe et on relance proprement."
+            "Auto-reconnexion: si une fenêtre se ferme ou si les chiffres partent en vrille, on coupe et on relance proprement."
           ]
         },
         "code": {
@@ -508,7 +508,7 @@
             },
             {
               "title": "src/Snapchat/account.js",
-              "desc": "Définit la session Puppeteer : profil, connexion, injection des scripts et état individuel."
+              "desc": "Définit la session Puppeteer: profil, connexion, injection des scripts et état individuel."
             },
             {
               "title": "src/macros/",
@@ -529,17 +529,17 @@
           ],
           "workflowTitle": "Boucles d'exécution",
           "workflow": [
-            "Lecture des snaps : tant qu'il reste des non lus, on mesure le temps d'ouverture et on active le mode congestion au-delà de 25 snaps de backlog.",
-            "Envoi des snaps : envoi par lots de 50 dès que le pipeline est libre.",
-            "Boucle de santé : surveille les latences, le backlog et les décisions de l'orchestrateur (pause, reprise, redémarrage)."
+            "Lecture des snaps: tant qu'il reste des non lus, on mesure le temps d'ouverture et on active le mode congestion au-delà de 25 snaps de backlog.",
+            "Envoi des snaps: envoi par lots de 50 dès que le pipeline est libre.",
+            "Boucle de santé: surveille les latences, le backlog et les décisions de l'orchestrateur (pause, reprise, redémarrage)."
           ]
         },
         "performance": {
           "title": "Comportement mesuré",
           "items": [
             "Le meilleur équilibre se situe avec 9 fenêtres (2 comptes principaux, 7 assistants).",
-            "Débit soutenu : environ 460 points/min avec cette configuration.",
-            "Expérience : ~10 000 000 points sur le compte principal en 14 jours et ~1 000 000 par compte assistant."
+            "Débit soutenu: environ 460 points/min avec cette configuration.",
+            "Expérience: ~10 000 000 points sur le compte principal en 14 jours et ~1 000 000 par compte assistant."
           ]
         },
         "remark": {
@@ -561,12 +561,12 @@
         "subtitle": "Un userscript Tampermonkey pour le jeu Magic Garden qui a réuni plus de 10 000 joueurs",
         "game": {
           "title": "À propos de Magic Garden",
-          "description": "Magic Garden est un idle game multijoueur disponible sur Discord et sur magicgarden.gg. Le principe : acheter des graines, faire pousser des plantes, les vendre et devenir riche petit à petit. Des mécaniques comme les animaux de compagnie (qui offrent des bonus), la météo (qui influence les prix) et le multijoueur (jusqu'à 6 joueurs, avec des bonus de vente selon le nombre de joueurs dans le salon) ajoutent de la profondeur à un jeu qui semble enfantin au premier abord.",
+          "description": "Magic Garden est un idle game multijoueur disponible sur Discord et sur magicgarden.gg. Le principe: acheter des graines, faire pousser des plantes, les vendre et devenir riche petit à petit. Des mécaniques comme les animaux de compagnie (qui offrent des bonus), la météo (qui influence les prix) et le multijoueur (jusqu'à 6 joueurs, avec des bonus de vente selon le nombre de joueurs dans le salon) ajoutent de la profondeur à un jeu qui semble enfantin au premier abord.",
           "link_label": "Jouer sur magicgarden.gg"
         },
         "origin": {
           "title": "Origine du projet",
-          "intro": "Tout est parti d'une soirée Discord entre amis. On tombe sur ce jeu par hasard, et honnêtement, première réaction : \"C'est enfantin, le gameplay est vraiment pas terrible\". Mais très vite, une idée m'a traversé l'esprit.",
+          "intro": "Tout est parti d'une soirée Discord entre amis. On tombe sur ce jeu par hasard, et honnêtement, première réaction: \"C'est enfantin, le gameplay est vraiment pas terrible\". Mais très vite, une idée m'a traversé l'esprit.",
           "steps": [
             {
               "icon": "🎲",
@@ -576,7 +576,7 @@
             {
               "icon": "🔍",
               "title": "Le reverse engineering",
-              "desc": "J'ai commencé à disséquer le jeu : lire le bundle JavaScript minifié, analyser les requêtes réseau, décortiquer chaque message WebSocket. L'objectif, comprendre chaque mécanisme pour savoir ce que je pourrais exploiter."
+              "desc": "J'ai commencé à disséquer le jeu: lire le bundle JavaScript minifié, analyser les requêtes réseau, décortiquer chaque message WebSocket. L'objectif, comprendre chaque mécanisme pour savoir ce que je pourrais exploiter."
             },
             {
               "icon": "⚡",
@@ -621,7 +621,7 @@
               {
                 "icon": "🔄",
                 "title": "La maintenance permanente",
-                "desc": "Le jeu était mis à jour constamment. Plusieurs mises à jour du mod par semaine, parfois par jour. Les systèmes core ont été refondus plusieurs fois : système de sprites, système de données, compatibilité Discord."
+                "desc": "Le jeu était mis à jour constamment. Plusieurs mises à jour du mod par semaine, parfois par jour. Les systèmes core ont été refondus plusieurs fois: système de sprites, système de données, compatibilité Discord."
               }
             ],
             "structure_title": "Structure du projet",
@@ -636,15 +636,15 @@
               "HTML"
             ],
             "features": [
-              "Gestionnaire d'animaux : création d'équipes, drag-to-reorder, auto-feed par espèce, logs des capacités",
-              "Notifications : alertes d'items rares en shop, météo, niveaux de nourriture des animaux",
-              "Salons publics : listing de salons alimenté par la communauté avec bonus de vente",
-              "Mode éditeur : mode créatif complet, toutes plantes et décors débloqués dans toutes leurs variations",
-              "Locker : protection des récoltes selon les mutations des plantes",
-              "QoL intégrés au jeu : Buy All, Sell All, tri d'inventaire, calculateur de valeur, statistiques",
-              "Menu debug complet : visualisation du store Jotai en temps réel, capture de sprites et sons du jeu, messages WebSocket en direct, utile pour les autres modders",
+              "Gestionnaire d'animaux: création d'équipes, drag-to-reorder, auto-feed par espèce, logs des capacités",
+              "Notifications: alertes d'items rares en shop, météo, niveaux de nourriture des animaux",
+              "Salons publics: listing de salons alimenté par la communauté avec bonus de vente",
+              "Mode éditeur: mode créatif complet, toutes plantes et décors débloqués dans toutes leurs variations",
+              "Locker: protection des récoltes selon les mutations des plantes",
+              "QoL intégrés au jeu: Buy All, Sell All, tri d'inventaire, calculateur de valeur, statistiques",
+              "Menu debug complet: visualisation du store Jotai en temps réel, capture de sprites et sons du jeu, messages WebSocket en direct, utile pour les autres modders",
               "Keybinds personnalisables et compatibilité multi-navigateurs (Chrome, Edge, Firefox, Opera GX, Discord)",
-              "Et bien d'autres : le mod a été développé quotidiennement pendant des mois, la liste complète des fonctionnalités est disponible sur GitHub"
+              "Et bien d'autres: le mod a été développé quotidiennement pendant des mois, la liste complète des fonctionnalités est disponible sur GitHub"
             ],
             "limits": [
               "Très sensible aux mises à jour du jeu (bundle minifié qui change fréquemment)",
@@ -655,24 +655,24 @@
           },
           "backend": {
             "label": "Backend (VPS)",
-            "objective": "Fournir une infrastructure légère et économique capable de supporter plus de 10 000 utilisateurs pour alimenter les fonctionnalités communautaires du mod : salons, chat en temps réel, amis, groupes et leaderboard.",
+            "objective": "Fournir une infrastructure légère et économique capable de supporter plus de 10 000 utilisateurs pour alimenter les fonctionnalités communautaires du mod: salons, chat en temps réel, amis, groupes et leaderboard.",
             "story_title": "L'histoire du backend",
             "story_intro": "Le backend est né d'une nécessité. Quand l'API des salons publics du jeu a été retirée suite à des abus, j'ai décidé de recréer cette fonctionnalité moi-même. Les joueurs du mod deviendraient eux-mêmes les fournisseurs de données.",
             "story_steps": [
               {
                 "icon": "☁️",
                 "title": "Phase Supabase",
-                "desc": "J'avais prévu 50 utilisateurs maximum, le quota gratuit de 500K requêtes/mois devait suffire. En 1 heure après le déploiement : déjà 50 utilisateurs. En 24 heures : 400. En moins d'une semaine : le quota était atteint."
+                "desc": "J'avais prévu 50 utilisateurs maximum, le quota gratuit de 500K requêtes/mois devait suffire. En 1 heure après le déploiement: déjà 50 utilisateurs. En 24 heures: 400. En moins d'une semaine: le quota était atteint."
               },
               {
                 "icon": "🖥️",
                 "title": "Migration VPS",
-                "desc": "Migration sur un VPS Hetzner en 2 jours à 3,6€/mois. Capacité théorique : 20 millions de requêtes/jour. Une optimisation complètement disproportionnée par rapport à Supabase."
+                "desc": "Migration sur un VPS Hetzner en 2 jours à 3,6€/mois. Capacité théorique: 20 millions de requêtes/jour. Une optimisation complètement disproportionnée par rapport à Supabase."
               },
               {
                 "icon": "💬",
                 "title": "Le Community Hub",
-                "desc": "Avec plus de 1 000 utilisateurs, j'ai décidé de construire ce qui manquait réellement au jeu : un vrai système communautaire. Chat en temps réel, système d'amis, groupes, leaderboard, profils personnalisables avec 7 contrôles de confidentialité."
+                "desc": "Avec plus de 1 000 utilisateurs, j'ai décidé de construire ce qui manquait réellement au jeu: un vrai système communautaire. Chat en temps réel, système d'amis, groupes, leaderboard, profils personnalisables avec 7 contrôles de confidentialité."
               },
               {
                 "icon": "🔐",
@@ -682,7 +682,7 @@
               {
                 "icon": "⚡",
                 "title": "L'optimisation",
-                "desc": "Avec 10 000 joueurs enregistrés et 500 connectés simultanément, le VPS était à 200% de ses capacités avec 5 millions de requêtes/jour. Refactoring massif : requêtes intelligentes, déduplication, polling optimisé. Résultat : 900K requêtes/jour, VPS stable à 25%. Tout ça sur un serveur à 3,6€/mois."
+                "desc": "Avec 10 000 joueurs enregistrés et 500 connectés simultanément, le VPS était à 200% de ses capacités avec 5 millions de requêtes/jour. Refactoring massif: requêtes intelligentes, déduplication, polling optimisé. Résultat: 900K requêtes/jour, VPS stable à 25%. Tout ça sur un serveur à 3,6€/mois."
               },
               {
                 "icon": "☕",
@@ -701,11 +701,11 @@
             ],
             "features": [
               "Système de salons publics alimenté directement par les joueurs du mod",
-              "Community Hub complet : chat temps réel, amis, groupes, leaderboard, visualisation en temps réel du jardin, inventaire et animaux de ses amis sans être dans leur salon",
+              "Community Hub complet: chat temps réel, amis, groupes, leaderboard, visualisation en temps réel du jardin, inventaire et animaux de ses amis sans être dans leur salon",
               "Authentification sécurisée via Discord OAuth",
               "Long polling avec système d'événements (contournement des restrictions Discord)",
               "Dashboard admin pour superviser le backend en temps réel",
-              "Optimisation massive : de 5M à 900K requêtes/jour, VPS à 25% de capacité"
+              "Optimisation massive: de 5M à 900K requêtes/jour, VPS à 25% de capacité"
             ],
             "limits": [
               "Architecture polling uniquement (pas de SSE à cause des restrictions Discord)",
@@ -718,10 +718,10 @@
             "optimization_rules": [
               "Cache mémoire TTL 30s pour les données globales (salons, leaderboard, joueurs en ligne)",
               "Rate limiting en PostgreSQL par IP et par joueur, avec blocklist IP",
-              "Long polling avec système de waiters : le serveur attend un événement ou un timeout avant de répondre",
-              "Fan-out unifié : un seul push alimente SSE et long polling simultanément",
-              "Agrégation parallèle : 11 requêtes en Promise.all pour le chargement initial",
-              "Présence avec sweep lazy : le timer ne tourne que quand des joueurs sont connectés",
+              "Long polling avec système de waiters: le serveur attend un événement ou un timeout avant de répondre",
+              "Fan-out unifié: un seul push alimente SSE et long polling simultanément",
+              "Agrégation parallèle: 11 requêtes en Promise.all pour le chargement initial",
+              "Présence avec sweep lazy: le timer ne tourne que quand des joueurs sont connectés",
               "Déduplication des destinataires pour les événements de présence (amis + groupes)",
               "Bulk upserts pour les joueurs dans un salon (un seul INSERT au lieu de N)",
               "Index partiels et composites PostgreSQL ciblés sur les requêtes fréquentes",
@@ -730,7 +730,7 @@
           },
           "gemini": {
             "label": "Gemini (Next-gen)",
-            "objective": "Repartir de zéro en collaboration avec un autre développeur pour créer le mod ultime : future-proof, auto-adaptatif aux mises à jour du jeu, compatible tous navigateurs et mobile, et conçu pour être facilement forkable.",
+            "objective": "Repartir de zéro en collaboration avec un autre développeur pour créer le mod ultime: future-proof, auto-adaptatif aux mises à jour du jeu, compatible tous navigateurs et mobile, et conçu pour être facilement forkable.",
             "story_title": "Pourquoi Gemini",
             "story_intro": "Après des mois de développement sur Aries Mod, les limites de l'architecture originale devenaient évidentes. On a décidé avec un autre développeur de tout repartir de zéro.",
             "story_steps": [
@@ -821,7 +821,7 @@
         },
         "remark": {
           "title": "La suite",
-          "description": "Ce projet a représenté plusieurs mois de développement intensif, a rassemblé une communauté de plus de 10 000 joueurs et a généré suffisamment de soutien pour couvrir plus d'un an et demi d'hébergement. Il évolue aujourd'hui vers Gemini, un projet collaboratif de réécriture complète. L'objectif : un mod future-proof, auto-adaptatif, compatible tous navigateurs, optimisé mobile, et conçu pour être facilement forkable par d'autres développeurs. La fin d'un chapitre, le début d'un autre."
+          "description": "Ce projet a représenté plusieurs mois de développement intensif, a rassemblé une communauté de plus de 10 000 joueurs et a généré suffisamment de soutien pour couvrir plus d'un an et demi d'hébergement. Il évolue aujourd'hui vers Gemini, un projet collaboratif de réécriture complète. L'objectif: un mod future-proof, auto-adaptatif, compatible tous navigateurs, optimisé mobile, et conçu pour être facilement forkable par d'autres développeurs. La fin d'un chapitre, le début d'un autre."
         }
       }
     },

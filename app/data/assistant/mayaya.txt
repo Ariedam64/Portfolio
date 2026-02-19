@@ -1,44 +1,44 @@
-Projet : Mayaya — De l’idée perso à l’outil incontournable
+Projet : Mayaya — De l'idée perso à l'outil incontournable
 
-Mayaya est un bot IA conçu pour le jeu en ligne BombParty. Il est capable d’apprendre à jouer de façon autonome, de fournir des statistiques, un mode compétition et un overlay visuel en jeu. Il est passé d’un simple bot “troll” à un outil très utilisé par la communauté.
+Mayaya est un bot IA conçu par Romann pour le jeu en ligne BombParty. Il est capable d'apprendre à jouer de façon autonome, de fournir des statistiques, un mode compétition et un overlay visuel en jeu. Il est passé d'un simple bot "troll" à un outil très utilisé par la communauté.
 
 Contexte : BombParty
 
-BombParty est un jeu en ligne basé sur la rapidité et le vocabulaire. À chaque tour, une syllabe apparaît (par exemple "tra") et les joueurs ont quelques secondes pour taper un mot la contenant ("travail", "contrat", etc.) avant que la “bombe” virtuelle n’explose. Le concept est simple mais la pression du chrono rend les parties nerveuses.
+BombParty est un jeu en ligne basé sur la rapidité et le vocabulaire. À chaque tour, une syllabe apparaît (par exemple "tra") et les joueurs ont quelques secondes pour taper un mot la contenant ("travail", "contrat", etc.) avant que la "bombe" virtuelle n'explose. Le concept est simple mais la pression du chrono rend les parties nerveuses.
 
 Origine de Mayaya :
 
-Au départ, BombParty ne propose pas de mode solo ni de réelle solution pour s’entraîner seul. On ne peut jouer que dans des parties publiques avec des joueurs aléatoires. Frustré par ces limites (et un peu par ennui), j’ai commencé par créer un petit bot pour m’amuser.
+Au départ, BombParty ne propose pas de mode solo ni de réelle solution pour s'entraîner seul. On ne peut jouer que dans des parties publiques avec des joueurs aléatoires. Frustré par ces limites, Romann a commencé par créer un petit bot pour s'amuser.
 
-L’évolution :
+L'évolution :
 
 Un troll :
-Au tout début, le bot ne faisait qu’une chose : répondre “feur” dès que quelqu’un écrivait “quoi” dans le chat. Simple blague, sans ambition.
+Au tout début, le bot ne faisait qu'une chose : répondre "feur" dès que quelqu'un écrivait "quoi" dans le chat. Simple blague, sans ambition.
 
-Ensuite l’outil .exe (Python) :
-Le bot a commencé à devenir intéressant, j’ai ajouté plusieurs petites features amusantes. Quand un ami m’a demandé à le tester, je l’ai packagé dans une application Python avec interface graphique simple à configurer, distribuée en exécutable .exe.
+Ensuite l'outil .exe (Python) :
+Le bot a commencé à devenir intéressant, Romann a ajouté plusieurs petites features amusantes. Quand un ami a voulu le tester, il l'a packagé dans une application Python avec interface graphique simple à configurer, distribuée en exécutable .exe.
 
 Puis le bot 24/7 (Node.js) :
-Tourner le bot en local restait limité et peu pratique. J’ai donc migré vers un bot Node.js hébergé en continu, avec plus de 30 commandes et des modes d’entraînement bien plus poussés.
+Tourner le bot en local restait limité et peu pratique. Romann a migré vers un bot Node.js hébergé en continu, avec plus de 30 commandes et des modes d'entraînement bien plus poussés.
 
-Enfin l’overlay :
-Le problème suivant : devoir passer par le chat pour lire scores et statistiques. J’ai donc ajouté un overlay visuel, propre, responsive et modulaire, directement par-dessus le jeu.
+Enfin l'overlay :
+Le problème suivant : devoir passer par le chat pour lire scores et statistiques. Romann a donc ajouté un overlay visuel, propre, responsive et modulaire, directement par-dessus le jeu.
 
-Cette progression, du simple troll à l’overlay complet, a fini par inspirer les développeurs de BombParty, qui ont repris plusieurs idées dans leur propre version in-game.
+Cette progression, du simple troll à l'overlay complet, a fini par inspirer les développeurs de BombParty, qui ont repris plusieurs idées dans leur propre version in-game.
 
 Modules du projet Mayaya :
 
 Bot Python (première version)
 
-Objectif : Permettre à n’importe quel joueur d’ajouter un bot dans un salon sans configuration complexe ni dépendance technique.
+Objectif : Permettre à n'importe quel joueur d'ajouter un bot dans un salon sans configuration complexe ni dépendance technique.
 
-Stack : Python 3, customTkinter pour l’interface, pyInstaller pour générer un .exe, WebSocket (reverse engineering), OpenAI API.
+Stack : Python 3, customTkinter pour l'interface, pyInstaller pour générer un .exe, WebSocket (reverse engineering), OpenAI API.
 
 Fonctionnalités principales :
 
 Interface visuelle pour gérer les bots et rejoindre un salon.
 
-Lecture des syllabes via WebSocket et réponse automatique à partir d’un dictionnaire local.
+Lecture des syllabes via WebSocket et réponse automatique à partir d'un dictionnaire local.
 
 Options diverses : autojoin, easter eggs, réponses IA conversationnelles.
 
@@ -56,7 +56,7 @@ Maintenance lourde : recompilation manuelle à chaque modification.
 
 Bot Mayaya (version Node.js centralisée)
 
-Objectif : Créer une version centralisée, hébergée en continu, capable d’interagir avec les joueurs, d’apprendre automatiquement, de conserver des statistiques, d’aider les nouveaux joueurs et de proposer des fonctionnalités avancées.
+Objectif : Créer une version centralisée, hébergée en continu, capable d'interagir avec les joueurs, d'apprendre automatiquement, de conserver des statistiques, d'aider les nouveaux joueurs et de proposer des fonctionnalités avancées.
 
 Stack : Node.js, PostgreSQL, JSON, WebSocket (reverse engineering), OpenAI API.
 
@@ -66,7 +66,7 @@ Salon principal accessible en permanence.
 
 Plus de 30 commandes : statistiques, aide, modération, etc.
 
-Modes d’entraînement compétitifs avec suivi du WPM, du temps de réaction et de la précision.
+Modes d'entraînement compétitifs avec suivi du WPM, du temps de réaction et de la précision.
 
 Apprentissage automatique de nouveaux mots en observant les parties.
 
@@ -76,7 +76,7 @@ Réactions contextuelles pour certains joueurs (personnalisation via GPT).
 
 Reconnexion automatique en cas de déconnexion.
 
-Possibilité d’instances secondaires sans impacter la room principale.
+Possibilité d'instances secondaires sans impacter la room principale.
 
 Limites :
 
@@ -86,15 +86,15 @@ Accès à la base PostgreSQL uniquement via interface textuelle.
 
 Overlay (surcouche visuelle côté client)
 
-Objectif : Afficher en temps réel des données de performance pour les joueurs, sans dépendre uniquement du bot. Améliorer l’UX globale du jeu.
+Objectif : Afficher en temps réel des données de performance pour les joueurs, sans dépendre uniquement du bot. Améliorer l'UX globale du jeu.
 
 Stack : JavaScript, Tampermonkey, DOM API, jQuery, CSS.
 
 Fonctionnalités principales :
 
-Tableau de statistiques personnalisable (WPM, temps de réaction, taux d’erreur).
+Tableau de statistiques personnalisable (WPM, temps de réaction, taux d'erreur).
 
-Module d’entraînement filtrable (aléatoire, occurrences, regex) avec surlignage dynamique.
+Module d'entraînement filtrable (aléatoire, occurrences, regex) avec surlignage dynamique.
 
 Bots intégrés (entraînement et personnel) directement dans le jeu.
 
@@ -108,23 +108,23 @@ Profil joueur enrichi.
 
 Limites :
 
-Projet arrêté avant une version finale : l’équipe de BombParty a intégré les principales idées en natif.
+Projet arrêté avant une version finale : l'équipe de BombParty a intégré les principales idées en natif.
 
 Très sensible aux changements DOM.
 
 Non compatible mobile.
 
-Fun fact : la guerre d’usure contre Maca
+Fun fact : la guerre d'usure contre Maca
 
-Lorsque j’ai lancé Mayaya, un membre du staff BombParty, Maca, a tenté de bloquer l’initiative :
+Lorsque Romann a lancé Mayaya, un membre du staff BombParty, Maca, a tenté de bloquer l'initiative :
 
 Un seul bot autorisé, tous les autres supprimés.
 
-Chaque feature “fun” (GIF de profil, alertes d’anniversaire…) supprimée rapidement via hotfix.
+Chaque feature "fun" (GIF de profil, alertes d'anniversaire…) supprimée rapidement via hotfix.
 
-Mise en place d’un reCAPTCHA furtif et chiffrement WebSocket pour empêcher les bots.
+Mise en place d'un reCAPTCHA furtif et chiffrement WebSocket pour empêcher les bots.
 
-Plutôt que d’abandonner, j’ai opté pour une guerre d’usure technique :
+Plutôt que d'abandonner, Romann a opté pour une guerre d'usure technique :
 
 Contournement du reCAPTCHA via simulation de requêtes HTTP et interactions utilisateurs.
 
@@ -136,4 +136,4 @@ Après environ un an, Maca a fini par lâcher : avant de partir, il a retiré le
 
 Remarque :
 
-Après 2 ans de fonctionnement 24/7, j’ai décidé d’arrêter l’hébergement continu du bot par manque de motivation pour maintenir le service. D’autres bots plus récents ont pris le relais, mais le code reste disponible pour un usage local.
+Après 2 ans de fonctionnement 24/7, Romann a décidé d'arrêter l'hébergement continu du bot par manque de motivation pour maintenir le service. D'autres bots plus récents ont pris le relais, mais le code reste disponible pour un usage local.
