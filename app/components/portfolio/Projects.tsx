@@ -42,9 +42,10 @@ export default function Projects() {
   {
     images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],
     title: 'Arie\'s Mod',
-    description: t("portfolio_project4_description"),
+    description: t("portfolio.projects.ariesmod.description"),
     technologies: ['Tampermonkey','TypeScript','JavaScript','HTML','CSS'],
-    sourceUrl: 'https://github.com/Ariedam64/MagicGarden-modMenu'
+    detailsUrl: 'portfolio/projects/ariesmod',
+    sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
   },
   {
     images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],

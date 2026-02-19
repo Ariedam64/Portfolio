@@ -584,6 +584,275 @@
             "Simple rules like the camera lock, backlog limit and latency guard make the system predictable and easy to fix."
           ]
         }
+      },
+      "ariesmod": {
+        "title": "Aries Mod",
+        "description": "Community Tampermonkey mod for Magic Garden that brought together over 10,000 players, with a dedicated backend and integrated community hub",
+        "subtitle": "A Tampermonkey userscript for the game Magic Garden that brought together over 10,000 players",
+        "game": {
+          "title": "About Magic Garden",
+          "description": "Magic Garden is a multiplayer idle game available on Discord and magicgarden.gg. The concept: buy seeds, grow plants, sell them and get richer over time. Mechanics like pets (offering bonuses), weather (influencing prices) and multiplayer (up to 6 players, with sell bonuses based on room size) add depth to what seems like a childish game at first glance.",
+          "link_label": "Play on magicgarden.gg"
+        },
+        "origin": {
+          "title": "Project Origin",
+          "intro": "It all started during a Discord evening with friends. We stumbled upon this game by accident, and honestly, my first reaction was: \"It's childish, the gameplay really isn't great.\" But very quickly, an idea crossed my mind.",
+          "steps": [
+            {
+              "icon": "🎲",
+              "title": "The discovery",
+              "desc": "\"OK the game sucks, but can't I just try to become the richest player?\" My developer instinct kicked in instantly."
+            },
+            {
+              "icon": "🔍",
+              "title": "Reverse engineering",
+              "desc": "I started dissecting the game: reading the minified JavaScript bundle, analyzing network requests, breaking down every WebSocket message. The goal, understand every mechanism to figure out what I could exploit."
+            },
+            {
+              "icon": "⚡",
+              "title": "The first mod",
+              "desc": "I built a first mod focused on automation to accumulate money quickly and posted it on the game's public Discord. No rules, no security, the game had only been out for two months."
+            },
+            {
+              "icon": "🤝",
+              "title": "Meeting the devs",
+              "desc": "A game developer reached out to me. Supportive, he said he was happy someone was taking interest in his game this early, but that this type of mod wasn't allowed. And that's when I saw another opportunity."
+            },
+            {
+              "icon": "💡",
+              "title": "The real beginning",
+              "desc": "What if, instead of automating, I created a community mod that players actually need? A mod that enhances the experience without breaking the game. That's where the real project started, systematically asking for dev approval before every feature."
+            }
+          ],
+          "conclusion": "This transparent approach built a trust relationship with the developers that allowed the project to grow for months."
+        },
+        "modules": {
+          "client": {
+            "label": "Client (Userscript)",
+            "objective": "Create a Tampermonkey mod that enriches the Magic Garden experience without breaking the game, adding community features and quality-of-life improvements that players are asking for.",
+            "story_title": "The mod's story",
+            "story_intro": "The mod evolved over months, each feature added in response to community needs and validated by the game developers.",
+            "story_steps": [
+              {
+                "icon": "🐾",
+                "title": "The foundations",
+                "desc": "First official version with the most requested features from the community. The mod was immediately adopted by players."
+              },
+              {
+                "icon": "🌐",
+                "title": "The takeoff",
+                "desc": "The game had no public room system, yet playing with more people increases sell prices. I created a Discord bot coupled with the game's API to list available rooms directly in the mod. This is when the mod really took off."
+              },
+              {
+                "icon": "🎨",
+                "title": "Editor mode",
+                "desc": "An idea that surprised everyone, developers included. A purely visual mode, but one that dramatically boosted the community aspect of the game."
+              },
+              {
+                "icon": "🔄",
+                "title": "Constant maintenance",
+                "desc": "The game was being updated constantly. Multiple mod updates per week, sometimes per day. Core systems were rebuilt several times: sprite system, game data system, Discord compatibility."
+              }
+            ],
+            "structure_title": "Project structure",
+            "structure": "src/\n  ariesModAPI/  # Community API integration\n  core/  # Core mod logic\n  data/  # Game data (dynamically extracted)\n  hooks/  # Reactive hooks\n  services/  # Service layer\n  sprite/  # Sprite rendering system\n  store/  # State management\n  ui/  # User interface (menus, overlays)\n  utils/  # Utilities\n  main.ts  # Userscript entry point",
+            "tech": [
+              "TypeScript",
+              "JavaScript",
+              "esbuild",
+              "Tampermonkey",
+              "Shadow DOM",
+              "CSS",
+              "HTML"
+            ],
+            "features": [
+              "Pet manager: team creation, drag-to-reorder, auto-feed by species, ability logs",
+              "Notifications: rare shop item alerts, weather events, pet food levels",
+              "Public rooms: community-fed room listing with sell bonuses",
+              "Editor mode: full creative mode, all plants and decor unlocked in every variation",
+              "Locker: crop protection based on plant mutations",
+              "In-game QoL: Buy All, Sell All, inventory sorting, value calculator, statistics",
+              "Full debug menu: real-time Jotai store viewer, game sprite and sound capture, live WebSocket messages, useful for other modders",
+              "Customizable keybinds and multi-browser compatibility (Chrome, Edge, Firefox, Opera GX, Discord)",
+              "And many more: the mod was developed daily for months, the full feature list is available on GitHub"
+            ],
+            "limits": [
+              "Highly sensitive to game updates (frequently changing minified bundle)",
+              "Discord Activities compatibility complex to maintain (multiple restrictions)",
+              "Frequent maintenance required (multiple updates per week or even per day)",
+              "Core systems rebuilt several times (sprites, game data)"
+            ]
+          },
+          "backend": {
+            "label": "Backend (VPS)",
+            "objective": "Provide a lightweight and cost-effective infrastructure capable of supporting over 10,000 users to power the mod's community features: rooms, real-time chat, friends, groups and leaderboard.",
+            "story_title": "The backend story",
+            "story_intro": "The backend was born out of necessity. When the game's public room API was removed due to abuse, I decided to recreate this feature myself. Mod players would become the data providers themselves.",
+            "story_steps": [
+              {
+                "icon": "☁️",
+                "title": "Supabase phase",
+                "desc": "I had planned for 50 users maximum, the free tier of 500K requests/month should have been enough. Within 1 hour of deployment: already 50 users. Within 24 hours: 400. In less than a week: the quota was reached."
+              },
+              {
+                "icon": "🖥️",
+                "title": "VPS migration",
+                "desc": "Migrated to a Hetzner VPS in 2 days at €3.6/month. Theoretical capacity: 20 million requests/day. A completely disproportionate optimization compared to Supabase."
+              },
+              {
+                "icon": "💬",
+                "title": "The Community Hub",
+                "desc": "With over 1,000 users, I decided to build what the game was truly missing: a real community system. Real-time chat, friend system, groups, leaderboard, customizable profiles with 7 privacy controls."
+              },
+              {
+                "icon": "🔐",
+                "title": "Security and compatibility",
+                "desc": "Added Discord OAuth to secure authentication. SSE events didn't work on Discord, so I implemented long polling with an event system. Coded non-stop for a week to make everything compatible."
+              },
+              {
+                "icon": "⚡",
+                "title": "The optimization",
+                "desc": "With 10,000 registered players and 500 connected simultaneously, the VPS was at 200% capacity with 5 million requests/day. Massive refactoring: smart requests, deduplication, optimized polling. Result: 900K requests/day, VPS stable at 25%. All on a €3.6/month server."
+              },
+              {
+                "icon": "☕",
+                "title": "Ko-fi and supporters",
+                "desc": "I added a Ko-fi page without expecting much. Within one week, I had raised enough to cover over a year and a half of hosting. I decided to integrate Supporter badges into the Community Hub to thank contributors."
+              }
+            ],
+            "tech": [
+              "Node.js",
+              "PostgreSQL",
+              "Hetzner VPS",
+              "Discord OAuth",
+              "Long Polling",
+              "REST API",
+              "Docker"
+            ],
+            "features": [
+              "Public room system fed directly by mod players",
+              "Full Community Hub: real-time chat, friends, groups, leaderboard, real-time view of friends' garden, inventory and pets without being in their room",
+              "Secure authentication via Discord OAuth",
+              "Long polling with event system (workaround for Discord restrictions)",
+              "Admin dashboard for real-time backend monitoring",
+              "Massive optimization: from 5M to 900K requests/day, VPS at 25% capacity"
+            ],
+            "limits": [
+              "Polling-only architecture (no SSE due to Discord restrictions)",
+              "Single VPS without redundancy",
+              "Dependency on Discord OAuth for authentication"
+            ],
+            "structure_title": "Project structure",
+            "structure": "src/\n  app.ts  # Express config, CORS, routes\n  server.ts  # HTTP + WebSocket bootstrap\n  db.ts  # PostgreSQL pool\n  lib/\n    cache.ts  # In-memory TTL cache\n    rateLimit.ts  # Per-IP and per-player rate limiting\n    messageRateLimit.ts  # Message rate limiting\n    ip.ts  # IP extraction\n  middleware/\n    auth.ts  # Bearer token authentication\n  routes/\n    auth/  # Discord OAuth\n    collect/  # Player state ingestion\n    events/  # Long polling, SSE, presence, event hub\n    friends/  # Friend system\n    groups/  # Community groups\n    messages/  # Real-time chat\n    players/  # Player profiles\n    privacy/  # Privacy controls\n    rooms/  # Public rooms\n    leaderboard/  # Rankings\n    admin/  # Admin dashboard\nschema.sql  # PostgreSQL schema\nDockerfile  # Multi-stage Docker build",
+            "optimization_title": "Optimization strategies",
+            "optimization_rules": [
+              "In-memory TTL cache (30s) for global data (rooms, leaderboard, online players)",
+              "PostgreSQL-backed rate limiting per IP and per player, with IP blocklist",
+              "Long polling with waiter pattern: server holds request until an event arrives or timeout",
+              "Unified fan-out: a single push serves both SSE and long-polling consumers",
+              "Parallel aggregation: 11 queries via Promise.all for initial data load",
+              "Lazy presence sweep: timer only runs when players are connected",
+              "Recipient deduplication for presence events (friends + group members)",
+              "Bulk upserts for room players (single INSERT instead of N)",
+              "Partial and composite PostgreSQL indexes targeting frequent queries",
+              "Lazy room cleanup (cleanup-on-read, no cron needed)"
+            ]
+          },
+          "gemini": {
+            "label": "Gemini (Next-gen)",
+            "objective": "Start from scratch in collaboration with another developer to create the ultimate mod: future-proof, auto-adaptive to game updates, all-browser and mobile compatible, and designed to be easily forkable.",
+            "story_title": "Why Gemini",
+            "story_intro": "After months of development on Aries Mod, the limitations of the original architecture became obvious. We decided with another developer to start over from scratch.",
+            "story_steps": [
+              {
+                "icon": "🤝",
+                "title": "The collaboration",
+                "desc": "Another developer was also playing the game and had his own mod. We decided to merge our two projects into one, starting from scratch with an architecture built to last."
+              },
+              {
+                "icon": "🏗️",
+                "title": "The architecture",
+                "desc": "Documented strict rules, a modular architecture with clear layers (atoms, globals, modules, features, UI), and a clean separation of concerns. No more hardcoded game data, everything is dynamically extracted."
+              },
+              {
+                "icon": "📱",
+                "title": "Compatibility",
+                "desc": "All-browser compatible from day one, mobile optimized, and designed so any developer can fork and add their own sections easily."
+              },
+              {
+                "icon": "🤖",
+                "title": "Claude as copilot",
+                "desc": "The project architecture is largely managed with Claude. Workflows, rules, and skills are defined in the .claude directory, enabling much smarter and cleaner coding. Every contribution automatically follows these guidelines."
+              }
+            ],
+            "structure_title": "Project structure",
+            "structure": "src/\n  api/  # Public API (window.Gemini)\n  atoms/  # Bridge to the game's Jotai store\n  globals/  # Reactive derived variables\n  modules/  # Game modules (Data, Sprite, Pixi, Audio...)\n  features/  # 20+ independent features\n  websocket/  # Capture and transport\n  ui/  # Interface (Shadow DOM, components, sections)\n  utils/  # Cross-cutting utilities\n  main.ts  # Entry point",
+            "tech": [
+              "TypeScript (strict)",
+              "Vite",
+              "Jotai",
+              "Pixi.js",
+              "Shadow DOM",
+              "Vitest",
+              "ESLint"
+            ],
+            "features": [
+              "Modular architecture with documented strict rules",
+              "Auto-adaptation to game structure (no more hardcoded data)",
+              "All-browser compatible + mobile optimized",
+              "20+ independently toggleable features",
+              "Public API exposed (window.Gemini) for third-party scripts",
+              "Dynamic sprite system via MGSprite and data via MGData"
+            ],
+            "limits": [
+              "Still under active development",
+              "More complex architecture (steeper learning curve for contributors)"
+            ]
+          }
+        },
+        "impact": {
+          "title": "Impact in numbers",
+          "items": [
+            {
+              "icon": "👥",
+              "text": "10,000+ players registered on the mod"
+            },
+            {
+              "icon": "🟢",
+              "text": "500 players connected simultaneously on average"
+            },
+            {
+              "icon": "📊",
+              "text": "2,000 regular users per day"
+            },
+            {
+              "icon": "💰",
+              "text": "€50 raised on Ko-fi in one week, enough to cover 1.5 years of hosting"
+            },
+            {
+              "icon": "🖥️",
+              "text": "A €3.6/month VPS handling the entire ecosystem"
+            },
+            {
+              "icon": "🌍",
+              "text": "Compatible with Chrome, Edge, Firefox, Opera GX and Discord Activities"
+            }
+          ]
+        },
+        "learnings": {
+          "title": "What this project demonstrates",
+          "items": [
+            "Reverse engineering is a powerful tool when used constructively and transparently",
+            "Underestimating your user base is the best mistake you can make, it forces you to learn scaling under real conditions",
+            "A well-configured €3.6/month VPS can outperform €25/month cloud solutions",
+            "Community trust is built through transparency and asking for permission rather than forgiveness",
+            "User feedback is the best fuel for a developer"
+          ]
+        },
+        "remark": {
+          "title": "What's next",
+          "description": "This project represented months of intensive development, brought together a community of over 10,000 players, and generated enough support to cover more than a year and a half of hosting. It's now evolving into Gemini, a collaborative ground-up rewrite. The goal: a future-proof, auto-adaptive, all-browser, mobile-optimized mod designed to be easily forkable by other developers. The end of one chapter, the beginning of another."
+        }
       }
     },
     "sections": {

@@ -22,9 +22,9 @@
       "role": "Analyste Développeur",
       "cvLink": "Consulter le CV",
       "description": "Développeur de 24 ans situé en France, passionné de code depuis 8 ans. Ce que j'adore ? Automatiser, optimiser, et coder des projets qui me passionnent"
-	},
-	"experiences":{
-	  "work_title": "Expériences",
+    },
+    "experiences": {
+      "work_title": "Expériences",
       "work": [
         {
           "date": "2024 - présent",
@@ -496,7 +496,7 @@
           ],
           "conclusion": "Ces constats ont guidé les règles : limiter la durée des sessions, mettre la caméra en file d'attente et redémarrer dès que les métriques dérivent."
         },
-		"operating_title":"Logique de fonctionnement",
+        "operating_title": "Logique de fonctionnement",
         "management": {
           "title": "Gestion des instances",
           "items": [
@@ -584,6 +584,275 @@
             "Des règles simples comme le verrou caméra, la limite de backlog et la garde sur la latence rendent le système prévisible et facile à corriger."
           ]
         }
+      },
+      "ariesmod": {
+        "title": "Aries Mod",
+        "description": "Mod communautaire Tampermonkey pour Magic Garden qui a réuni plus de 10 000 joueurs, avec backend dédié et hub communautaire intégré",
+        "subtitle": "Un userscript Tampermonkey pour le jeu Magic Garden qui a réuni plus de 10 000 joueurs",
+        "game": {
+          "title": "À propos de Magic Garden",
+          "description": "Magic Garden est un idle game multijoueur disponible sur Discord et sur magicgarden.gg. Le principe : acheter des graines, faire pousser des plantes, les vendre et devenir riche petit à petit. Des mécaniques comme les animaux de compagnie (qui offrent des bonus), la météo (qui influence les prix) et le multijoueur (jusqu'à 6 joueurs, avec des bonus de vente selon le nombre de joueurs dans le salon) ajoutent de la profondeur à un jeu qui semble enfantin au premier abord.",
+          "link_label": "Jouer sur magicgarden.gg"
+        },
+        "origin": {
+          "title": "Origine du projet",
+          "intro": "Tout est parti d'une soirée Discord entre amis. On tombe sur ce jeu par hasard, et honnêtement, première réaction : \"C'est enfantin, le gameplay est vraiment pas terrible\". Mais très vite, une idée m'a traversé l'esprit.",
+          "steps": [
+            {
+              "icon": "🎲",
+              "title": "La découverte",
+              "desc": "\"OK le jeu est nul, mais est-ce que je peux pas essayer de devenir le joueur le plus riche ?\" Mon instinct de développeur s'est activé instantanément."
+            },
+            {
+              "icon": "🔍",
+              "title": "Le reverse engineering",
+              "desc": "J'ai commencé à disséquer le jeu : lire le bundle JavaScript minifié, analyser les requêtes réseau, décortiquer chaque message WebSocket. L'objectif, comprendre chaque mécanisme pour savoir ce que je pourrais exploiter."
+            },
+            {
+              "icon": "⚡",
+              "title": "Le premier mod",
+              "desc": "J'ai développé un premier mod axé sur l'automatisation pour accumuler de l'argent rapidement et je l'ai posté dans le Discord public du jeu. Pas de règles, pas de sécurité, le jeu venait de sortir il y a deux mois."
+            },
+            {
+              "icon": "🤝",
+              "title": "Le contact avec les devs",
+              "desc": "Un développeur du jeu est venu vers moi. Bienveillant, il m'a dit être content que quelqu'un s'intéresse à son jeu si tôt, mais que ce type de mod n'était pas autorisé. Et là, j'ai vu une autre opportunité."
+            },
+            {
+              "icon": "💡",
+              "title": "Le vrai départ",
+              "desc": "Et si, au lieu d'automatiser, je créais un mod communautaire dont les joueurs ont réellement besoin ? Un mod qui améliore l'expérience sans casser le jeu. C'est là que le vrai projet a commencé, en demandant systématiquement la validation des devs avant chaque feature."
+            }
+          ],
+          "conclusion": "Cette approche transparente a construit une relation de confiance avec les développeurs qui a permis au projet de grandir pendant des mois."
+        },
+        "modules": {
+          "client": {
+            "label": "Client (Userscript)",
+            "objective": "Créer un mod Tampermonkey qui enrichit l'expérience Magic Garden sans casser le jeu, en ajoutant des fonctionnalités communautaires et des améliorations de qualité de vie que les joueurs réclament.",
+            "story_title": "L'histoire du mod",
+            "story_intro": "Le mod a évolué au fil des mois, chaque fonctionnalité étant ajoutée en réponse aux besoins de la communauté et validée par les développeurs du jeu.",
+            "story_steps": [
+              {
+                "icon": "🐾",
+                "title": "Les fondations",
+                "desc": "Première version officielle avec les fonctionnalités les plus demandées par la communauté. Le mod a tout de suite été adopté par les joueurs."
+              },
+              {
+                "icon": "🌐",
+                "title": "L'explosion",
+                "desc": "Le jeu n'avait pas de système de salons publics alors que jouer à plusieurs augmente les prix de vente. J'ai créé un bot Discord couplé à l'API du jeu pour lister les salons directement dans le mod. C'est là que le mod est devenu vraiment populaire."
+              },
+              {
+                "icon": "🎨",
+                "title": "Le mode éditeur",
+                "desc": "Une idée qui a surpris tout le monde, développeurs inclus. Un mode purement visuel, mais qui a décuplé l'aspect communautaire du jeu."
+              },
+              {
+                "icon": "🔄",
+                "title": "La maintenance permanente",
+                "desc": "Le jeu était mis à jour constamment. Plusieurs mises à jour du mod par semaine, parfois par jour. Les systèmes core ont été refondus plusieurs fois : système de sprites, système de données, compatibilité Discord."
+              }
+            ],
+            "structure_title": "Structure du projet",
+            "structure": "src/\n  ariesModAPI/  # Intégration API communautaire\n  core/  # Logique core du mod\n  data/  # Données du jeu (extraites dynamiquement)\n  hooks/  # Hooks réactifs\n  services/  # Couche service\n  sprite/  # Système de rendu des sprites\n  store/  # Gestion d'état\n  ui/  # Interface utilisateur (menus, overlays)\n  utils/  # Utilitaires\n  main.ts  # Point d'entrée du userscript",
+            "tech": [
+              "TypeScript",
+              "JavaScript",
+              "esbuild",
+              "Tampermonkey",
+              "Shadow DOM",
+              "CSS",
+              "HTML"
+            ],
+            "features": [
+              "Gestionnaire d'animaux : création d'équipes, drag-to-reorder, auto-feed par espèce, logs des capacités",
+              "Notifications : alertes d'items rares en shop, météo, niveaux de nourriture des animaux",
+              "Salons publics : listing de salons alimenté par la communauté avec bonus de vente",
+              "Mode éditeur : mode créatif complet, toutes plantes et décors débloqués dans toutes leurs variations",
+              "Locker : protection des récoltes selon les mutations des plantes",
+              "QoL intégrés au jeu : Buy All, Sell All, tri d'inventaire, calculateur de valeur, statistiques",
+              "Menu debug complet : visualisation du store Jotai en temps réel, capture de sprites et sons du jeu, messages WebSocket en direct, utile pour les autres modders",
+              "Keybinds personnalisables et compatibilité multi-navigateurs (Chrome, Edge, Firefox, Opera GX, Discord)",
+              "Et bien d'autres : le mod a été développé quotidiennement pendant des mois, la liste complète des fonctionnalités est disponible sur GitHub"
+            ],
+            "limits": [
+              "Très sensible aux mises à jour du jeu (bundle minifié qui change fréquemment)",
+              "Compatibilité Discord Activities complexe à maintenir (restrictions multiples)",
+              "Maintenance fréquente nécessaire (plusieurs mises à jour par semaine voire par jour)",
+              "Systèmes core refondus plusieurs fois (sprites, données du jeu)"
+            ]
+          },
+          "backend": {
+            "label": "Backend (VPS)",
+            "objective": "Fournir une infrastructure légère et économique capable de supporter plus de 10 000 utilisateurs pour alimenter les fonctionnalités communautaires du mod : salons, chat en temps réel, amis, groupes et leaderboard.",
+            "story_title": "L'histoire du backend",
+            "story_intro": "Le backend est né d'une nécessité. Quand l'API des salons publics du jeu a été retirée suite à des abus, j'ai décidé de recréer cette fonctionnalité moi-même. Les joueurs du mod deviendraient eux-mêmes les fournisseurs de données.",
+            "story_steps": [
+              {
+                "icon": "☁️",
+                "title": "Phase Supabase",
+                "desc": "J'avais prévu 50 utilisateurs maximum, le quota gratuit de 500K requêtes/mois devait suffire. En 1 heure après le déploiement : déjà 50 utilisateurs. En 24 heures : 400. En moins d'une semaine : le quota était atteint."
+              },
+              {
+                "icon": "🖥️",
+                "title": "Migration VPS",
+                "desc": "Migration sur un VPS Hetzner en 2 jours à 3,6€/mois. Capacité théorique : 20 millions de requêtes/jour. Une optimisation complètement disproportionnée par rapport à Supabase."
+              },
+              {
+                "icon": "💬",
+                "title": "Le Community Hub",
+                "desc": "Avec plus de 1 000 utilisateurs, j'ai décidé de construire ce qui manquait réellement au jeu : un vrai système communautaire. Chat en temps réel, système d'amis, groupes, leaderboard, profils personnalisables avec 7 contrôles de confidentialité."
+              },
+              {
+                "icon": "🔐",
+                "title": "Sécurité et compatibilité",
+                "desc": "Ajout de Discord OAuth pour sécuriser l'authentification. Les événements SSE ne fonctionnaient pas sur Discord, j'ai mis en place un long polling avec système d'événements. Codé pendant une semaine non-stop pour rendre le tout compatible."
+              },
+              {
+                "icon": "⚡",
+                "title": "L'optimisation",
+                "desc": "Avec 10 000 joueurs enregistrés et 500 connectés simultanément, le VPS était à 200% de ses capacités avec 5 millions de requêtes/jour. Refactoring massif : requêtes intelligentes, déduplication, polling optimisé. Résultat : 900K requêtes/jour, VPS stable à 25%. Tout ça sur un serveur à 3,6€/mois."
+              },
+              {
+                "icon": "☕",
+                "title": "Ko-fi et les supporters",
+                "desc": "J'ai ajouté une page Ko-fi sans trop m'attendre à des résultats. En une semaine, j'avais récolté suffisamment pour couvrir plus d'un an et demi d'hébergement. J'ai décidé d'intégrer des badges Supporter dans le Community Hub pour remercier les contributeurs."
+              }
+            ],
+            "tech": [
+              "Node.js",
+              "PostgreSQL",
+              "Hetzner VPS",
+              "Discord OAuth",
+              "Long Polling",
+              "REST API",
+              "Docker"
+            ],
+            "features": [
+              "Système de salons publics alimenté directement par les joueurs du mod",
+              "Community Hub complet : chat temps réel, amis, groupes, leaderboard, visualisation en temps réel du jardin, inventaire et animaux de ses amis sans être dans leur salon",
+              "Authentification sécurisée via Discord OAuth",
+              "Long polling avec système d'événements (contournement des restrictions Discord)",
+              "Dashboard admin pour superviser le backend en temps réel",
+              "Optimisation massive : de 5M à 900K requêtes/jour, VPS à 25% de capacité"
+            ],
+            "limits": [
+              "Architecture polling uniquement (pas de SSE à cause des restrictions Discord)",
+              "Single VPS sans redondance",
+              "Dépendance à Discord OAuth pour l'authentification"
+            ],
+            "structure_title": "Structure du projet",
+            "structure": "src/\n  app.ts  # Configuration Express, CORS, routes\n  server.ts  # Bootstrap HTTP + WebSocket\n  db.ts  # Pool PostgreSQL\n  lib/\n    cache.ts  # Cache mémoire avec TTL\n    rateLimit.ts  # Rate limiting par IP et joueur\n    messageRateLimit.ts  # Rate limiting messages\n    ip.ts  # Extraction IP\n  middleware/\n    auth.ts  # Authentification Bearer token\n  routes/\n    auth/  # Discord OAuth\n    collect/  # Ingestion état joueurs\n    events/  # Long polling, SSE, présence, hub\n    friends/  # Système d amis\n    groups/  # Groupes communautaires\n    messages/  # Chat temps réel\n    players/  # Profils joueurs\n    privacy/  # Contrôles de confidentialité\n    rooms/  # Salons publics\n    leaderboard/  # Classements\n    admin/  # Dashboard administration\nschema.sql  # Schéma PostgreSQL\nDockerfile  # Build multi-stage Docker",
+            "optimization_title": "Stratégies d optimisation",
+            "optimization_rules": [
+              "Cache mémoire TTL 30s pour les données globales (salons, leaderboard, joueurs en ligne)",
+              "Rate limiting en PostgreSQL par IP et par joueur, avec blocklist IP",
+              "Long polling avec système de waiters : le serveur attend un événement ou un timeout avant de répondre",
+              "Fan-out unifié : un seul push alimente SSE et long polling simultanément",
+              "Agrégation parallèle : 11 requêtes en Promise.all pour le chargement initial",
+              "Présence avec sweep lazy : le timer ne tourne que quand des joueurs sont connectés",
+              "Déduplication des destinataires pour les événements de présence (amis + groupes)",
+              "Bulk upserts pour les joueurs dans un salon (un seul INSERT au lieu de N)",
+              "Index partiels et composites PostgreSQL ciblés sur les requêtes fréquentes",
+              "Nettoyage lazy des salons expirés (cleanup-on-read, pas de cron)"
+            ]
+          },
+          "gemini": {
+            "label": "Gemini (Next-gen)",
+            "objective": "Repartir de zéro en collaboration avec un autre développeur pour créer le mod ultime : future-proof, auto-adaptatif aux mises à jour du jeu, compatible tous navigateurs et mobile, et conçu pour être facilement forkable.",
+            "story_title": "Pourquoi Gemini",
+            "story_intro": "Après des mois de développement sur Aries Mod, les limites de l'architecture originale devenaient évidentes. On a décidé avec un autre développeur de tout repartir de zéro.",
+            "story_steps": [
+              {
+                "icon": "🤝",
+                "title": "La collaboration",
+                "desc": "Un autre développeur utilisait également le jeu et avait son propre mod. On a décidé de fusionner nos deux projets en un seul, en repartant de zéro avec une architecture pensée pour durer."
+              },
+              {
+                "icon": "🏗️",
+                "title": "L'architecture",
+                "desc": "Des règles strictes documentées, une architecture modulaire avec des couches claires (atoms, globals, modules, features, UI), et une séparation nette des responsabilités. Plus de hardcode de données du jeu, tout est extrait dynamiquement."
+              },
+              {
+                "icon": "📱",
+                "title": "La compatibilité",
+                "desc": "Compatible tous navigateurs dès le départ, optimisé mobile, et conçu pour que n'importe quel développeur puisse fork et ajouter ses propres sections facilement."
+              },
+              {
+                "icon": "🤖",
+                "title": "Claude comme copilote",
+                "desc": "L'architecture du projet est en grande partie gérée grâce à Claude. Des workflows, rules et skills sont définis dans le dossier .claude du projet, ce qui permet de coder de manière beaucoup plus intelligente et propre. Chaque contribution passe par ces guidelines automatiquement."
+              }
+            ],
+            "structure_title": "Structure du projet",
+            "structure": "src/\n  api/  # API publique (window.Gemini)\n  atoms/  # Bridge vers le store Jotai du jeu\n  globals/  # Variables réactives dérivées\n  modules/  # Modules du jeu (Data, Sprite, Pixi, Audio...)\n  features/  # 20+ fonctionnalités indépendantes\n  websocket/  # Capture et transport\n  ui/  # Interface (Shadow DOM, composants, sections)\n  utils/  # Utilitaires transversaux\n  main.ts  # Point d'entrée",
+            "tech": [
+              "TypeScript (strict)",
+              "Vite",
+              "Jotai",
+              "Pixi.js",
+              "Shadow DOM",
+              "Vitest",
+              "ESLint"
+            ],
+            "features": [
+              "Architecture modulaire avec règles strictes documentées",
+              "Auto-adaptation à la structure du jeu (plus de hardcode de données)",
+              "Compatible tous navigateurs + optimisé mobile",
+              "20+ features indépendantes et activables individuellement",
+              "API publique exposée (window.Gemini) pour les scripts tiers",
+              "Système de sprites dynamique via MGSprite et données via MGData"
+            ],
+            "limits": [
+              "Toujours en cours de développement",
+              "Architecture plus complexe (courbe d'apprentissage pour les contributeurs)"
+            ]
+          }
+        },
+        "impact": {
+          "title": "L'impact en chiffres",
+          "items": [
+            {
+              "icon": "👥",
+              "text": "10 000+ joueurs enregistrés sur le mod"
+            },
+            {
+              "icon": "🟢",
+              "text": "500 joueurs connectés simultanément en moyenne"
+            },
+            {
+              "icon": "📊",
+              "text": "2 000 utilisateurs réguliers par jour"
+            },
+            {
+              "icon": "💰",
+              "text": "50€ récoltés sur Ko-fi en une semaine, de quoi couvrir 1 an et demi d'hébergement"
+            },
+            {
+              "icon": "🖥️",
+              "text": "Un VPS à 3,6€/mois qui gère tout l'écosystème"
+            },
+            {
+              "icon": "🌍",
+              "text": "Compatible Chrome, Edge, Firefox, Opera GX et Discord Activities"
+            }
+          ]
+        },
+        "learnings": {
+          "title": "Ce que ce projet démontre",
+          "items": [
+            "La rétro-ingénierie est un outil puissant quand elle est utilisée de manière constructive et transparente",
+            "Sous-estimer sa base d'utilisateurs est la meilleure erreur possible, ça force à apprendre le scaling en conditions réelles",
+            "Un VPS à 3,6€/mois bien configuré peut surpasser des solutions cloud à 25€/mois",
+            "La confiance de la communauté se construit avec de la transparence et en demandant la permission plutôt que le pardon",
+            "Le feedback des utilisateurs est le meilleur carburant pour un développeur"
+          ]
+        },
+        "remark": {
+          "title": "La suite",
+          "description": "Ce projet a représenté plusieurs mois de développement intensif, a rassemblé une communauté de plus de 10 000 joueurs et a généré suffisamment de soutien pour couvrir plus d'un an et demi d'hébergement. Il évolue aujourd'hui vers Gemini, un projet collaboratif de réécriture complète. L'objectif : un mod future-proof, auto-adaptatif, compatible tous navigateurs, optimisé mobile, et conçu pour être facilement forkable par d'autres développeurs. La fin d'un chapitre, le début d'un autre."
+        }
       }
     },
     "sections": {
@@ -601,17 +870,17 @@
     "chatbot": "Assistant"
   },
   "assistant": {
-      "welcome": "Bienvenue sur mon portfolio !",
-      "input": "Ecrivez un message...",
-      "suggestions": [
-        {
-          "prompt": "Parle-moi du projet Mayaya.",
-          "label": "Parle-moi du projet Mayaya."
-        },
-        {
-          "prompt": "Quel stack utilises-tu au quotidien ?",
-          "label": "Quel stack utilises-tu au quotidien ?"
-        }
-      ]
+    "welcome": "Bienvenue sur mon portfolio !",
+    "input": "Ecrivez un message...",
+    "suggestions": [
+      {
+        "prompt": "Parle-moi du projet Mayaya.",
+        "label": "Parle-moi du projet Mayaya."
+      },
+      {
+        "prompt": "Quel stack utilises-tu au quotidien ?",
+        "label": "Quel stack utilises-tu au quotidien ?"
+      }
+    ]
   }
 }
