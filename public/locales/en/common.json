@@ -181,7 +181,9 @@
               "Lack of error handling",
               "Unsigned executable, blocked by some antivirus software",
               "Heavy maintenance: manual recompilation after each change"
-            ]
+            ],
+            "structure_title": "Project structure",
+            "structure": "bot_python/\n├── main.py                 # Entry point\n├── ui/\n│   └── app.py              # GUI (customTkinter)\n├── bot/\n│   ├── bot.py              # WebSocket logic\n│   └── ai.py               # OpenAI API integration\n├── data/\n│   └── dictionary.json     # Local word dictionary\n└── dist/\n    └── Mayaya.exe          # Executable (pyInstaller)"
           },
           "node": {
             "label": "Mayaya Bot",
@@ -206,7 +208,9 @@
             "limits": [
               "No visual dashboard: everything managed via in-game chat",
               "PostgreSQL database access limited to text interface"
-            ]
+            ],
+            "structure_title": "Architecture (99 JS files, 34 folders)",
+            "structure": "Bombparty-Bot/\n├── Main.js                 # Entry point\n├── datavariables.json      # Configuration & state\n│\n├── BD/                     # Database layer\n│   ├── Database.js         # PostgreSQL wrapper\n│   └── Connection/\n│       └── configuration.js\n│\n├── Game/                   # Game logic\n│   ├── API/\n│   │   └── jklmAPI.js      # JKLM.fun REST client\n│   ├── Bot/\n│   │   ├── Bot.js          # Bot class (extends Player)\n│   │   └── AI.js           # AI logic\n│   ├── Player/\n│   │   └── Player.js       # Player base class\n│   └── Room/\n│       ├── Room.js         # Room management\n│       └── Modules/\n│           ├── Configuration.js\n│           ├── Game.js\n│           └── Rules.js\n│\n├── Socket/                 # WebSocket layer\n│   ├── Websocket.js        # Abstract class\n│   ├── Sockets/\n│   │   ├── GameSocket.js   # Game WS\n│   │   └── RoomSocket.js   # Room WS\n│   └── Events/\n│       ├── CommandsEvents/ # 39 commands\n│       │   ├── Bot/        # $autoJoin, $joinRoom, $enableAI…\n│       │   ├── Database/   # $totalWords, $occurrenceWord…\n│       │   ├── Player/     # $track, $speed, $precision…\n│       │   ├── Ranked/     # $record, $global, $personal…\n│       │   └── Room/       # $kickPlayer, $setLeader…\n│       ├── GameEvents/     # 32 event handlers\n│       └── RoomEvents/     # 12 event handlers\n│\n└── Misc/\n    └── Functions.js        # Utility functions"
           },
           "overlay": {
             "label": "Overlay",
@@ -231,7 +235,9 @@
               "Abandoned before final release: BombParty integrated main ideas natively",
               "Highly sensitive to DOM changes",
               "No mobile support"
-            ]
+            ],
+            "structure_title": "Architecture (76 source files)",
+            "structure": "uiop2/\n├── src/\n│   ├── main.js             # Entry point (detects context)\n│   │\n│   ├── game/               # Game iframe context\n│   │   ├── Game.js         # Game-side logic\n│   │   ├── Events/\n│   │   │   ├── message.js  # Incoming postMessages\n│   │   │   └── socket.js   # WebSocket events\n│   │   ├── ExistingFunctions/\n│   │   │   └── replaceFunctions.js # Game hooks\n│   │   └── Script panels/\n│   │       └── Dictionary/ # In-game dictionary\n│   │\n│   └── room/               # Room context (main page)\n│       ├── Room.js         # Main orchestrator\n│       ├── Events/\n│       │   ├── message.js  # Incoming postMessages\n│       │   └── socket.js   # WebSocket events\n│       ├── SideBar/        # Side panel (UI)\n│       └── Script panels/  # Feature modules\n│           ├── Bot/        # Training bots\n│           ├── DactyloStats/ # Stats (WPM, accuracy…)\n│           ├── Dictionaries/ # Word lists\n│           ├── Training/   # Training mode\n│           ├── Keyboard/   # Keyboard shortcuts\n│           ├── gameInterface/ # UI enhancements\n│           └── LeaderOptions/ # Leaderboard options\n│\n├── meta/\n│   └── header.user.js      # Tampermonkey header\n├── dist/\n│   └── uiop.user.js        # Final build\n└── build.js                # Build (Browserify + Babel)"
           }
         },
         "funFact": {

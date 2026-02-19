@@ -181,7 +181,9 @@
               "Absence de gestion des erreurs",
               "Exécutable non signé, bloqué par certains antivirus",
               "Maintenance lourde: recompile manuelle à chaque modifications"
-            ]
+            ],
+            "structure_title": "Structure du projet",
+            "structure": "bot_python/\n├── main.py                 # Point d'entrée\n├── ui/\n│   └── app.py              # Interface graphique (customTkinter)\n├── bot/\n│   ├── bot.py              # Logique WebSocket\n│   └── ai.py               # Intégration OpenAI API\n├── data/\n│   └── dictionnaire.json   # Dictionnaire de mots local\n└── dist/\n    └── Mayaya.exe          # Exécutable (pyInstaller)"
           },
           "node": {
             "label": "Bot Mayaya",
@@ -206,7 +208,9 @@
             "limits": [
               "Absence de dashboard visuel: tout se gère via le chat du jeu",
               "Accès à la base PostgreSQL limité à l’interface textuelle"
-            ]
+            ],
+            "structure_title": "Architecture (99 fichiers JS, 34 dossiers)",
+            "structure": "Bombparty-Bot/\n├── Main.js                 # Point d'entrée\n├── datavariables.json      # Configuration et état\n│\n├── BD/                     # Couche base de données\n│   ├── Database.js         # Wrapper PostgreSQL\n│   └── Connection/\n│       └── configuration.js\n│\n├── Game/                   # Logique de jeu\n│   ├── API/\n│   │   └── jklmAPI.js      # Client REST JKLM.fun\n│   ├── Bot/\n│   │   ├── Bot.js          # Classe Bot (étend Player)\n│   │   └── AI.js           # Logique IA\n│   ├── Player/\n│   │   └── Player.js       # Classe Player (base)\n│   └── Room/\n│       ├── Room.js         # Gestion de la room\n│       └── Modules/\n│           ├── Configuration.js\n│           ├── Game.js\n│           └── Rules.js\n│\n├── Socket/                 # Couche WebSocket\n│   ├── Websocket.js        # Classe abstraite\n│   ├── Sockets/\n│   │   ├── GameSocket.js   # WS jeu\n│   │   └── RoomSocket.js   # WS room\n│   └── Events/\n│       ├── CommandsEvents/ # 39 commandes\n│       │   ├── Bot/        # $autoJoin, $joinRoom, $enableAI…\n│       │   ├── Database/   # $totalWords, $occurrenceWord…\n│       │   ├── Player/     # $track, $speed, $precision…\n│       │   ├── Ranked/     # $record, $global, $personal…\n│       │   └── Room/       # $kickPlayer, $setLeader…\n│       ├── GameEvents/     # 32 handlers d'événements\n│       └── RoomEvents/     # 12 handlers d'événements\n│\n└── Misc/\n    └── Functions.js        # Fonctions utilitaires"
           },
           "overlay": {
             "label": "Overlay",
@@ -231,7 +235,9 @@
               "Abandonné avant version finale: l’équipe de BombParty a intégré les principales idées en natif",
               "Très sensible aux changements DOM",
               "Pas de prise en charge mobile"
-            ]
+            ],
+            "structure_title": "Architecture (76 fichiers source)",
+            "structure": "uiop2/\n├── src/\n│   ├── main.js             # Point d'entrée (détecte le contexte)\n│   │\n│   ├── game/               # Contexte iframe jeu\n│   │   ├── Game.js         # Logique côté jeu\n│   │   ├── Events/\n│   │   │   ├── message.js  # postMessages reçus\n│   │   │   └── socket.js   # Événements WebSocket\n│   │   ├── ExistingFunctions/\n│   │   │   └── replaceFunctions.js # Hooks jeu\n│   │   └── Script panels/\n│   │       └── Dictionary/ # Dictionnaire en jeu\n│   │\n│   └── room/               # Contexte room (page principale)\n│       ├── Room.js         # Orchestrateur principal\n│       ├── Events/\n│       │   ├── message.js  # postMessages reçus\n│       │   └── socket.js   # Événements WebSocket\n│       ├── SideBar/        # Panneau latéral (UI)\n│       └── Script panels/  # Modules de fonctionnalités\n│           ├── Bot/        # Bots d'entraînement\n│           ├── DactyloStats/ # Stats (WPM, précision…)\n│           ├── Dictionaries/ # Listes de mots\n│           ├── Training/   # Mode entraînement\n│           ├── Keyboard/   # Raccourcis clavier\n│           ├── gameInterface/ # Améliorations UI\n│           └── LeaderOptions/ # Options leaderboard\n│\n├── meta/\n│   └── header.user.js      # En-tête Tampermonkey\n├── dist/\n│   └── uiop.user.js        # Build final\n└── build.js                # Build (Browserify + Babel)"
           }
         },
         "funFact": {
