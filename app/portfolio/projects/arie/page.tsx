@@ -11,6 +11,7 @@ import TranslateAnimation from "@/app/components/TranslateAnimation"
 import Header from "@/app/components/portfolio/projects/Header";
 import Section from "@/app/components/portfolio/projects/Section";
 import StepsList from "@/app/components/portfolio/projects/StepsList";
+import TreeView from "@/app/components/portfolio/projects/TreeView";
 import { tList } from "@/utils/i18n";
 import PageLayout from "@/app/components/portfolio/projects/PayeLayout";
 import TabsSection, { TabItem } from "@/app/components/portfolio/projects/TabSection"
@@ -40,10 +41,15 @@ export default function ArieProject() {
             <TabsSection
                 title={t("portfolio.sections.architecture")}
                 items={projectTabs}
-                renderContent={({ content: m }) => (
+                renderContent={({ content: m }) => {
+                    const base = `portfolio.projects.arie.modules.${m.key}`;
+                    return (
                     <div className="space-y-6 bg-zinc-800/40 p-6 rounded-lg">
                         <SectionCard title={t("portfolio.sections.objective")} icon="🎯" borderColor="border-[#9333ea]">
                             <p><TranslateAnimation text={t(m.objectiveKey)} /></p>
+                        </SectionCard>
+                        <SectionCard title={t(`${base}.structure_title`)} icon="🗂️" borderColor="border-fuchsia-500">
+                            <TreeView treeText={t(`${base}.structure`)} />
                         </SectionCard>
                         <SectionCard title={t("portfolio.sections.features")} icon="⚙️" borderColor="border-green-500">
                             <ListSection items={tList(t, m.featuresKey) as string[]} textColor="text-gray-300"/>
@@ -59,7 +65,8 @@ export default function ArieProject() {
                             </a>
                         </div>
                     </div>
-                )}
+                    );
+                }}
             />
             <Section emoji="⚙️" title={t("portfolio.projects.arie.enhancement")}>
                 <ListSection items={tList(t, "portfolio.projects.arie.enhancements")} textColor="text-gray-300" listStyle="disc"/>

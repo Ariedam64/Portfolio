@@ -139,7 +139,7 @@
             {
               "icon": "😂",
               "title": "A prank",
-              "desc": "Originally it was just a joke: a bot that replied “feur” whenever someone typed “quoi” in chat"
+              "desc": "Originally it was just a joke: a bot that replied 'feur' whenever someone typed 'quoi' in chat"
             },
             {
               "icon": "💾",
@@ -245,30 +245,24 @@
           "intro": "When I launched Mayaya, Maca—the BombParty staff’s enforcer—became a real blockade:",
           "items": [
             {
-              "icon": "🔒",
               "text": "Only one bot was tolerated; all others were wiped out"
             },
             {
-              "icon": "🚫",
-              "text": "Every “fun” feature (profile GIFs, birthday alerts…) was removed in a hotfix"
+              "text": "Every 'fun' feature (profile GIFs, birthday alerts…) was removed in a hotfix"
             },
             {
-              "icon": "🛡️",
               "text": "A stealth reCAPTCHA and WebSocket encryption to stifle any initiative"
             }
           ],
           "war_intro": "Rather than giving up, we launched a real war of attrition:",
           "warSteps": [
             {
-              "icon": "🤖",
               "text": "Bypassing the reCAPTCHA by simulating HTTP requests and user interactions"
             },
             {
-              "icon": "🔍",
               "text": "Intensive reverse-engineering of WebSocket traffic at every patch"
             },
             {
-              "icon": "🛠️",
               "text": "Auto-adaptive scripts capable of keeping pace with real-time updates"
             }
           ],
@@ -288,17 +282,14 @@
           "description": "Within our Discord server, the proliferation of specialized bots (music, mini-games, GPT, giveaways, etc.) became unmanageable: tedious maintenance, scattered permissions, and frequent outages (e.g., music bots relying on YouTube getting blocked). So we created Arie, guided by three principles:",
           "steps": [
             {
-              "icon": "🗂️",
               "title": "Centralization",
               "desc": "Gather all truly useful features into a single bot."
             },
             {
-              "icon": "🎨",
               "title": "Customization",
               "desc": "Offer a tailor-made experience (GPT personalities, inside-joke commands, etc.)."
             },
             {
-              "icon": "🛡️",
               "title": "Reliability",
               "desc": "Ensure 24/7 availability and a polished UX (slash commands + buttons)."
             }
@@ -309,6 +300,8 @@
           "node": {
             "label": "Discord Bot",
             "objective": "Create and maintain a single, scalable, open-source bot that covers 100% of our daily Discord needs (games, music, AI, utilities) while remaining lightweight to deploy and easy to evolve.",
+            "structure_title": "Project structure",
+            "structure": "Discord-Bot/\n├── index.js                # Bot entry point\n├── server.js               # Express server (Heroku keep-alive)\n├── config.json             # Configuration\n├── commands/               # Commands grouped by feature\n│   ├── animes/             # Anime search\n│   ├── bot/                # Bot commands\n│   ├── games/              # Mini-games (Connect 4)\n│   ├── gpt/                # AI commands / image generation\n│   ├── misc/               # Miscellaneous (Caesar cipher…)\n│   └── music/              # Music player (playlists, search)\n├── events/                 # Discord.js event listeners\n├── handlers/               # Bootstrap (commands, events, interactions)\n├── stockage/               # Database and Mongoose models\n├── templates/              # Reusable embeds and components\n├── tests/                  # Unit tests\n└── utils/                  # Shared utilities\n    └── commandLogic/       # Command business logic",
             "tech": [
               "Node.js",
               "Express",
@@ -575,27 +568,22 @@
           "intro": "It all started during a Discord evening with friends. We stumbled upon this game by accident, and honestly, my first reaction was: \"It's childish, the gameplay really isn't great.\" But very quickly, an idea crossed my mind.",
           "steps": [
             {
-              "icon": "🎲",
               "title": "The discovery",
               "desc": "\"OK the game sucks, but can't I just try to become the richest player?\" My developer instinct kicked in instantly."
             },
             {
-              "icon": "🔍",
               "title": "Reverse engineering",
               "desc": "I started dissecting the game: reading the minified JavaScript bundle, analyzing network requests, breaking down every WebSocket message. The goal, understand every mechanism to figure out what I could exploit."
             },
             {
-              "icon": "⚡",
               "title": "The first mod",
               "desc": "I built a first mod focused on automation to accumulate money quickly and posted it on the game's public Discord. No rules, no security, the game had only been out for two months."
             },
             {
-              "icon": "🤝",
               "title": "Meeting the devs",
               "desc": "A game developer reached out to me. Supportive, he said he was happy someone was taking interest in his game this early, but that this type of mod wasn't allowed. And that's when I saw another opportunity."
             },
             {
-              "icon": "💡",
               "title": "The real beginning",
               "desc": "What if, instead of automating, I created a community mod that players actually need? A mod that enhances the experience without breaking the game. That's where the real project started, systematically asking for dev approval before every feature."
             }
@@ -610,22 +598,18 @@
             "story_intro": "The mod evolved over months, each feature added in response to community needs and validated by the game developers.",
             "story_steps": [
               {
-                "icon": "🐾",
                 "title": "The foundations",
                 "desc": "First official version with the most requested features from the community. The mod was immediately adopted by players."
               },
               {
-                "icon": "🌐",
                 "title": "The takeoff",
                 "desc": "The game had no public room system, yet playing with more people increases sell prices. I created a Discord bot coupled with the game's API to list available rooms directly in the mod. This is when the mod really took off."
               },
               {
-                "icon": "🎨",
                 "title": "Editor mode",
                 "desc": "An idea that surprised everyone, developers included. A purely visual mode, but one that dramatically boosted the community aspect of the game."
               },
               {
-                "icon": "🔄",
                 "title": "Constant maintenance",
                 "desc": "The game was being updated constantly. Multiple mod updates per week, sometimes per day. Core systems were rebuilt several times: sprite system, game data system, Discord compatibility."
               }
@@ -790,27 +774,21 @@
           "title": "Impact in numbers",
           "items": [
             {
-              "icon": "👥",
               "text": "10,000+ players registered on the mod"
             },
             {
-              "icon": "🟢",
               "text": "500 players connected simultaneously on average"
             },
             {
-              "icon": "📊",
               "text": "2,000 regular users per day"
             },
             {
-              "icon": "💰",
               "text": "€50 raised on Ko-fi in one week, enough to cover 1.5 years of hosting"
             },
             {
-              "icon": "🖥️",
               "text": "A €3.6/month VPS handling the entire ecosystem"
             },
             {
-              "icon": "🌍",
               "text": "Compatible with Chrome, Edge, Firefox, Opera GX and Discord Activities"
             }
           ]

@@ -19,6 +19,14 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
   },
   {
+    images: ['/img/snapchat2.png','/img/snapchat1.png'],
+    title: 'SnapScore+',
+    description: t("portfolio.projects.snapscore.description"),
+    technologies: ['JavaScript','Node.js','Puppeteer','Tampermonkey','MacroDroid'],
+    detailsUrl: 'portfolio/projects/snapscore',
+    sourceUrl: 'https://github.com/Ariedam64/SnapScore-V2'
+  },
+  {
     images: ['/img/mayaya_nodegif.gif','/img/mayaya_python1.png','/img/mayaya_node1.png','/img/mayaya_overlay3.png','/img/mayaya_python5.png'],
     title: 'Mayaya',
     description: t("portfolio.projects.mayaya.description"),
@@ -33,26 +41,6 @@ export default function Projects() {
     technologies: ['Node.js', 'Discord.js', 'Express', 'PostgreSQL', 'YTDL-Core', 'OpenAI', 'DALL-E', 'Heroku'],
     detailsUrl: 'portfolio/projects/arie',
     sourceUrl: 'https://github.com/Ariedam64/Discord-Bot'
-  },
-  {
-    images: ['/img/snapchat2.png','/img/snapchat1.png'],
-    title: 'SnapScore+',
-    description: t("portfolio.projects.snapscore.description"),
-    technologies: ['JavaScript','Node.js','Puppeteer','Tampermonkey','MacroDroid'],
-    detailsUrl: 'portfolio/projects/snapscore',
-    sourceUrl: 'https://github.com/Ariedam64/SnapScore-V2'
-  },
-  {
-    images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],
-    title: 'Albion Tools',
-    description: t("portfolio_project5_description"),
-    technologies: ['Next.js','Next UI','Tailwind','React Query','TipTap Editor','Prism.js','MongoDB','NextAuth.js'],
-  },
-  {
-    images: ['https://i.imgur.com/FZFjoxR.jpeg','https://i.imgur.com/lA6ksli.jpeg', 'https://i.imgur.com/a1sAejB.jpeg', 'https://i.imgur.com/2ewg9PU.jpeg','https://i.imgur.com/00zeDe1.jpeg', 'https://i.imgur.com/WeYJQID.jpeg', 'https://i.imgur.com/h20nCh1.jpeg', 'https://i.imgur.com/KkISaCy.jpeg' ],
-    title: 'Portfolio',
-    description: t("portfolio_project6_description"),
-    technologies: ['Next.js','Next UI','Tailwind','React Query','TipTap Editor','Prism.js','MongoDB','NextAuth.js'],
   },
   ];
 

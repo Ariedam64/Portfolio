@@ -245,30 +245,24 @@
           "intro": "Quand j’ai lancé Mayaya, Maca, le bras armé du staff BombParty, est devenu un véritable barrage :",
           "items": [
             {
-              "icon": "🔒",
               "text": "Un seul bot toléré ; tous les autres rayés de la carte"
             },
             {
-              "icon": "🚫",
               "text": "Chaque feature « fun » (GIF de profil, alertes d’anniv…) disparaissait en hotfix"
             },
             {
-              "icon": "🛡️",
               "text": "Un reCAPTCHA furtif et un chiffrement WebSocket pour étouffer toute initiative"
             }
           ],
           "war_intro": "Plutôt que de craquer, on a lancé une véritable guerre d’usure :",
           "warSteps": [
             {
-              "icon": "🤖",
               "text": "Contournement du reCAPTCHA: en simulant des requêtes HTTP et des interactions utilisateur"
             },
             {
-              "icon": "🔍",
               "text": "Reverse-engineering intensif du trafic WebSocket à chaque patch"
             },
             {
-              "icon": "🛠️",
               "text": "Scripts auto-adaptatifs, capables de tenir tête aux mises à jour en temps réel"
             }
           ],
@@ -288,17 +282,14 @@
           "description": "Au sein de notre serveur discord, la prolifération de bots spécialisés (musique, mini‑jeux, GPT, giveaways…) devenait ingérable : maintenance pénible, permissions dispersées, et pannes fréquentes (ex. le blocage des bots musicaux reposant sur YouTube). Nous avons donc créé Arie, guidé par trois axes :",
           "steps": [
             {
-              "icon": "🗂️",
               "title": "Centralisation",
               "desc": "Regrouper toutes les fonctionnalités réellement utiles dans un seul bot."
             },
             {
-              "icon": "🎨",
               "title": "Personnalisation",
               "desc": "Offrir une expérience sur‑mesure (personnalités GPT, commandes inside‑jokes…)"
             },
             {
-              "icon": "🛡️",
               "title": "Fiabilité",
               "desc": "Assurer une disponibilité 24/7 et une UX soignée (slash commands + boutons)"
             }
@@ -309,6 +300,8 @@
           "node": {
             "label": "Bot Discord",
             "objective": "Créer et maintenir un bot unique, évolutif et open‑source qui couvre 100 % de nos besoins quotidiens sur Discord (jeux, musique, IA, utilitaires) tout en restant léger à déployer et simple à faire évoluer.",
+            "structure_title": "Structure du projet",
+            "structure": "Discord-Bot/\n├── index.js                # Point d'entrée du bot\n├── server.js               # Serveur Express (keep-alive Heroku)\n├── config.json             # Configuration\n├── commands/               # Commandes groupées par fonctionnalité\n│   ├── animes/             # Recherche d'animes\n│   ├── bot/                # Commandes bot\n│   ├── games/              # Mini-jeux (Puissance 4)\n│   ├── gpt/                # Commandes IA / génération d'images\n│   ├── misc/               # Divers (chiffrement César…)\n│   └── music/              # Lecteur musique (playlists, recherche)\n├── events/                 # Écouteurs d'événements Discord.js\n├── handlers/               # Bootstrap (commandes, events, interactions)\n├── stockage/               # Base de données et modèles Mongoose\n├── templates/              # Embeds et composants réutilisables\n├── tests/                  # Tests unitaires\n└── utils/                  # Utilitaires partagés\n    └── commandLogic/       # Logique métier des commandes",
             "tech": [
               "Node.js",
               "Express",
@@ -575,27 +568,22 @@
           "intro": "Tout est parti d'une soirée Discord entre amis. On tombe sur ce jeu par hasard, et honnêtement, première réaction: \"C'est enfantin, le gameplay est vraiment pas terrible\". Mais très vite, une idée m'a traversé l'esprit.",
           "steps": [
             {
-              "icon": "🎲",
               "title": "La découverte",
               "desc": "\"OK le jeu est nul, mais est-ce que je peux pas essayer de devenir le joueur le plus riche ?\" Mon instinct de développeur s'est activé instantanément."
             },
             {
-              "icon": "🔍",
               "title": "Le reverse engineering",
               "desc": "J'ai commencé à disséquer le jeu: lire le bundle JavaScript minifié, analyser les requêtes réseau, décortiquer chaque message WebSocket. L'objectif, comprendre chaque mécanisme pour savoir ce que je pourrais exploiter."
             },
             {
-              "icon": "⚡",
               "title": "Le premier mod",
               "desc": "J'ai développé un premier mod axé sur l'automatisation pour accumuler de l'argent rapidement et je l'ai posté dans le Discord public du jeu. Pas de règles, pas de sécurité, le jeu venait de sortir il y a deux mois."
             },
             {
-              "icon": "🤝",
               "title": "Le contact avec les devs",
               "desc": "Un développeur du jeu est venu vers moi. Bienveillant, il m'a dit être content que quelqu'un s'intéresse à son jeu si tôt, mais que ce type de mod n'était pas autorisé. Et là, j'ai vu une autre opportunité."
             },
             {
-              "icon": "💡",
               "title": "Le vrai départ",
               "desc": "Et si, au lieu d'automatiser, je créais un mod communautaire dont les joueurs ont réellement besoin ? Un mod qui améliore l'expérience sans casser le jeu. C'est là que le vrai projet a commencé, en demandant systématiquement la validation des devs avant chaque feature."
             }
@@ -610,22 +598,18 @@
             "story_intro": "Le mod a évolué au fil des mois, chaque fonctionnalité étant ajoutée en réponse aux besoins de la communauté et validée par les développeurs du jeu.",
             "story_steps": [
               {
-                "icon": "🐾",
                 "title": "Les fondations",
                 "desc": "Première version officielle avec les fonctionnalités les plus demandées par la communauté. Le mod a tout de suite été adopté par les joueurs."
               },
               {
-                "icon": "🌐",
                 "title": "L'explosion",
                 "desc": "Le jeu n'avait pas de système de salons publics alors que jouer à plusieurs augmente les prix de vente. J'ai créé un bot Discord couplé à l'API du jeu pour lister les salons directement dans le mod. C'est là que le mod est devenu vraiment populaire."
               },
               {
-                "icon": "🎨",
                 "title": "Le mode éditeur",
                 "desc": "Une idée qui a surpris tout le monde, développeurs inclus. Un mode purement visuel, mais qui a décuplé l'aspect communautaire du jeu."
               },
               {
-                "icon": "🔄",
                 "title": "La maintenance permanente",
                 "desc": "Le jeu était mis à jour constamment. Plusieurs mises à jour du mod par semaine, parfois par jour. Les systèmes core ont été refondus plusieurs fois: système de sprites, système de données, compatibilité Discord."
               }
@@ -790,27 +774,21 @@
           "title": "L'impact en chiffres",
           "items": [
             {
-              "icon": "👥",
               "text": "10 000+ joueurs enregistrés sur le mod"
             },
             {
-              "icon": "🟢",
               "text": "500 joueurs connectés simultanément en moyenne"
             },
             {
-              "icon": "📊",
               "text": "2 000 utilisateurs réguliers par jour"
             },
             {
-              "icon": "💰",
               "text": "50€ récoltés sur Ko-fi en une semaine, de quoi couvrir 1 an et demi d'hébergement"
             },
             {
-              "icon": "🖥️",
               "text": "Un VPS à 3,6€/mois qui gère tout l'écosystème"
             },
             {
-              "icon": "🌍",
               "text": "Compatible Chrome, Edge, Firefox, Opera GX et Discord Activities"
             }
           ]

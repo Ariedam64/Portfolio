@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api repos/Ariedam64/Discord-Bot/git/trees/HEAD?recursive=1)",
+      "Bash(gh api repos/Ariedam64/Discord-Bot/contents/)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);var lines=c.split\\(''\\\\n''\\);console.log\\(141,JSON.stringify\\(lines[141]\\).slice\\(0,150\\)\\);console.log\\(142,JSON.stringify\\(lines[142]\\).slice\\(0,150\\)\\);console.log\\(143,JSON.stringify\\(lines[143]\\).slice\\(0,150\\)\\);\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);var lines=c.split\\(''\\\\n''\\);for\\(var i=238;i<275;i++\\){console.log\\(i+1,JSON.stringify\\(lines[i]\\).slice\\(0,130\\)\\);}\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);var lines=c.split\\(''\\\\n''\\);for\\(var i=136;i<148;i++\\){console.log\\(i+1,JSON.stringify\\(lines[i]\\).slice\\(0,160\\)\\);}\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);try{JSON.parse\\(c\\);console.log\\(''OK''\\);}catch\\(e\\){console.log\\(''ERR pos'',e.message\\);var pos=parseInt\\(e.message.match\\(/position \\(\\\\d+\\)/\\)[1]\\);console.log\\(''around:'',JSON.stringify\\(c.slice\\(pos-30,pos+50\\)\\)\\);}\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);c=c.replace\\(''replied \"\"feur\"\" whenever someone typed \"\"quoi\"\" in chat'',''replied \\\\''feur\\\\'' whenever someone typed \\\\''quoi\\\\'' in chat''\\);fs.writeFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',c,''utf8''\\);try{JSON.parse\\(c\\);console.log\\(''EN: OK''\\);}catch\\(e\\){console.log\\(''ERR:'',e.message\\);var pos=parseInt\\(e.message.match\\(/position \\(\\\\d+\\)/\\)[1]\\);console.log\\(''around:'',JSON.stringify\\(c.slice\\(pos-30,pos+50\\)\\)\\);}\")",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var c=fs.readFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',''utf8''\\);c=c.replace\\(''easy to evolve.\"\",,'',''easy to evolve.\"\",''\\);var idx=c.indexOf\\(''commandLogic/       # Command business logic\"\"''\\);var insertPos=idx+45;c=c.slice\\(0,insertPos\\)+'',''+c.slice\\(insertPos\\);fs.writeFileSync\\(''c:/Users/Romann/Desktop/Codage/my-website/public/locales/en/common.json'',c,''utf8''\\);try{JSON.parse\\(c\\);console.log\\(''EN: OK''\\);}catch\\(e\\){console.log\\(''ERR:'',e.message\\);var pos=parseInt\\(e.message.match\\(/position \\(\\\\d+\\)/\\)[1]\\);console.log\\(''around:'',JSON.stringify\\(c.slice\\(pos-30,pos+60\\)\\)\\);}\")"
+    ]
+  }
+}
