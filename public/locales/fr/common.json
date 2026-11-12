@@ -1163,6 +1163,12 @@
       "viewCode": "Voir le code",
       "architecture": "🔧 Architecture technique du projet",
       "viewSite": "Voir le site"
+    },
+    "lightbox": {
+      "open": "Agrandir l'image",
+      "close": "Fermer",
+      "previous": "Image précédente",
+      "next": "Image suivante"
     }
   },
   "sidebar": {

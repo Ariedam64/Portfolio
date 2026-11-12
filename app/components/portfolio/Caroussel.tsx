@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperInstance } from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import Lightbox from "./Lightbox";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -47,11 +51,25 @@ const IMAGE_SIZES: Record<FrameHeight, string> = {
   portrait: "(max-width: 768px) 60vw, 360px",
 };
 
+/** Qualité de l'image affichée dans le cadre. À 75 (le défaut de Next), la
+ *  compression bave autour du texte des captures d'écran. */
+const QUALITY = 90;
+
 export default function Caroussel({
   images = [],
   className = "",
   frameHeight = "compact",
 }: CarousselProps) {
+  const { t } = useTranslation("common");
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const closeLightbox = () => {
+    // Le carrousel reprend sur la dernière image regardée en plein écran.
+    if (openIndex !== null) swiper?.slideTo(openIndex, 0);
+    setOpenIndex(null);
+  };
+
   if (images.length === 0) {
     return <div className={`w-full rounded-xl flex justify-center ${className}`} />;
   }
@@ -67,6 +85,7 @@ export default function Caroussel({
         observeParents
         centeredSlides
         grabCursor
+        onSwiper={setSwiper}
         className="w-full rounded-2xl"
         style={{
           "--swiper-navigation-color": "#BB86FC",
@@ -76,18 +95,39 @@ export default function Caroussel({
       >
         {images.map((src, index) => (
           <SwiperSlide key={index} className="flex justify-center items-center">
-            <div className="relative w-full" style={{ height: FRAME_HEIGHTS[frameHeight] }}>
+            <button
+              type="button"
+              onClick={() => setOpenIndex(index)}
+              aria-label={t("portfolio.lightbox.open")}
+              title={t("portfolio.lightbox.open")}
+              className="relative block w-full cursor-zoom-in rounded-xl focus-visible:outline-2 focus-visible:outline-[#BB86FC]"
+              style={{ height: FRAME_HEIGHTS[frameHeight] }}
+            >
               <Image
                 src={src}
                 alt={`Illustration ${index + 1}`}
                 fill
+                quality={QUALITY}
                 sizes={IMAGE_SIZES[frameHeight]}
                 className="rounded-xl object-contain"
               />
-            </div>
+            </button>
           </SwiperSlide>
         ))}
       </Swiper>
+      {openIndex !== null && (
+        <Lightbox
+          images={images}
+          index={openIndex}
+          onIndexChange={setOpenIndex}
+          onClose={closeLightbox}
+          labels={{
+            close: t("portfolio.lightbox.close"),
+            previous: t("portfolio.lightbox.previous"),
+            next: t("portfolio.lightbox.next"),
+          }}
+        />
+      )}
     </div>
   );
 }
