@@ -1082,18 +1082,38 @@
     "translate": "Traduire [EN]",
     "chatbot": "Assistant"
   },
-  "assistant": {
-    "welcome": "Bienvenue sur mon portfolio !",
-    "input": "Ecrivez un message...",
-    "suggestions": [
-      {
-        "prompt": "Parle-moi du projet Mayaya.",
-        "label": "Parle-moi du projet Mayaya."
-      },
-      {
-        "prompt": "Quel stack utilises-tu au quotidien ?",
-        "label": "Quel stack utilises-tu au quotidien ?"
-      }
-    ]
+  "chat": {
+    "launcher": "Une question ?",
+    "title": "Assistant de Romann",
+    "subtitle": "Parcours, projets, compétences",
+    "open": "Poser une question sur Romann",
+    "close": "Fermer le chat",
+    "reset": "Nouvelle conversation",
+    "greeting": "Bonjour ! Je réponds à vos questions sur Romann : son parcours, ses projets et ce qu’il sait faire.",
+    "starters": [
+      "Quel est son projet le plus impressionnant ?",
+      "Quelle est sa stack au quotidien ?",
+      "Comment travaille-t-il avec l’IA ?",
+      "Comment le contacter ?"
+    ],
+    "placeholder": "Posez votre question…",
+    "send": "Envoyer",
+    "stop": "Arrêter",
+    "disclaimer": "Réponses générées par IA (Claude), à vérifier auprès de Romann.",
+    "viewProject": "Voir le projet",
+    "github": "GitHub",
+    "site": "Site",
+    "interrupted": "Réponse interrompue.",
+    "errors": {
+      "rate_limited": "Beaucoup de questions d’un coup. Réessayez dans quelques minutes.",
+      "conversation_limit": "Cette conversation est assez longue. Démarrez-en une nouvelle pour continuer.",
+      "message_too_long": "Message trop long (800 caractères maximum).",
+      "invalid_request": "La requête n’a pas pu être traitée. Démarrez une nouvelle conversation.",
+      "refused": "Je ne peux pas répondre à cette question. Essayez une autre formulation.",
+      "busy": "Le service est très sollicité. Réessayez dans un instant.",
+      "server_error": "Une erreur est survenue. Réessayez.",
+      "network": "Connexion impossible. Vérifiez votre réseau et réessayez."
+    },
+    "retry": "Réessayer"
   }
 }

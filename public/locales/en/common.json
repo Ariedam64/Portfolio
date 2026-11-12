@@ -1082,18 +1082,38 @@
     "translate": "Translate [FR]",
     "chatbot": "Chatbot"
   },
-  "assistant": {
-    "welcome": "Welcome to my portfolio!",
-    "input": "Write a message...",
-    "suggestions": [
-      {
-        "prompt": "Tell me about the Mayaya project.",
-        "label": "Tell me about the Mayaya project."
-      },
-      {
-        "prompt": "What stack do you use daily?",
-        "label": "What stack do you use daily?"
-      }
-    ]
+  "chat": {
+    "launcher": "Got a question?",
+    "title": "Romann’s assistant",
+    "subtitle": "Background, projects, skills",
+    "open": "Ask a question about Romann",
+    "close": "Close chat",
+    "reset": "New conversation",
+    "greeting": "Hi! I answer your questions about Romann: his background, his projects and what he can do.",
+    "starters": [
+      "What is his most impressive project?",
+      "What is his day-to-day stack?",
+      "How does he work with AI?",
+      "How can I contact him?"
+    ],
+    "placeholder": "Ask your question…",
+    "send": "Send",
+    "stop": "Stop",
+    "disclaimer": "AI-generated answers (Claude), double-check with Romann.",
+    "viewProject": "View project",
+    "github": "GitHub",
+    "site": "Website",
+    "interrupted": "Answer interrupted.",
+    "errors": {
+      "rate_limited": "Lots of questions at once. Try again in a few minutes.",
+      "conversation_limit": "This conversation is getting long. Start a new one to continue.",
+      "message_too_long": "Message too long (800 characters max).",
+      "invalid_request": "The request could not be processed. Start a new conversation.",
+      "refused": "I can’t answer that one. Try rephrasing.",
+      "busy": "The service is busy. Try again in a moment.",
+      "server_error": "Something went wrong. Please try again.",
+      "network": "Could not connect. Check your network and try again."
+    },
+    "retry": "Retry"
   }
 }

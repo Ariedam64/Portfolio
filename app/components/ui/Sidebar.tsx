@@ -5,7 +5,6 @@ import { HomeIcon, LanguageIcon, ChevronRightIcon, ChevronLeftIcon } from '@hero
 import IconButton from './Buttons';
 import { useLanguageSwitcher } from '../../../utils/languageSwitcher';
 import { useTranslation } from "react-i18next";
-import Chat from "@/app/components/portfolio/Chat";
 
 export default function Sidebar() {
   const { handleSwitch } = useLanguageSwitcher();
@@ -93,7 +92,6 @@ export default function Sidebar() {
               tooltip={t("sidebar.translate")}
             />
 
-            <Chat />
           </div>
         </div>
 
@@ -146,7 +144,6 @@ export default function Sidebar() {
               tooltip={t("sidebar.translate")}
             />
 
-            <Chat />
           </div>
         </div>
 

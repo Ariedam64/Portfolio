@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { I18nProvider } from '../utils/i18n-provider';
 import Sidebar from "./components/ui/Sidebar";
+import ChatWidget from "./components/chat/ChatWidget";
 import "./styles/globals.css";
 
 import 'swiper/css';
@@ -23,6 +24,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
         <Sidebar />
         <I18nProvider>
           {children}
+          <ChatWidget />
         </I18nProvider>
         <footer className="bg-[#18181B] text-gray-300 p-4 text-center">
           © MADEIRA Romann
