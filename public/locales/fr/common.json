@@ -556,8 +556,8 @@
       },
       "ariesmod": {
         "title": "Écosystème Magic Garden",
-        "description": "Écosystème de six projets autour du jeu Magic Garden : mod Tampermonkey, hub communautaire, API publique qui extrait les données du jeu, backend et application Android. Plus de 25 000 joueurs.",
-        "subtitle": "Six projets construits autour d'un même jeu : un mod, un hub communautaire, une API publique, une application Android. Plus de 25 000 joueurs.",
+        "description": "Écosystème de sept projets autour du jeu Magic Garden : mod, hub communautaire, API publique qui extrait les données du jeu, backend, application Android et maintenance pilotée par des agents IA. Près de 40 000 joueurs.",
+        "subtitle": "Sept projets construits autour d'un même jeu : un mod, un hub communautaire, une API publique, une application Android et une maintenance pilotée par des agents IA. Près de 40 000 joueurs.",
         "game": {
           "title": "À propos de Magic Garden",
           "description": "Magic Garden est un idle game multijoueur disponible sur Discord et sur magicgarden.gg. Le principe: acheter des graines, faire pousser des plantes, les vendre et devenir riche petit à petit. Des mécaniques comme les animaux de compagnie (qui offrent des bonus), la météo (qui influence les prix) et le multijoueur (jusqu'à 6 joueurs, avec des bonus de vente selon le nombre de joueurs dans le salon) ajoutent de la profondeur à un jeu qui semble enfantin au premier abord.",
@@ -644,7 +644,9 @@
               "Images composées à la demande : un animal avec sa variation et sa mutation, généré puis mis en cache",
               "Statistiques historiques : fréquence d'apparition des items en boutique, historique de la météo",
               "Documentation Swagger interactive, testable directement depuis le navigateur",
-              "Garden Explorer : un site public pour parcourir les données et utiliser les calculateurs sans rien installer",
+              "Prévision de la météo, exacte à 100 % sur les dernières 24 h (287 sur 287)",
+              "Exports CSV et TSV importables directement dans Google Sheets",
+              "Garden Explorer : un site public pour suivre boutiques et météo en direct, parcourir l'historique, les données et les animations du jeu, et utiliser les calculateurs sans rien installer",
               "Adaptation automatique aux mises à jour du jeu, sans intervention manuelle"
             ],
             "limits": [
@@ -759,7 +761,7 @@
           },
           "backend": {
             "label": "Backend (VPS)",
-            "objective": "Fournir une infrastructure légère et économique capable de supporter plus de 25 000 utilisateurs pour alimenter les fonctionnalités communautaires du mod: salons, chat en temps réel, amis, groupes et leaderboard.",
+            "objective": "Fournir une infrastructure légère et économique aux fonctionnalités communautaires du mod : salons, chat en temps réel, amis, groupes et classements. Elle connaît aujourd'hui près de 40 000 joueurs.",
             "story_title": "L'histoire du backend",
             "story_intro": "Le backend est né d'une nécessité. Quand l'API des salons publics du jeu a été retirée suite à des abus, j'ai recréé la fonctionnalité moi-même, avec les joueurs du mod comme fournisseurs de données.",
             "story_steps": [
@@ -802,7 +804,7 @@
               "Community Hub complet: chat temps réel, amis, groupes, leaderboard, visualisation en temps réel du jardin, inventaire et animaux de ses amis sans être dans leur salon",
               "Authentification sécurisée via Discord OAuth",
               "Long polling avec système d'événements (contournement des restrictions Discord)",
-              "Dashboard admin pour superviser le backend en temps réel",
+              "Console d'administration avec connexion Discord, console SQL en lecture seule et supervision de la maintenance IA",
               "Optimisation massive: de 5M à 900K requêtes/jour, VPS à 25% de capacité"
             ],
             "limits": [
@@ -923,25 +925,94 @@
               "Architecture plus exigeante, avec une courbe d'apprentissage pour les contributeurs",
               "Dépend toujours du bundle du jeu, qui peut changer de structure en profondeur"
             ]
+          },
+          "maintenance": {
+            "label": "Maintenance IA",
+            "objective": "Le jeu sort plusieurs versions par jour, et chacune peut casser l'API ou les mods. Ce système surveille, trie les bugs et prépare les correctifs avec des agents IA. Il ne me reste qu'à relire et valider.",
+            "story_title": "L'histoire de la maintenance",
+            "story_intro": "Avec neuf projets qui dépendent tous du même jeu, je passais mes soirées à réparer ce que la dernière mise à jour avait cassé. J'ai automatisé la partie répétitive, en gardant la décision finale.",
+            "story_steps": [
+              {
+                "title": "La surveillance",
+                "desc": "Toutes les cinq minutes, un script demande sa version au jeu, ce qui coûte 18 octets. À chaque nouvelle version, il vérifie tous les endpoints de l'API et compare la forme de chaque réponse, jamais son contenu : la météo qui change déclencherait sinon une alerte permanente."
+              },
+              {
+                "title": "Apprendre à se taire",
+                "desc": "Les premières nuits, le même message tombait 119 fois avant le matin, et une alerte partait dès que le jeu ajoutait un objet. J'ai appris au système à revérifier une minute plus tard avant d'alerter, et à ne signaler que ce qui casse vraiment. Une surveillance ne vaut que si elle est rare."
+              },
+              {
+                "title": "La réparation autonome",
+                "desc": "Quand un endpoint tombe pour une raison nouvelle, un agent Claude cherche la cause dans le code du jeu et corrige l'API. Il n'a ni git ni réseau : c'est la boucle qui redémarre l'API, revérifie et revient en arrière si quelque chose reste cassé. Sur le banc d'essai, le bon correctif est arrivé en 148 secondes."
+              },
+              {
+                "title": "Les signalements des joueurs",
+                "desc": "Les joueurs signalent leurs bugs depuis le mod, dans leur langue. Un modèle rapide relie le message à la bonne fonctionnalité grâce à une carte du code, un agent diagnostique en lecture seule, puis écrit un correctif seulement si un test reproduit d'abord le bug. 27 des 34 premiers signalements ont été corrigés."
+              },
+              {
+                "title": "Le superviseur",
+                "desc": "Tout se pilote depuis la console d'administration du backend. J'y discute avec un superviseur qui voit les incidents, les problèmes en cours et un agent par projet, à travers un serveur MCP que j'ai écrit sans bibliothèque. Rien n'est publié ni envoyé à un joueur sans mon clic."
+              }
+            ],
+            "structure_title": "Structure du projet",
+            "structure": "src/\n  detector/      # Surveillance de l'API et des versions du jeu\n  autonome/      # Réparation autonome avec retour arrière\n  signalements/  # Tri, diagnostic, correctif et livraison des bugs\n  superviseur/   # Conversation et serveur MCP de la console\n  commun/        # Verrou des travaux lourds, journal, client du backend\n  config/        # Registre des projets suivis\n  scripts/       # Tâches cron et générateurs de cartes\nagents/          # Un profil par projet suivi (9 projets)\ndata/            # Empreintes de l'API, catalogues, cartes du code",
+            "optimization_title": "Garde-fous",
+            "optimization_rules": [
+              "Rien n'est poussé, publié ni envoyé à un joueur sans un clic de ma part",
+              "Réparation seulement sur une panne nouvelle, 3 tentatives par jour au maximum",
+              "Le modèle de réparation n'a ni git, ni PM2, ni réseau : la boucle redémarre, vérifie et restaure",
+              "Une panne générale (processus arrêté, Nginx) n'est jamais confiée au modèle, ce n'est pas un bug de code",
+              "Le texte des joueurs est traité comme une donnée, jamais comme une instruction (défense contre l'injection de prompt)",
+              "Un correctif n'est écrit que si un test reproduit d'abord le bug",
+              "Un seul travail lourd à la fois sur la machine, grâce à un verrou sur le disque",
+              "Le superviseur tourne sans outils natifs (ni fichiers, ni commandes, ni web), seulement avec ses outils MCP",
+              "Aucun agent ne démarre sous 900 Mo de mémoire libre, pour ne jamais ralentir l'API en production"
+            ],
+            "tech": [
+              "TypeScript",
+              "Node.js",
+              "Claude Code",
+              "MCP (JSON-RPC 2.0)",
+              "PostgreSQL",
+              "PM2",
+              "cron",
+              "Git worktrees",
+              "GitHub Actions"
+            ],
+            "features": [
+              "Surveillance de l'API toutes les 5 minutes, vérification complète à chaque version du jeu",
+              "Incidents ouverts et fermés tout seuls dans la console d'administration",
+              "Instantané des catalogues du jeu à chaque version, pour repérer les nouveautés et les champs qui changent",
+              "Réparation autonome de l'API avec redémarrage, revérification et retour arrière",
+              "Signalements des joueurs compris dans plusieurs langues et regroupés quand ils décrivent le même problème",
+              "Diagnostic dans une copie isolée du dépôt (worktree git), correctif testé, livraison sur un clic",
+              "Livraison Android automatisée : branche, intégration continue, lecture des tests, tag",
+              "Superviseur conversationnel avec environ 25 outils MCP et un agent par projet suivi"
+            ],
+            "limits": [
+              "Un diagnostic prend plusieurs minutes, plus qu'un humain qui connaît déjà le code",
+              "Tout tourne sur le même petit serveur que l'API : la mémoire disponible limite les travaux en parallèle",
+              "Les mods ne sont pas surveillés automatiquement, ils se corrigent sur signalement des joueurs",
+              "Dépend du CLI Claude : s'il n'est plus authentifié, la surveillance continue mais diagnostics et réparations attendent"
+            ]
           }
         },
         "impact": {
           "title": "L'impact en chiffres",
           "items": [
             {
-              "text": "25 000+ joueurs enregistrés sur le mod"
+              "text": "~40 000 joueurs référencés par le backend"
             },
             {
-              "text": "500 joueurs connectés simultanément en moyenne"
+              "text": "~700 utilisateurs par jour sur Arie's Mod seul"
             },
             {
-              "text": "2 000 utilisateurs réguliers par jour"
+              "text": "~800 000 requêtes par jour, sur un VPS à 3,60 €/mois qui fait tourner tout l'écosystème"
+            },
+            {
+              "text": "~20 000 téléchargements des versions publiées sur GitHub"
             },
             {
               "text": "Plus de 100€ récoltés sur Ko-fi en un mois, de quoi couvrir plus de deux ans d'hébergement"
-            },
-            {
-              "text": "Un VPS à 3,6€/mois qui gère tout l'écosystème"
             },
             {
               "text": "Compatible Chrome, Edge, Firefox, Opera GX et Discord Activities"
@@ -956,6 +1027,23 @@
             "Un VPS à 3,6€/mois bien configuré peut surpasser des solutions cloud à 25€/mois",
             "La confiance de la communauté se construit avec de la transparence et en demandant la permission plutôt que le pardon",
             "Le feedback des utilisateurs est le meilleur carburant pour un développeur"
+          ]
+        },
+        "extras": {
+          "title": "Autres briques",
+          "items": [
+            {
+              "text": "MG Answer Bot : bot Python qui répond aux questions des joueurs en citant ses sources (API du jeu, wiki) et refuse de répondre sans preuve. RAG avec embeddings et Claude, évalué sur de vraies questions, 347 tests."
+            },
+            {
+              "text": "Contribution à Starweaver-API, l'API commune des auteurs de mods : 48 fonctions WebSocket typées, un guide et des tests écrits avant le code. Pull request fusionnée en mai 2026, et je co-administre l'organisation GitHub des moddeurs."
+            },
+            {
+              "text": "MG-Websocket-Helper : client Node.js qui reconstruit l'état complet du jeu comme le client officiel (JSON Patch), base de l'application Android."
+            },
+            {
+              "text": "Bot Telegram d'alertes de boutique en anglais, français et russe, branché sur l'API."
+            }
           ]
         }
       },

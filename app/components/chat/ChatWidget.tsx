@@ -50,9 +50,14 @@ export default function ChatWidget() {
   }, [open]);
 
   // Suit le bas de la conversation, sauf si le visiteur a remonté pour relire.
+  // On ne descend jamais plus bas que la dernière question : une réponse plus
+  // haute que la fenêtre se lit depuis son début, sans avoir à remonter.
   useLayoutEffect(() => {
     const el = scroller.current;
-    if (el && stickToBottom.current) el.scrollTop = el.scrollHeight;
+    if (!el || !stickToBottom.current) return;
+    const bottom = el.scrollHeight - el.clientHeight;
+    const anchor = el.querySelector<HTMLElement>("[data-anchor]");
+    el.scrollTop = anchor ? Math.min(bottom, anchor.offsetTop - 16) : bottom;
   }, [messages, open]);
 
   const onScroll = () => {
@@ -89,6 +94,7 @@ export default function ChatWidget() {
 
   const starters = (t("chat.starters", { returnObjects: true }) as string[]) ?? [];
   const lastAssistantId = [...messages].reverse().find((m) => m.role === "assistant")?.id;
+  const lastUserId = [...messages].reverse().find((m) => m.role === "user")?.id;
   const cardLabels = { viewProject: t("chat.viewProject"), github: t("chat.github"), site: t("chat.site") };
 
   return (
@@ -113,7 +119,7 @@ export default function ChatWidget() {
               <img src={AVATAR} alt="" className="size-10 rounded-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-[#121016] bg-emerald-400" />
             </span>
-            <span className="hidden font-[Comfortaa] text-sm font-bold sm:inline">{t("chat.launcher")}</span>
+            <span className="hidden font-[Comfortaa,sans-serif] text-sm font-bold sm:inline">{t("chat.launcher")}</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -135,7 +141,7 @@ export default function ChatWidget() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={AVATAR} alt="" className="size-9 rounded-full object-cover" />
               <div className="min-w-0 flex-1">
-                <h2 className="font-[Comfortaa] text-[15px] font-bold leading-tight text-white">{t("chat.title")}</h2>
+                <h2 className="font-[Comfortaa,sans-serif] text-[15px] font-bold leading-tight text-white">{t("chat.title")}</h2>
                 <p className="truncate text-xs text-[#a49fb0]">{t("chat.subtitle")}</p>
               </div>
               {messages.length > 0 && (
@@ -151,7 +157,7 @@ export default function ChatWidget() {
             <div
               ref={scroller}
               onScroll={onScroll}
-              className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 [scrollbar-color:#3a2f4c_transparent] [scrollbar-width:thin]"
+              className="relative flex-1 overflow-y-auto overscroll-contain px-4 py-4 [scrollbar-color:#3a2f4c_transparent] [scrollbar-width:thin]"
               aria-live="polite"
             >
               {messages.length === 0 ? (
@@ -162,7 +168,7 @@ export default function ChatWidget() {
               ) : (
                 <ol className="space-y-5">
                   {messages.map((m) => (
-                    <li key={m.id}>
+                    <li key={m.id} data-anchor={m.id === lastUserId ? "" : undefined}>
                       {m.role === "user" ? (
                         <UserBubble message={m} />
                       ) : (
@@ -304,11 +310,14 @@ function AssistantMessage({
   onRetry: () => void;
   t: (key: string) => string;
 }) {
-  // Le texte passe toujours avant les éléments interactifs, et les relances en
-  // dernier : le modèle appelle ses outils avant d'écrire sa réponse.
+  // Le modèle appelle ses outils avant d'écrire sa réponse. Les cartes et les
+  // relances attendent donc la fin du texte, puis s'affichent dessous : le
+  // texte ne les repousse pas pendant qu'il s'écrit.
   const rank = { text: 0, projects: 1, metrics: 2, contact: 3, suggestions: 4 } as const;
-  const parts = [...message.parts].sort((a, b) => rank[a.kind] - rank[b.kind]);
-  const waiting = message.pending && !parts.some((p) => p.kind === "text");
+  const parts = [...message.parts]
+    .filter((p) => !message.pending || p.kind === "text")
+    .sort((a, b) => rank[a.kind] - rank[b.kind]);
+  const waiting = message.pending && parts.length === 0;
   return (
     <div className="max-w-full text-[15px] leading-relaxed text-[#e4e0ea]">
       {waiting && <TypingDots />}

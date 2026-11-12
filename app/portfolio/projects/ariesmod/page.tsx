@@ -28,6 +28,7 @@ export default function AriesModProjectPage() {
   const originSteps = tList<Step>(t, "portfolio.projects.ariesmod.origin.steps");
   const impactItems = tList(t, "portfolio.projects.ariesmod.impact.items");
   const learningsItems = tList(t, "portfolio.projects.ariesmod.learnings.items");
+  const extrasItems = tList(t, "portfolio.projects.ariesmod.extras.items");
 
   return (
     <>
@@ -154,6 +155,10 @@ export default function AriesModProjectPage() {
             );
           }}
         />
+
+        <Section emoji="🧩" title={t("portfolio.projects.ariesmod.extras.title")}>
+          <ListSection items={extrasItems} textColor="text-gray-300" />
+        </Section>
 
         <Section emoji="📊" title={t("portfolio.projects.ariesmod.impact.title")}>
           <ListSection items={impactItems} textColor="text-gray-300" />

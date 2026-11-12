@@ -556,8 +556,8 @@
       },
       "ariesmod": {
         "title": "Magic Garden Ecosystem",
-        "description": "An ecosystem of six projects around the game Magic Garden: Tampermonkey mod, community hub, public API that extracts the game's data, backend and Android app. Over 25,000 players.",
-        "subtitle": "Six projects built around one game: a mod, a community hub, a public API, an Android app. Over 25,000 players.",
+        "description": "An ecosystem of seven projects around the game Magic Garden: mod, community hub, public API that extracts the game's data, backend, Android app and maintenance driven by AI agents. Nearly 40,000 players.",
+        "subtitle": "Seven projects built around one game: a mod, a community hub, a public API, an Android app and maintenance driven by AI agents. Nearly 40,000 players.",
         "game": {
           "title": "About Magic Garden",
           "description": "Magic Garden is a multiplayer idle game available on Discord and magicgarden.gg. The concept: buy seeds, grow plants, sell them and get richer over time. Mechanics like pets (offering bonuses), weather (influencing prices) and multiplayer (up to 6 players, with sell bonuses based on room size) add depth to what seems like a childish game at first glance.",
@@ -644,7 +644,9 @@
               "Composed images on demand: a pet with its variant and mutation, generated then cached",
               "Historical statistics: how often items show up in shops, weather history",
               "Interactive Swagger documentation, testable straight from the browser",
-              "Garden Explorer: a public site to browse the data and use the calculators with nothing to install",
+              "Weather forecast, 100% accurate over the last 24 hours (287 out of 287)",
+              "CSV and TSV exports that import straight into Google Sheets",
+              "Garden Explorer: a public site to follow live shops and weather, browse the history, game data and animations, and use the calculators with nothing to install",
               "Adapts to game updates on its own, with no manual work"
             ],
             "limits": [
@@ -759,7 +761,7 @@
           },
           "backend": {
             "label": "Backend (VPS)",
-            "objective": "Provide a lightweight and cost-effective infrastructure capable of supporting over 25,000 users to power the mod's community features: rooms, real-time chat, friends, groups and leaderboard.",
+            "objective": "Provide a lightweight, low-cost infrastructure for the mod's community features: rooms, real-time chat, friends, groups and leaderboards. It now knows nearly 40,000 players.",
             "story_title": "The backend story",
             "story_intro": "The backend came out of necessity. When the game's public rooms API was pulled after abuse, I rebuilt the feature myself, with the mod's own players as the data providers.",
             "story_steps": [
@@ -802,7 +804,7 @@
               "Full Community Hub: real-time chat, friends, groups, leaderboard, real-time view of friends' garden, inventory and pets without being in their room",
               "Secure authentication via Discord OAuth",
               "Long polling with event system (workaround for Discord restrictions)",
-              "Admin dashboard for real-time backend monitoring",
+              "Admin console with Discord login, read-only SQL console and supervision of the AI maintenance",
               "Massive optimization: from 5M to 900K requests/day, VPS at 25% capacity"
             ],
             "limits": [
@@ -923,25 +925,94 @@
               "A more demanding architecture, with a learning curve for contributors",
               "Still tied to the game bundle, whose structure can change deeply"
             ]
+          },
+          "maintenance": {
+            "label": "AI maintenance",
+            "objective": "The game ships several versions a day, and any of them can break the API or the mods. This system watches, triages bugs and prepares fixes with AI agents. All I have left to do is review and approve.",
+            "story_title": "The story of the maintenance",
+            "story_intro": "With nine projects all depending on the same game, I spent my evenings fixing whatever the latest update had broken. I automated the repetitive part and kept the final decision.",
+            "story_steps": [
+              {
+                "title": "Watching",
+                "desc": "Every five minutes, a script asks the game for its version, which costs 18 bytes. On each new version, it checks every API endpoint and compares the shape of each response, never its content: otherwise the changing weather would raise a permanent alert."
+              },
+              {
+                "title": "Learning to stay quiet",
+                "desc": "In the first nights, the same message came in 119 times before morning, and an alert fired whenever the game added an item. I taught the system to check again a minute later before alerting, and to report only what actually breaks. Monitoring is only worth something if it is rare."
+              },
+              {
+                "title": "Autonomous repair",
+                "desc": "When an endpoint breaks for a new reason, a Claude agent looks for the cause in the game's code and fixes the API. It has no git and no network: the loop restarts the API, checks again and rolls back if anything is still broken. On the test bench, the right fix came in 148 seconds."
+              },
+              {
+                "title": "Player bug reports",
+                "desc": "Players report bugs from inside the mod, in their own language. A fast model matches the message to the right feature using a map of the code, an agent diagnoses in read-only mode, then writes a fix only if a test reproduces the bug first. 27 of the first 34 reports were fixed."
+              },
+              {
+                "title": "The supervisor",
+                "desc": "Everything is driven from the backend's admin console. There I talk with a supervisor that sees incidents, open problems and one agent per project, through an MCP server I wrote without any library. Nothing ships or reaches a player without my click."
+              }
+            ],
+            "structure_title": "Project structure",
+            "structure": "src/\n  detector/      # Watches the API and game versions\n  autonome/      # Autonomous repair with rollback\n  signalements/  # Bug triage, diagnosis, fix and delivery\n  superviseur/   # Console conversation and MCP server\n  commun/        # Heavy-job lock, activity log, backend client\n  config/        # Registry of tracked projects\n  scripts/       # Cron jobs and map generators\nagents/          # One profile per tracked project (9 projects)\ndata/            # API fingerprints, catalogs, code maps",
+            "optimization_title": "Safeguards",
+            "optimization_rules": [
+              "Nothing is pushed, released or sent to a player without my click",
+              "Repair only on a new failure, at most 3 attempts a day",
+              "The repair model has no git, no PM2 and no network: the loop restarts, checks and restores",
+              "A full outage (stopped process, Nginx) is never handed to the model, it is not a code bug",
+              "Player text is treated as data, never as instructions (prompt injection defense)",
+              "A fix is only written once a test reproduces the bug",
+              "One heavy job at a time on the machine, enforced by a lock on disk",
+              "The supervisor runs without built-in tools (no files, commands or web), only its MCP tools",
+              "No agent starts below 900 MB of free memory, so the production API never slows down"
+            ],
+            "tech": [
+              "TypeScript",
+              "Node.js",
+              "Claude Code",
+              "MCP (JSON-RPC 2.0)",
+              "PostgreSQL",
+              "PM2",
+              "cron",
+              "Git worktrees",
+              "GitHub Actions"
+            ],
+            "features": [
+              "API monitoring every 5 minutes, full check on each game version",
+              "Incidents opened and closed automatically in the admin console",
+              "Snapshot of the game's catalogs on each version, to spot new content and changed fields",
+              "Autonomous API repair with restart, re-check and rollback",
+              "Player reports understood in several languages and grouped when they describe the same problem",
+              "Diagnosis in an isolated copy of the repository (git worktree), tested fix, one-click delivery",
+              "Automated Android delivery: branch, CI, reading test results, tag",
+              "Conversational supervisor with about 25 MCP tools and one agent per tracked project"
+            ],
+            "limits": [
+              "A diagnosis takes several minutes, longer than a human who already knows the code",
+              "Everything runs on the same small server as the API: free memory limits parallel jobs",
+              "The mods are not monitored automatically, they get fixed from player reports",
+              "Depends on the Claude CLI: if it is no longer signed in, monitoring goes on but diagnoses and repairs wait"
+            ]
           }
         },
         "impact": {
           "title": "Impact in numbers",
           "items": [
             {
-              "text": "25,000+ players registered on the mod"
+              "text": "~40,000 players known to the backend"
             },
             {
-              "text": "500 players connected simultaneously on average"
+              "text": "~700 daily users on Arie's Mod alone"
             },
             {
-              "text": "2,000 regular users per day"
+              "text": "~800,000 requests a day, on a €3.60/month VPS running the whole ecosystem"
+            },
+            {
+              "text": "~20,000 downloads of the releases published on GitHub"
             },
             {
               "text": "Over €100 raised on Ko-fi in one month, enough to cover more than two years of hosting"
-            },
-            {
-              "text": "A €3.6/month VPS handling the entire ecosystem"
             },
             {
               "text": "Compatible with Chrome, Edge, Firefox, Opera GX and Discord Activities"
@@ -956,6 +1027,23 @@
             "A well-configured €3.6/month VPS can outperform €25/month cloud solutions",
             "Community trust is built through transparency and asking for permission rather than forgiveness",
             "User feedback is the best fuel for a developer"
+          ]
+        },
+        "extras": {
+          "title": "Other building blocks",
+          "items": [
+            {
+              "text": "MG Answer Bot: a Python bot that answers players' questions citing its sources (game API, wiki) and refuses to answer without evidence. RAG with embeddings and Claude, evaluated on real questions, 347 tests."
+            },
+            {
+              "text": "Contribution to Starweaver-API, the shared API of the game's mod authors: 48 typed WebSocket functions, a guide and tests written before the code. Pull request merged in May 2026, and I co-administer the modders' GitHub organization."
+            },
+            {
+              "text": "MG-Websocket-Helper: a Node.js client that rebuilds the full game state like the official client (JSON Patch), the foundation of the Android app."
+            },
+            {
+              "text": "Telegram shop alert bot in English, French and Russian, built on the API."
+            }
           ]
         }
       },

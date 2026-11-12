@@ -72,7 +72,7 @@ export const PROJECTS = {
       fr: "Surveille l'API, trie les bugs des joueurs et prépare des correctifs testés. Rien n'est publié sans validation humaine.",
       en: "Watches the API, triages player bug reports and prepares tested fixes. Nothing ships without human approval.",
     },
-    image: "/img/backend5.png",
+    image: "/img/maintenance2.png",
     stack: ["TypeScript", "Claude", "MCP", "PostgreSQL", "PM2"],
     page: "/portfolio/projects/ariesmod",
   },
