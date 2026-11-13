@@ -1,27 +1,19 @@
 import { ReactNode } from "react";
-import TranslateAnimation from "../../TranslateAnimation";
+import { cn } from "@/app/lib/utils";
+import { Eyebrow } from "./Section";
 
 interface SectionCardProps {
   title: string;
-  icon?: string;
-  borderColor: string;
+  className?: string;
   children: ReactNode;
 }
 
-export default function SectionCard({
-  title,
-  icon,
-  borderColor,
-  children,
-}: SectionCardProps) {
+/** Bloc interne d'une section ou d'un onglet : bordure neutre, titre en libellé. */
+export default function SectionCard({ title, className, children }: SectionCardProps) {
   return (
-    <div className={`bg-[#27272A] border-l-4 ${borderColor} p-4 rounded-md space-y-2`}>
-      <h4 className="text-lg sm:text-xl font-semibold text-[#d4d4d4]">
-        {icon} <TranslateAnimation text={title}/>
-      </h4>
-      <div className="text-sm sm:text-base text-gray-300 p-2">
-        {children}
-      </div>
+    <div className={cn("rounded-xl border border-[#3E304F] bg-[#1c1b21] p-4 sm:p-5", className)}>
+      <Eyebrow text={title} />
+      <div className="mt-3 text-sm text-[#d4d4d8] sm:text-[15px]">{children}</div>
     </div>
   );
 }

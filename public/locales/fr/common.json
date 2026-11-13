@@ -596,6 +596,7 @@
         },
         "origin": {
           "title": "Origine du projet",
+          "headline": "D'une soirée Discord à un mod communautaire",
           "intro": "Tout est parti d'une soirée Discord entre amis. On tombe sur ce jeu par hasard, et honnêtement, première réaction: \"C'est enfantin, le gameplay est vraiment pas terrible\". Mais très vite, une idée m'a traversé l'esprit.",
           "steps": [
             {
@@ -1027,6 +1028,13 @@
             ]
           }
         },
+        "architecture_headline": "Sept briques, un seul écosystème",
+        "stats": [
+          { "value": "40 000", "label": "joueurs référencés" },
+          { "value": "~700", "label": "utilisateurs par jour" },
+          { "value": "~800 000", "label": "requêtes par jour" },
+          { "value": "3,60 €", "label": "de VPS par mois" }
+        ],
         "impact": {
           "title": "L'impact en chiffres",
           "items": [
@@ -1192,7 +1200,9 @@
       "advantages": "Avantages",
       "limits": "Limites",
       "viewCode": "Voir le code",
-      "architecture": "🔧 Architecture technique du projet",
+      "architecture": "Architecture technique",
+      "game": "Le jeu",
+      "origin": "Origine du projet",
       "viewSite": "Voir le site"
     },
     "projectCard": {

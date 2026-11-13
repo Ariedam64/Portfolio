@@ -596,6 +596,7 @@
         },
         "origin": {
           "title": "Project Origin",
+          "headline": "From a Discord night to a community mod",
           "intro": "It all started during a Discord evening with friends. We stumbled upon this game by accident, and honestly, my first reaction was: \"It's childish, the gameplay really isn't great.\" But very quickly, an idea crossed my mind.",
           "steps": [
             {
@@ -1027,6 +1028,13 @@
             ]
           }
         },
+        "architecture_headline": "Seven building blocks, one ecosystem",
+        "stats": [
+          { "value": "40,000", "label": "players tracked" },
+          { "value": "~700", "label": "users per day" },
+          { "value": "~800,000", "label": "requests per day" },
+          { "value": "€3.60", "label": "VPS cost per month" }
+        ],
         "impact": {
           "title": "Impact in numbers",
           "items": [
@@ -1192,7 +1200,9 @@
       "advantages": "Advantages",
       "limits": "Limitations",
       "viewCode": "View Code",
-      "architecture": "🔧 Technical architecture of the project",
+      "architecture": "Technical architecture",
+      "game": "The game",
+      "origin": "Project origin",
       "viewSite": "View the site"
     },
     "projectCard": {

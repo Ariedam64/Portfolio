@@ -50,7 +50,7 @@ export const PROJECTS = {
       fr: "API publique qui extrait les données du jeu depuis son code minifié et diffuse boutiques et météo en temps réel.",
       en: "Public API that extracts game data from its minified bundle and streams shops and weather in real time.",
     },
-    image: "/img/api1.webp",
+    image: "/img/api-docs.webp",
     stack: ["Node.js", "Express", "SQLite", "SSE", "Rive"],
     page: "/portfolio/projects/ariesmod",
     repo: "https://github.com/Ariedam64/Magic-Garden-API",

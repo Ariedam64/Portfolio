@@ -1,19 +1,21 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { mayayaModule, ModuleData } from "@/app/data/projectsData"
-import Background from "../../../components/portfolio/Background";
-import Caroussel from "../../../components/portfolio/Caroussel";
+import { mayayaModule, ModuleData } from "@/app/data/projectsData";
+import Background from "@/app/components/portfolio/Background";
+import PageLayout from "@/app/components/portfolio/projects/PayeLayout";
+import ProjectHero, { interleaveTech } from "@/app/components/portfolio/projects/ProjectHero";
+import Section, { SectionColumn, SplitSection } from "@/app/components/portfolio/projects/Section";
 import SectionCard from "@/app/components/portfolio/projects/SectionCard";
-import TechPills from "@/app/components/portfolio/projects/TechPills";
 import ListSection from "@/app/components/portfolio/projects/ListSection";
-import TranslateAnimation from "@/app/components/TranslateAnimation"
-import Header from "@/app/components/portfolio/projects/Header";
-import Section from "@/app/components/portfolio/projects/Section";
+import ModulePanel from "@/app/components/portfolio/projects/ModulePanel";
+import { codeAndSiteLinks } from "@/app/components/portfolio/projects/ProjectLinks";
+import TranslateAnimation from "@/app/components/TranslateAnimation";
+import TabsSection, { TabItem } from "@/app/components/portfolio/projects/TabSection";
 import TreeView from "@/app/components/portfolio/projects/TreeView";
 import { tList } from "@/utils/i18n";
-import PageLayout from "@/app/components/portfolio/projects/PayeLayout";
-import TabsSection, { TabItem } from "@/app/components/portfolio/projects/TabSection"
+
+const BASE = "portfolio.projects.mayaya";
 
 export default function MayayaProject() {
   const { t } = useTranslation("common");
@@ -23,73 +25,86 @@ export default function MayayaProject() {
     label: t(m.labelKey),
     content: m,
   }));
+  const main = mayayaModule[0];
 
   return (
     <>
       <Background />
-
       <PageLayout>
+        <ProjectHero
+          title={t(`${BASE}.title`)}
+          subtitle={t(`${BASE}.subtitle`)}
+          image={main.images?.[0]}
+          tech={interleaveTech(mayayaModule.map((m) => tList<string>(t, m.techKey)))}
+          links={codeAndSiteLinks(t, main)}
+        />
 
-        <Header emoji="🐝" title={t("portfolio.projects.mayaya.title")} subtitle={t("portfolio.projects.mayaya.subtitle")}/>
-
-        <Section emoji="🎮" title={t("portfolio.projects.mayaya.game_title")}>
-          <TranslateAnimation text={t("portfolio.projects.mayaya.game_desc")} />
-        </Section>
-
-        <Section emoji="🚀" title={t("portfolio.projects.mayaya.origin.title")}>
-          <p> <TranslateAnimation text={t("portfolio.projects.mayaya.origin.description")} /> </p>
-          <p> <TranslateAnimation text={t("portfolio.projects.mayaya.origin.conclusion")} /></p>
-        </Section>
+        <SplitSection>
+          <SectionColumn title={t(`${BASE}.game_title`)}>
+            <p>
+              <TranslateAnimation text={t(`${BASE}.game_desc`)} />
+            </p>
+          </SectionColumn>
+          <SectionColumn title={t(`${BASE}.origin.title`)}>
+            <p>
+              <TranslateAnimation text={t(`${BASE}.origin.description`)} />
+            </p>
+            <p>
+              <TranslateAnimation text={t(`${BASE}.origin.conclusion`)} />
+            </p>
+          </SectionColumn>
+        </SplitSection>
 
         <TabsSection
-          title={t("portfolio.sections.architecture")}
+          eyebrow={t("portfolio.sections.architecture")}
           items={projectTabs}
-          renderContent={({ content: m }) => {
-            const base = `portfolio.projects.mayaya.modules.${m.key}`;
+          renderContent={({ label, content: m }) => {
+            const base = `${BASE}.modules.${m.key}`;
             return (
-              <div className="space-y-6 bg-zinc-800/40 p-6 rounded-lg">
-                <SectionCard title={t("portfolio.sections.objective")} icon="🎯" borderColor="border-[#9333ea]">
-                  <p><TranslateAnimation text={t(m.objectiveKey)} /></p>
-                </SectionCard>
-                <SectionCard title={t(`${base}.structure_title`)} icon="🗂️" borderColor="border-fuchsia-500">
+              <ModulePanel
+                eyebrow={t("portfolio.sections.objective")}
+                title={label}
+                objective={t(m.objectiveKey)}
+                images={m.images}
+                frameHeight={m.frameHeight}
+                tech={tList<string>(t, m.techKey)}
+                links={codeAndSiteLinks(t, m)}
+              >
+                <SectionCard title={t(`${base}.structure_title`)}>
                   <TreeView treeText={t(`${base}.structure`)} />
                 </SectionCard>
-                <SectionCard title={t("portfolio.sections.features")} icon="⚙️" borderColor="border-green-500">
-                <ListSection items={tList(t, m.featuresKey) as string[]} textColor="text-gray-300"/>
-              </SectionCard>
-              <SectionCard title={t("portfolio.sections.limits")} icon="❌" borderColor="border-red-500">
-                <ListSection items={tList(t, m.limitsKey) as string[]} textColor="text-gray-300"/>
-              </SectionCard>
-              <TechPills items={tList(t, m.techKey) as string[]} />
-              <Caroussel className="mx-auto" images={m.images} />
-              {m.repoUrl && (
-                <div className="flex justify-center">
-                  <a href={m.repoUrl} target="_blank" rel="noopener noreferrer" className="text-purple-300 hover:underline">
-                    <TranslateAnimation text={t("portfolio.sections.viewCode")} />
-                  </a>
+                <div className="grid gap-5 lg:grid-cols-2">
+                  <SectionCard title={t("portfolio.sections.features")}>
+                    <ListSection items={tList(t, m.featuresKey)} />
+                  </SectionCard>
+                  <SectionCard title={t("portfolio.sections.limits")}>
+                    <ListSection items={tList(t, m.limitsKey)} />
+                  </SectionCard>
                 </div>
-              )}
-            </div>
+              </ModulePanel>
             );
           }}
         />
 
-        <Section emoji="🎲" title={t("portfolio.projects.mayaya.funFact.title")}>
-          <p className="text-gray-200"><TranslateAnimation text={t("portfolio.projects.mayaya.funFact.intro")}/></p>
-          <div>
-            <ListSection items={tList(t, "portfolio.projects.mayaya.funFact.items")} textColor="text-gray-300"/>
-          </div>
-          <p className="text-gray-200"><TranslateAnimation text={t("portfolio.projects.mayaya.funFact.war_intro")}/></p>
-          <div>
-            <ListSection items={tList(t, "portfolio.projects.mayaya.funFact.warSteps")} textColor="text-gray-300"/>
-          </div>
-          <p className="font-semibold text-gray-200"><TranslateAnimation text={t("portfolio.projects.mayaya.funFact.conclusion")}/></p>
+        <Section title={t(`${BASE}.funFact.title`)}>
+          <p>
+            <TranslateAnimation text={t(`${BASE}.funFact.intro`)} />
+          </p>
+          <ListSection items={tList(t, `${BASE}.funFact.items`)} />
+          <p>
+            <TranslateAnimation text={t(`${BASE}.funFact.war_intro`)} />
+          </p>
+          <ListSection items={tList(t, `${BASE}.funFact.warSteps`)} />
+          <p className="font-semibold text-white">
+            <TranslateAnimation text={t(`${BASE}.funFact.conclusion`)} />
+          </p>
         </Section>
 
-        <Section emoji="💡" title={t("portfolio.projects.mayaya.remark")} titleColor="text-purple-300" borderColor="border-purple-500" >
-          <p> <TranslateAnimation text={t("portfolio.projects.mayaya.remark_label")}/></p>
+        <Section title={t(`${BASE}.remark`)}>
+          <p>
+            <TranslateAnimation text={t(`${BASE}.remark_label`)} />
+          </p>
         </Section>
-
       </PageLayout>
     </>
   );

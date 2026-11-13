@@ -127,10 +127,12 @@ export const ariesmodModule: ModuleData[] = [
     featuresKey: "portfolio.projects.ariesmod.modules.api.features",
     limitsKey: "portfolio.projects.ariesmod.modules.api.limits",
     images: [
-      "/img/api1.webp",
+      // Historique météo du Garden Explorer en premier : c'est la capture qui
+      // montre le plus de données. Puis la doc, avec ses endpoints et une vraie réponse.
+      "/img/api4.webp",
+      "/img/api-docs.webp",
       "/img/api2.webp",
       "/img/api3.webp",
-      "/img/api4.webp",
       "/img/api5.webp",
       "/img/api6.webp",
       "/img/api7.webp",

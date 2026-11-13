@@ -1,4 +1,5 @@
 import React from "react";
+import { File, Folder } from "lucide-react";
 
 export interface TreeViewProps {
   /**
@@ -64,13 +65,9 @@ function parseTree(treeText: string): TreeNode[] {
 
 function NodeRow({ node }: { node: TreeNode }) {
   const icon = node.isDir ? (
-    <span className="text-yellow-300" aria-hidden>
-      📁
-    </span>
+    <Folder aria-hidden className="size-3.5 shrink-0 translate-y-0.5 text-[#a78bfa]" />
   ) : (
-    <span className="text-blue-300" aria-hidden>
-      📄
-    </span>
+    <File aria-hidden className="size-3.5 shrink-0 translate-y-0.5 text-[#71717a]" />
   );
 
   return (
@@ -79,11 +76,11 @@ function NodeRow({ node }: { node: TreeNode }) {
         {icon}
         <span className={node.isDir ? "text-purple-200" : "text-gray-100"}>{node.name}{node.isDir ? "/" : ""}</span>
         {node.comment && (
-          <span className="text-gray-400 italic"> — {node.comment}</span>
+          <span className="text-[#a1a1aa]"> — {node.comment}</span>
         )}
       </div>
       {node.children.length > 0 && (
-        <ul className="pl-5 border-l border-zinc-700 ml-2 mt-1">
+        <ul className="ml-1.5 mt-1 border-l border-[#3E304F] pl-5">
           {node.children.map((child, idx) => (
             <NodeRow key={idx} node={child} />
           ))}
@@ -99,8 +96,8 @@ export default function TreeView({ treeText, className }: TreeViewProps) {
   return (
     <div
       className={[
-        "font-mono text-sm bg-zinc-800/60 rounded-lg p-4 text-left",
-        "overflow-x-auto border border-zinc-700",
+        "font-mono text-[13px] bg-[#131217] rounded-lg p-4 text-left",
+        "overflow-x-auto border border-[#3E304F]",
         className ?? "",
       ].join(" ")}
     >
