@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/translateAnimation.module.css";
 
 interface TranslateAnimationProps {
@@ -10,30 +9,27 @@ interface TranslateAnimationProps {
   className?: string;
 }
 
-export default function TranslateAnimation({
-  text,
-  duration = 300,
-  className = "",
-}: TranslateAnimationProps) {
-  const { i18n } = useTranslation();
-  const [prevLang, setPrevLang] = useState(i18n.language);
-  const [displayedText, setDisplayedText] = useState("");
+/**
+ * Affiche un texte traduit, avec un fondu quand il change (changement de
+ * langue). Le premier rendu montre directement le texte : il doit être dans le
+ * HTML envoyé par le serveur, pour les moteurs de recherche et les aperçus de
+ * liens, et ne pas apparaître en retard au chargement.
+ */
+export default function TranslateAnimation({ text, duration = 300, className = "" }: TranslateAnimationProps) {
+  const [displayedText, setDisplayedText] = useState(text);
   const [visible, setVisible] = useState(true);
+  const shown = useRef(text);
 
   useEffect(() => {
-    // Si on a un nouveau texte ou un changement de langue...
-    if (text !== displayedText || i18n.language !== prevLang) {
-      // on fade-out
-      setVisible(false);
-      // après la durée, on change le texte+langue, puis fade-in
-      const timeout = setTimeout(() => {
-        setDisplayedText(text);
-        setPrevLang(i18n.language);
-        setVisible(true);
-      }, duration);
-      return () => clearTimeout(timeout);
-    }
-  }, [text, i18n.language, duration]);
+    if (text === shown.current) return;
+    setVisible(false);
+    const timeout = setTimeout(() => {
+      shown.current = text;
+      setDisplayedText(text);
+      setVisible(true);
+    }, duration);
+    return () => clearTimeout(timeout);
+  }, [text, duration]);
 
   return (
     <span

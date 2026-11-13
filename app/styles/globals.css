@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,8 +12,11 @@
   }
 }
 
+/* Comfortaa est chargée par next/font dans app/layout.tsx, qui définit la
+   variable. Un @import Google Fonts ici était ignoré : placé après Tailwind
+   dans la feuille compilée, le navigateur ne le lisait pas. */
 body {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--font-comfortaa), sans-serif;
 }
 
 .h1 {
@@ -68,6 +69,9 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    /* Fond sombre, comme le décor des pages : évite un flash blanc au
+       chargement et donne aux outils d'accessibilité le vrai contraste. */
+    @apply text-foreground;
+    background-color: #121212;
   }
 }

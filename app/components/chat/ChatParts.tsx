@@ -73,7 +73,7 @@ export function ProjectCards({
                 className="h-[72px] w-[96px] shrink-0 rounded-lg object-cover object-top"
               />
               <div className="min-w-0 flex-1">
-                <h4 className="font-[Comfortaa,sans-serif] text-sm font-bold leading-snug text-white">{p.title[locale]}</h4>
+                <h4 className="font-[family-name:var(--font-comfortaa)] text-sm font-bold leading-snug text-white">{p.title[locale]}</h4>
                 <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-[#a49fb0]">{p.tagline[locale]}</p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function MetricTiles({ ids, locale }: { ids: MetricId[]; locale: Locale }
         const m = METRICS[id];
         return (
           <div key={id} className="rounded-xl border border-[#3a2f4c] bg-[#1c1824] px-3 py-2.5">
-            <dd className="font-[Comfortaa,sans-serif] text-xl font-bold tabular-nums leading-tight text-[#c4b5fd]">{m.value}</dd>
+            <dd className="font-[family-name:var(--font-comfortaa)] text-xl font-bold tabular-nums leading-tight text-[#c4b5fd]">{m.value}</dd>
             <dt className="mt-1 text-[11px] leading-snug text-[#a49fb0]">{m.label[locale]}</dt>
           </div>
         );

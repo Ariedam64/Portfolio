@@ -29,7 +29,7 @@
 }
 
 .heading {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--font-comfortaa), sans-serif;
   font-weight: 700 !important;
   font-size: 5rem;                /* Taille plus grande pour l'impact */
   font-weight: 900;               /* Très bold pour la visibilité */

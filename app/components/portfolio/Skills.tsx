@@ -31,7 +31,7 @@ return (
             <h3 className="text-base font-extrabold text-[#d4d4d4] mb-1 text-left">
               <TranslateAnimation text={t(titleKey)}/>
             </h3>
-            <p className="text-sm text-[#8D8D8E] text-left m-0">
+            <p className="text-sm text-[#a1a1aa] text-left m-0">
               <TranslateAnimation text={t(descriptionKey)} />
             </p>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { HomeIcon, LanguageIcon, ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
+import { ChevronLeft, ChevronRight, House, Languages } from 'lucide-react'
 import IconButton from './Buttons';
 import { useLanguageSwitcher } from '../../../utils/languageSwitcher';
 import { useTranslation } from "react-i18next";
@@ -81,13 +81,13 @@ export default function Sidebar() {
         <div className="flex-1 min-w-0 px-4 py-3">
           <div className="flex flex-col space-y-2">
             <IconButton
-              icon={<HomeIcon className="w-6 h-6" />}
+              icon={<House className="w-6 h-6" />}
               href="/"
               tooltip={t("sidebar.home")}
             />
 
             <IconButton
-              icon={<LanguageIcon className="w-6 h-6" />}
+              icon={<Languages className="w-6 h-6" />}
               onClick={handleSwitch}
               tooltip={t("sidebar.translate")}
             />
@@ -111,9 +111,9 @@ export default function Sidebar() {
           "
         >
           {open ? (
-            <ChevronLeftIcon className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5" />
           ) : (
-            <ChevronRightIcon className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5" />
           )}
         </button>
       </div>
@@ -133,13 +133,13 @@ export default function Sidebar() {
         <div className="flex-1 min-w-0 px-4 py-3">
           <div className="flex flex-col space-y-4">
             <IconButton
-              icon={<HomeIcon className="w-6 h-6" />}
+              icon={<House className="w-6 h-6" />}
               href="/"
               tooltip={t("sidebar.home")}
             />
 
             <IconButton
-              icon={<LanguageIcon className="w-6 h-6" />}
+              icon={<Languages className="w-6 h-6" />}
               onClick={handleSwitch}
               tooltip={t("sidebar.translate")}
             />
@@ -162,9 +162,9 @@ export default function Sidebar() {
           "
         >
           {open ? (
-            <ChevronLeftIcon className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5" />
           ) : (
-            <ChevronRightIcon className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5" />
           )}
         </button>
       </div>

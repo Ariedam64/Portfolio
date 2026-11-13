@@ -73,7 +73,7 @@
 }
 
 .cardTitle {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--font-comfortaa), sans-serif;
   font-size: 4rem;  
   font-weight: 900;           
   letter-spacing: 0.1em; 

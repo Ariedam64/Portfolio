@@ -119,7 +119,7 @@ export default function ChatWidget() {
               <img src={AVATAR} alt="" className="size-10 rounded-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-[#121016] bg-emerald-400" />
             </span>
-            <span className="hidden font-[Comfortaa,sans-serif] text-sm font-bold sm:inline">{t("chat.launcher")}</span>
+            <span className="hidden font-[family-name:var(--font-comfortaa)] text-sm font-bold sm:inline">{t("chat.launcher")}</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -141,7 +141,7 @@ export default function ChatWidget() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={AVATAR} alt="" className="size-9 rounded-full object-cover" />
               <div className="min-w-0 flex-1">
-                <h2 className="font-[Comfortaa,sans-serif] text-[15px] font-bold leading-tight text-white">{t("chat.title")}</h2>
+                <h2 className="font-[family-name:var(--font-comfortaa)] text-[15px] font-bold leading-tight text-white">{t("chat.title")}</h2>
                 <p className="truncate text-xs text-[#a49fb0]">{t("chat.subtitle")}</p>
               </div>
               {messages.length > 0 && (

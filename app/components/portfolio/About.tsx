@@ -1,7 +1,6 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { FiExternalLink } from "react-icons/fi";
+import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import TranslateAnimation from "../TranslateAnimation";
@@ -68,7 +67,7 @@ export default function About() {
             aria-label="GitHub"
             className="text-gray-400 hover:text-white transition-colors text-2xl"
           >
-            <FaGithub />
+            <Github className="size-6" />
           </a>
           <a
             href="https://www.linkedin.com/in/romann-madeira-9991a41bb/"
@@ -77,14 +76,14 @@ export default function About() {
             aria-label="LinkedIn"
             className="text-gray-400 hover:text-white transition-colors text-2xl"
           >
-            <FaLinkedin />
+            <Linkedin className="size-6" />
           </a>
           <a
             href="mailto:ariedam.romann@gmail.com"
-            aria-label="Mail"
+            aria-label="Email"
             className="text-gray-400 hover:text-white transition-colors text-2xl"
           >
-            <FaEnvelope />
+            <Mail className="size-6" />
           </a>
         </div>
 
@@ -93,11 +92,10 @@ export default function About() {
           href={cvHref}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="CV"
           className="inline-flex items-center space-x-3 text-purple-400 bg-purple-600/30 hover:bg-purple-600/40 font-medium px-6 py-3 rounded-full transition-colors mb-10 text-base"
         >
           <TranslateAnimation text={t("portfolio.about.cvLink")} />
-          <FiExternalLink size={20} />
+          <ExternalLink size={20} aria-hidden />
         </a>
 
         {/* Indicateur scroll: toujours sous le bouton CV */}

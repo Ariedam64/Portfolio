@@ -20,6 +20,9 @@ export default function IconButton({
   ariaLabel,
   tooltip,
 }: IconButtonProps): ReactElement {
+  // Un bouton qui n'affiche qu'une icône a besoin d'un nom pour les lecteurs
+  // d'écran : à défaut d'aria-label, on reprend le texte de l'infobulle.
+  const label = ariaLabel ?? tooltip;
   const baseClasses = `
     p-3 bg-gray-800 text-white rounded-full shadow-lg
     hover:bg-gray-700 border-2 border-purple-500/80
@@ -28,14 +31,14 @@ export default function IconButton({
   `;
 
   const Control: ReactElement = href ? (
-    <Link href={href} aria-label={ariaLabel} className={baseClasses}>
+    <Link href={href} aria-label={label} className={baseClasses}>
       {icon}
     </Link>
   ) : (
     <button
       type="button"
       onClick={onClick}
-      aria-label={ariaLabel}
+      aria-label={label}
       className={baseClasses}
     >
       {icon}

@@ -16,7 +16,7 @@ export default function Card({ title, icon, description, href }: CardProps) {
     return (
         <Link href={href} className={styles.card}>
         <div className={styles.cardIcon}>
-            <img src={icon} />
+            <img src={icon} alt="" />
         </div>
         <h2 className={styles.cardTitle}><TranslateAnimation text={title}/></h2> 
         </Link>
