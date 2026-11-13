@@ -57,12 +57,16 @@ export function SectionColumn({ eyebrow, title, children }: { eyebrow?: string; 
   );
 }
 
-/** Carte à deux colonnes sur grand écran, empilées sur mobile. */
+/**
+ * Carte qui regroupe plusieurs blocs empilés, séparés par un trait. Côte à côte,
+ * la colonne de droite devenait trop étroite pour une frise d'étapes.
+ */
 export function SplitSection({ children, className }: { children?: React.ReactNode; className?: string }) {
   return (
     <section
       className={cn(
-        "grid gap-8 rounded-2xl border-2 border-[#3E304F] bg-[#18181be1] p-5 text-[15px] sm:p-8 sm:text-base lg:grid-cols-2 lg:gap-10",
+        "flex flex-col gap-8 rounded-2xl border-2 border-[#3E304F] bg-[#18181be1] p-5 text-[15px] sm:p-8 sm:text-base",
+        "[&>*+*]:border-t [&>*+*]:border-[#3E304F] [&>*+*]:pt-8",
         className,
       )}
     >

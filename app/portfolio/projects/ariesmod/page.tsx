@@ -53,7 +53,7 @@ export default function AriesModProjectPage() {
 
         <StatsStrip items={tList<Stat>(t, `${BASE}.stats`)} />
 
-        <SplitSection className="lg:grid-cols-[1fr_1.3fr]">
+        <SplitSection>
           <SectionColumn eyebrow={t("portfolio.sections.game")} title={t(`${BASE}.game.title`)}>
             <p>
               <TranslateAnimation text={t(`${BASE}.game.description`)} />
