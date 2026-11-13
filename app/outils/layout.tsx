@@ -1,10 +1,6 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/app/lib/pageMetadata";
 
-// Page encore vide : on ne la propose pas aux moteurs de recherche.
-export const metadata: Metadata = {
-  title: "Outils",
-  robots: { index: false, follow: true },
-};
+export const metadata = pageMetadata("/outils");
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;

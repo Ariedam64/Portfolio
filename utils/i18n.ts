@@ -4,10 +4,12 @@ import type { TFunction } from 'i18next';
 
 import enCommon from '../public/locales/en/common.json';
 import frCommon from '../public/locales/fr/common.json';
+import enTools from '../public/locales/en/tools.json';
+import frTools from '../public/locales/fr/tools.json';
 
 const resources = {
-  en: { common: enCommon },
-  fr: { common: frCommon },
+  en: { common: enCommon, tools: enTools },
+  fr: { common: frCommon, tools: frTools },
 } as const;
 
 export type Locale = keyof typeof resources;
@@ -70,7 +72,7 @@ if (!i18n.isInitialized) {
     fallbackLng: defaultLocale,
     supportedLngs,
     defaultNS: 'common',
-    ns: ['common'],
+    ns: ['common', 'tools'],
     initImmediate: false,
     resources,
     react: {

@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "copy": "Copy",
+    "copied": "Copied",
+    "input": "Input",
+    "output": "Output",
+    "allTools": "All tools",
+    "local": "Everything runs in your browser. Nothing is sent to a server.",
+    "dropFile": "Drop a file here or click to choose one"
+  },
+  "index": {
+    "title": "Dev tools",
+    "subtitle": "The small tools I reach for while coding: format, convert, decode, generate.",
+    "search": "Search tools…",
+    "empty": "No tool matches."
+  },
+  "categories": {
+    "data": "Data",
+    "text": "Text",
+    "encoding": "Encoding",
+    "time": "Time",
+    "generate": "Generate"
+  },
+  "list": {
+    "json": { "title": "JSON formatter", "description": "Format, minify and validate JSON, with the line of the error.", "keywords": "format beautify prettify minify validate lint" },
+    "yaml": { "title": "YAML ↔ JSON converter", "description": "Convert YAML to JSON and back.", "keywords": "yml docker compose config convert" },
+    "json-to-ts": { "title": "JSON to TypeScript types", "description": "Generate TypeScript interfaces from a JSON response.", "keywords": "ts types interface typescript api" },
+    "sql": { "title": "SQL formatter", "description": "Indent a SQL query: PostgreSQL, MySQL, SQLite…", "keywords": "postgres postgresql mysql sqlite query format" },
+    "markdown": { "title": "Markdown preview", "description": "Write Markdown and see it rendered live, tables and task lists included.", "keywords": "md readme gfm preview" },
+    "diff": { "title": "Text diff", "description": "Compare two texts by line, word or character.", "keywords": "compare difference changes" },
+    "regex": { "title": "Regex tester", "description": "Test a regular expression: highlighted matches, groups, replacement.", "keywords": "regexp regular expression match replace" },
+    "base64": { "title": "Base64 encoder / decoder", "description": "Encode and decode text or a file as Base64.", "keywords": "encode decode b64 file data url" },
+    "jwt": { "title": "JWT decoder", "description": "Read a JWT's header and payload, with its expiry in plain words.", "keywords": "token json web bearer auth" },
+    "hash": { "title": "Hash generator (MD5, SHA)", "description": "MD5, SHA-1, SHA-256, SHA-512, SHA3 and CRC32 of a text or a file.", "keywords": "md5 sha sha1 sha256 sha512 checksum fingerprint crc" },
+    "base-converter": { "title": "Hex / binary / ASCII converter", "description": "Convert between decimal, hex, binary and octal, and text to bytes.", "keywords": "hex hexadecimal binary decimal octal ascii bytes endian int32" },
+    "unix-time": { "title": "Unix timestamp converter", "description": "Convert a Unix timestamp to a date and back.", "keywords": "epoch date time seconds milliseconds" },
+    "discord-timestamp": { "title": "Discord timestamp generator", "description": "Generate Discord <t:…> tags, shown in each reader's own time zone.", "keywords": "discord bot date time tag" },
+    "cron": { "title": "Cron expression explainer", "description": "Turn a cron expression into a sentence and see its next runs.", "keywords": "crontab schedule job" },
+    "uuid": { "title": "UUID and password generator", "description": "Generate v4 or v7 UUIDs and strong passwords.", "keywords": "guid uuid4 uuid7 password random" },
+    "qrcode": { "title": "QR code generator", "description": "Make a QR code from text or a link and download it as PNG or SVG.", "keywords": "qr code link url image" }
+  },
+  "json": {
+    "valid": "Valid JSON",
+    "invalid": "Invalid JSON:",
+    "errorAt": "Error at line {{line}}, column {{column}}:",
+    "mode": "Mode",
+    "format": "Format",
+    "minify": "Minify",
+    "indent": "Indentation",
+    "sortKeys": "Sort keys"
+  },
+  "yaml": {
+    "direction": "Conversion direction",
+    "swap": "Swap"
+  },
+  "jsonToTs": {
+    "needObject": "Needs a JSON object or array",
+    "rootName": "Root type name",
+    "typeAlias": "type instead of interface",
+    "export": "Add export"
+  },
+  "sql": {
+    "dialect": "SQL dialect",
+    "keywords": "Keyword case",
+    "preserve": "Keep",
+    "spaces_one": "{{count}} space",
+    "spaces_other": "{{count}} spaces"
+  },
+  "markdown": {
+    "edit": "Write",
+    "preview": "Preview"
+  },
+  "diff": {
+    "before": "Original",
+    "after": "Changed",
+    "result": "Differences",
+    "mode": "Compare by",
+    "modes": { "lines": "Lines", "words": "Words", "chars": "Characters" },
+    "unit": { "lines": "lines", "words": "words", "chars": "characters" },
+    "ignoreWhitespace": "Ignore whitespace",
+    "ignoreCase": "Ignore case",
+    "identical": "Texts are identical"
+  },
+  "regex": {
+    "pattern": "Regular expression",
+    "flags": { "g": "global", "i": "ignore case", "m": "multiline", "s": "dot matches newline", "u": "unicode" },
+    "text": "Test string",
+    "matchCount_zero": "No matches",
+    "matchCount_one": "{{count}} match",
+    "matchCount_other": "{{count}} matches",
+    "truncated": "Limited to the first {{max}} matches",
+    "groups": "Captured groups",
+    "match": "Match",
+    "replace": "Replace",
+    "replacePlaceholder": "Replacement, with $1, $2 or $<name>"
+  },
+  "base64": {
+    "mode": "Mode",
+    "encode": "Encode",
+    "decode": "Decode",
+    "urlSafe": "URL-safe (no + / =)",
+    "text": "Text",
+    "invalid": "Invalid Base64",
+    "binary": "Binary content ({{size}}), not text",
+    "downloadFile": "Download file",
+    "file": "File to Base64",
+    "dataUrl": "Data URL format",
+    "tooBig": "File too large (max {{max}})",
+    "truncatedPreview": "Preview truncated, Copy copies everything"
+  },
+  "jwt": {
+    "token": "Token",
+    "invalid": "Unreadable token:",
+    "expired": "Expired {{when}}",
+    "notYet": "Not valid yet, will be {{when}}",
+    "valid": "Valid, expires {{when}}",
+    "noExp": "No expiry date",
+    "noVerify": "The signature is not verified: the tool reads the token without the key. The token is not saved.",
+    "header": "Header",
+    "payload": "Payload",
+    "dates": "Dates",
+    "claims": { "exp": "expires", "iat": "issued at", "nbf": "not before" }
+  },
+  "hash": {
+    "text": "Text",
+    "file": "File",
+    "computing": "Computing…",
+    "results": "Hashes",
+    "uppercase": "Uppercase"
+  },
+  "converter": {
+    "numbers": "Numbers",
+    "bases": { "dec": "Decimal", "hex": "Hexadecimal", "bin": "Binary", "oct": "Octal" },
+    "invalidNumber": "Invalid number",
+    "bits": "Bits needed",
+    "bytesBE": "Bytes (big-endian)",
+    "bytesLE": "Bytes (little-endian)",
+    "text": "Text (UTF-8)",
+    "hexBytes": "Hex bytes",
+    "invalidHex": "Invalid hex (pairs of 0-9, a-f)",
+    "notUtf8": "Not valid UTF-8 text"
+  },
+  "unix": {
+    "now": "Now",
+    "seconds": "Seconds",
+    "milliseconds": "Milliseconds",
+    "toDate": "Timestamp → date",
+    "timestamp": "Timestamp",
+    "useNow": "Now",
+    "invalid": "Needs a number",
+    "detected": "Detected unit: {{unit}}",
+    "units": { "s": "seconds", "ms": "milliseconds", "us": "microseconds" },
+    "local": "Local time",
+    "relative": "Relative",
+    "toTimestamp": "Date → timestamp",
+    "dateLocal": "Date and time ({{zone}})"
+  },
+  "discord": {
+    "date": "Date",
+    "localTime": "Local date and time",
+    "plus1h": "+1 h",
+    "plus1d": "+1 day",
+    "plus1w": "+1 week",
+    "hint": "Discord shows each tag in the time zone and language of whoever reads the message.",
+    "formats": "Tags to paste into Discord",
+    "styles": {
+      "t": "short time",
+      "T": "long time",
+      "d": "short date",
+      "D": "long date",
+      "f": "date and time",
+      "F": "long date and time",
+      "R": "relative, updates live"
+    }
+  },
+  "cron": {
+    "expression": "Cron expression",
+    "fields": { "second": "second", "minute": "minute", "hour": "hour", "dom": "day of month", "month": "month", "dow": "weekday" },
+    "presets": {
+      "every5min": "Every 5 min",
+      "hourly": "Every hour",
+      "daily": "Daily at midnight",
+      "weekdays9": "Weekdays at 9 AM",
+      "monday": "Mondays at 9 AM",
+      "monthly": "1st of the month"
+    },
+    "meaning": "What it means",
+    "nextRuns": "Next runs",
+    "timezone": "Computed in your time zone ({{zone}}). On a server, cron follows the server's time zone."
+  },
+  "uuid": {
+    "version": "Version",
+    "v4": "v4 random",
+    "v7": "v7 time-sortable",
+    "count": "Count",
+    "uppercase": "Uppercase",
+    "noHyphens": "No hyphens",
+    "regenerate": "Regenerate",
+    "password": "Password",
+    "length_one": "Length: {{count}} character",
+    "length_other": "Length: {{count}} characters",
+    "sets": { "lower": "Lowercase a-z", "upper": "Uppercase A-Z", "digits": "Digits 0-9", "symbols": "Symbols !@#…" },
+    "noAmbiguous": "Exclude look-alike characters (I, l, 1, O, 0, o)",
+    "strength": { "strong": "Very strong", "good": "Strong", "fair": "Fair", "weak": "Weak" }
+  },
+  "qr": {
+    "content": "Content",
+    "level": "Error correction",
+    "levels": { "L": "7%", "M": "15%", "Q": "25%", "H": "30%" },
+    "size": "PNG size: {{size}} px",
+    "margin": "Margin: {{margin}}",
+    "foreground": "Color",
+    "background": "Background",
+    "preview": "Preview",
+    "alt": "Generated QR code",
+    "empty": "Type some text or a link to generate the QR code.",
+    "tooLong": "Text too long for this correction level"
+  }
+}

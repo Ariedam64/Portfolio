@@ -1,13 +1,5 @@
-"use client";
+import ToolsIndex from "@/app/components/tools/ToolsIndex";
 
-import { useTranslation } from "react-i18next";
-
-export default function Outils() {
-  
-  const { t } = useTranslation('common');
-
-  return (
-    <>
-    </>
-  );
+export default function OutilsPage() {
+  return <ToolsIndex />;
 }

@@ -35,6 +35,11 @@ export const PAGES = {
     title: "SnapScore+",
     description: "Orchestration de navigateurs avec Puppeteer depuis une seule machine, projet d'expérimentation.",
   },
+  "/outils": {
+    title: "Outils de dev",
+    description:
+      "Petits outils de développeur qui tournent dans le navigateur : JSON, YAML, SQL, regex, JWT, Base64, hash, timestamps, cron, UUID, QR code, Markdown.",
+  },
 } as const;
 
 export type PagePath = keyof typeof PAGES;

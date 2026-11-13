@@ -1,0 +1,219 @@
+{
+  "ui": {
+    "copy": "Copier",
+    "copied": "Copié",
+    "input": "Entrée",
+    "output": "Résultat",
+    "allTools": "Tous les outils",
+    "local": "Tout se passe dans le navigateur, rien n'est envoyé à un serveur.",
+    "dropFile": "Glisser un fichier ici ou cliquer pour le choisir"
+  },
+  "index": {
+    "title": "Outils de dev",
+    "subtitle": "Les petits outils dont je me sers en développant : formater, convertir, décoder, générer.",
+    "search": "Rechercher un outil…",
+    "empty": "Aucun outil ne correspond."
+  },
+  "categories": {
+    "data": "Données",
+    "text": "Texte",
+    "encoding": "Encodage",
+    "time": "Temps",
+    "generate": "Génération"
+  },
+  "list": {
+    "json": { "title": "Formateur JSON", "description": "Formater, minifier et valider du JSON, avec la ligne de l'erreur.", "keywords": "format beautify prettify minify valider lint" },
+    "yaml": { "title": "Convertisseur YAML ↔ JSON", "description": "Convertir du YAML en JSON et inversement.", "keywords": "yml docker compose config convertir" },
+    "json-to-ts": { "title": "JSON vers types TypeScript", "description": "Générer les interfaces TypeScript d'une réponse JSON.", "keywords": "ts types interface typescript api" },
+    "sql": { "title": "Formateur SQL", "description": "Indenter une requête SQL : PostgreSQL, MySQL, SQLite…", "keywords": "postgres postgresql mysql sqlite requete query format" },
+    "markdown": { "title": "Aperçu Markdown", "description": "Écrire du Markdown et voir le rendu en direct, tableaux et cases à cocher compris.", "keywords": "md readme gfm preview" },
+    "diff": { "title": "Comparateur de texte", "description": "Comparer deux textes ligne par ligne, mot par mot ou caractère par caractère.", "keywords": "compare comparer difference changements" },
+    "regex": { "title": "Testeur de regex", "description": "Tester une expression régulière : correspondances surlignées, groupes, remplacement.", "keywords": "regexp expression reguliere match replace" },
+    "base64": { "title": "Encodeur / décodeur Base64", "description": "Encoder et décoder du texte ou un fichier en Base64.", "keywords": "encode decode b64 fichier data url" },
+    "jwt": { "title": "Décodeur JWT", "description": "Lire l'en-tête et le contenu d'un JWT, avec sa date d'expiration en clair.", "keywords": "token jeton json web bearer auth" },
+    "hash": { "title": "Générateur de hash (MD5, SHA)", "description": "MD5, SHA-1, SHA-256, SHA-512, SHA3 et CRC32 d'un texte ou d'un fichier.", "keywords": "md5 sha sha1 sha256 sha512 checksum empreinte crc" },
+    "base-converter": { "title": "Convertisseur hexa / binaire / ASCII", "description": "Convertir entre décimal, hexadécimal, binaire et octal, et du texte en octets.", "keywords": "hex hexadecimal binaire decimal octal ascii octets bytes endian int32" },
+    "unix-time": { "title": "Convertisseur de timestamp Unix", "description": "Convertir un timestamp Unix en date et inversement.", "keywords": "epoch date heure time secondes millisecondes" },
+    "discord-timestamp": { "title": "Générateur de timestamp Discord", "description": "Générer les balises <t:…> de Discord, qui s'affichent à l'heure de chaque lecteur.", "keywords": "discord bot date heure balise" },
+    "cron": { "title": "Traducteur d'expression cron", "description": "Traduire une expression cron en phrase et voir ses prochaines exécutions.", "keywords": "crontab planification schedule tache" },
+    "uuid": { "title": "Générateur d'UUID et de mots de passe", "description": "Générer des UUID v4 ou v7 et des mots de passe solides.", "keywords": "guid uuid4 uuid7 password mot de passe aleatoire random" },
+    "qrcode": { "title": "Générateur de QR code", "description": "Créer un QR code depuis un texte ou un lien et le télécharger en PNG ou SVG.", "keywords": "qr code lien url image" }
+  },
+  "json": {
+    "valid": "JSON valide",
+    "invalid": "JSON invalide :",
+    "errorAt": "Erreur ligne {{line}}, colonne {{column}} :",
+    "mode": "Mode",
+    "format": "Formater",
+    "minify": "Minifier",
+    "indent": "Indentation",
+    "sortKeys": "Trier les clés"
+  },
+  "yaml": {
+    "direction": "Sens de conversion",
+    "swap": "Inverser"
+  },
+  "jsonToTs": {
+    "needObject": "Il faut un objet ou un tableau JSON",
+    "rootName": "Nom du type racine",
+    "typeAlias": "type au lieu d'interface",
+    "export": "Ajouter export"
+  },
+  "sql": {
+    "dialect": "Dialecte SQL",
+    "keywords": "Casse des mots-clés",
+    "preserve": "Inchangée",
+    "spaces_one": "{{count}} espace",
+    "spaces_other": "{{count}} espaces"
+  },
+  "markdown": {
+    "edit": "Écrire",
+    "preview": "Aperçu"
+  },
+  "diff": {
+    "before": "Original",
+    "after": "Modifié",
+    "result": "Différences",
+    "mode": "Comparer par",
+    "modes": { "lines": "Lignes", "words": "Mots", "chars": "Caractères" },
+    "unit": { "lines": "lignes", "words": "mots", "chars": "caractères" },
+    "ignoreWhitespace": "Ignorer les espaces",
+    "ignoreCase": "Ignorer la casse",
+    "identical": "Textes identiques"
+  },
+  "regex": {
+    "pattern": "Expression régulière",
+    "flags": { "g": "toutes", "i": "casse", "m": "multiligne", "s": "point = retour ligne", "u": "unicode" },
+    "text": "Texte à tester",
+    "matchCount_zero": "Aucune correspondance",
+    "matchCount_one": "{{count}} correspondance",
+    "matchCount_other": "{{count}} correspondances",
+    "truncated": "Limité aux {{max}} premières correspondances",
+    "groups": "Groupes capturés",
+    "match": "Correspondance",
+    "replace": "Remplacement",
+    "replacePlaceholder": "Texte de remplacement, avec $1, $2 ou $<nom>"
+  },
+  "base64": {
+    "mode": "Mode",
+    "encode": "Encoder",
+    "decode": "Décoder",
+    "urlSafe": "Variante URL (sans + / =)",
+    "text": "Texte",
+    "invalid": "Base64 invalide",
+    "binary": "Contenu binaire ({{size}}), pas du texte",
+    "downloadFile": "Télécharger le fichier",
+    "file": "Fichier vers Base64",
+    "dataUrl": "Format data URL",
+    "tooBig": "Fichier trop gros (max {{max}})",
+    "truncatedPreview": "Aperçu tronqué, Copier copie tout"
+  },
+  "jwt": {
+    "token": "Jeton",
+    "invalid": "Jeton illisible :",
+    "expired": "Expiré {{when}}",
+    "notYet": "Pas encore valide, le sera {{when}}",
+    "valid": "Valide, expire {{when}}",
+    "noExp": "Pas de date d'expiration",
+    "noVerify": "La signature n'est pas vérifiée : l'outil lit le jeton sans la clé. Le jeton n'est pas mémorisé.",
+    "header": "En-tête",
+    "payload": "Contenu",
+    "dates": "Dates",
+    "claims": { "exp": "expiration", "iat": "émis le", "nbf": "valide à partir du" }
+  },
+  "hash": {
+    "text": "Texte",
+    "file": "Fichier",
+    "computing": "Calcul…",
+    "results": "Empreintes",
+    "uppercase": "Majuscules"
+  },
+  "converter": {
+    "numbers": "Nombres",
+    "bases": { "dec": "Décimal", "hex": "Hexadécimal", "bin": "Binaire", "oct": "Octal" },
+    "invalidNumber": "Nombre invalide",
+    "bits": "Bits nécessaires",
+    "bytesBE": "Octets (big-endian)",
+    "bytesLE": "Octets (little-endian)",
+    "text": "Texte (UTF-8)",
+    "hexBytes": "Octets en hexa",
+    "invalidHex": "Hexa invalide (paires de 0-9, a-f)",
+    "notUtf8": "Pas du texte UTF-8 valide"
+  },
+  "unix": {
+    "now": "Maintenant",
+    "seconds": "Secondes",
+    "milliseconds": "Millisecondes",
+    "toDate": "Timestamp → date",
+    "timestamp": "Timestamp",
+    "useNow": "Maintenant",
+    "invalid": "Il faut un nombre",
+    "detected": "Unité détectée : {{unit}}",
+    "units": { "s": "secondes", "ms": "millisecondes", "us": "microsecondes" },
+    "local": "Heure locale",
+    "relative": "Relatif",
+    "toTimestamp": "Date → timestamp",
+    "dateLocal": "Date et heure ({{zone}})"
+  },
+  "discord": {
+    "date": "Date",
+    "localTime": "Date et heure locales",
+    "plus1h": "+1 h",
+    "plus1d": "+1 jour",
+    "plus1w": "+1 semaine",
+    "hint": "Discord affiche chaque balise à l'heure et dans la langue de celui qui lit le message.",
+    "formats": "Balises à coller dans Discord",
+    "styles": {
+      "t": "heure courte",
+      "T": "heure longue",
+      "d": "date courte",
+      "D": "date longue",
+      "f": "date et heure",
+      "F": "date et heure longues",
+      "R": "relatif, mis à jour en direct"
+    }
+  },
+  "cron": {
+    "expression": "Expression cron",
+    "fields": { "second": "seconde", "minute": "minute", "hour": "heure", "dom": "jour du mois", "month": "mois", "dow": "jour sem." },
+    "presets": {
+      "every5min": "Toutes les 5 min",
+      "hourly": "Toutes les heures",
+      "daily": "Chaque jour à minuit",
+      "weekdays9": "En semaine à 9 h",
+      "monday": "Le lundi à 9 h",
+      "monthly": "Le 1er du mois"
+    },
+    "meaning": "Ce que ça veut dire",
+    "nextRuns": "Prochaines exécutions",
+    "timezone": "Calculées dans ton fuseau horaire ({{zone}}). Sur un serveur, le cron suit le fuseau du serveur."
+  },
+  "uuid": {
+    "version": "Version",
+    "v4": "v4 aléatoire",
+    "v7": "v7 triable par date",
+    "count": "Nombre",
+    "uppercase": "Majuscules",
+    "noHyphens": "Sans tirets",
+    "regenerate": "Regénérer",
+    "password": "Mot de passe",
+    "length_one": "Longueur : {{count}} caractère",
+    "length_other": "Longueur : {{count}} caractères",
+    "sets": { "lower": "Minuscules a-z", "upper": "Majuscules A-Z", "digits": "Chiffres 0-9", "symbols": "Symboles !@#…" },
+    "noAmbiguous": "Exclure les caractères ambigus (I, l, 1, O, 0, o)",
+    "strength": { "strong": "Très solide", "good": "Solide", "fair": "Moyen", "weak": "Faible" }
+  },
+  "qr": {
+    "content": "Contenu",
+    "level": "Correction d'erreur",
+    "levels": { "L": "7 %", "M": "15 %", "Q": "25 %", "H": "30 %" },
+    "size": "Taille du PNG : {{size}} px",
+    "margin": "Marge : {{margin}}",
+    "foreground": "Couleur",
+    "background": "Fond",
+    "preview": "Aperçu",
+    "alt": "QR code généré",
+    "empty": "Écris un texte ou un lien pour générer le QR code.",
+    "tooLong": "Texte trop long pour ce niveau de correction"
+  }
+}
