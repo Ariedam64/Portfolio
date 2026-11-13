@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { title, description } = frTools.list[tool];
   const path = `/outils/${tool}`;
   return {
-    title,
+    title: { absolute: `${title} · Romann Madeira` },
     description,
     alternates: { canonical: path },
     openGraph: {
