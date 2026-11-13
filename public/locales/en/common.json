@@ -23,108 +23,139 @@
       "cvLink": "View Resume",
       "description": "25-year-old developer based in France, passionate about coding for 8 years. What I love most? Automating, optimizing, and building projects that excite me."
     },
-    "experiences": {
-      "work_title": "Experiences",
-      "work": [
+      "experiences": {
+        "work_title": "Experience",
+        "studies_title": "Education",
+        "current": "Current",
+        "work": [
+          {
+            "title": "Full-Stack Developer",
+            "org": "Independent projects",
+            "place": "Remote",
+            "period": "2022 – Present",
+            "intro": "Bots and tools, then a whole ecosystem around a multiplayer web game.",
+            "points": [
+              "Mod for a web game in TypeScript, on PC, mobile and Discord",
+              "Public API (Node.js, Express, SQLite, SSE), covered by automated tests",
+              "Real-time back end (Node.js, PostgreSQL, WebSocket), optimized to cut server load",
+              "Published Android app (Kotlin, Jetpack Compose)"
+            ]
+          },
+          {
+            "title": "AI-assisted supervision and maintenance",
+            "org": "Independent projects",
+            "place": "Remote",
+            "period": "2025 – Present",
+            "intro": "",
+            "points": [
+              "Workflow of AI agents specialized for each project: mod, API and Android app",
+              "Monitoring of an API, with guarded self-repair and automatic rollback",
+              "AI triage of bug reports, every fix proven by a test",
+              "Conversational supervisor (custom MCP server), every release approved by me",
+              "Support and moderation for a player community"
+            ]
+          },
+          {
+            "title": "Software Developer",
+            "org": "Burographic",
+            "place": "Anglet, France · internship then work-study",
+            "period": "2021 – 2022",
+            "intro": "",
+            "points": [
+              "BuroSNMP, monitoring a fleet of copiers: needs analysis and Python client (SNMP)",
+              "Remote customer support through ticketing (TeamViewer, AnyDesk)",
+              "PC and copier repair, in the workshop and on site",
+              "Automation with Excel VBA macros and PowerShell and Batch scripts"
+            ]
+          }
+        ],
+        "studies": [
+          {
+            "title": "Professional Bachelor's, Advanced Programming",
+            "org": "IUT de Bayonne",
+            "place": "Work-study",
+            "period": "2021 – 2022"
+          },
+          {
+            "title": "Two-year Computer Science Degree (DUT)",
+            "org": "IUT de Bayonne",
+            "place": "Anglet, France",
+            "period": "2019 – 2021"
+          }
+        ]
+      },
+      "skills": [
         {
-          "date": "2024 - present",
-          "company": "Personal & community projects",
-          "role": "Independent developer",
-          "desc": "Client-side development (JS & C#), web automation (Puppeteer, Selenium, Tampermonkey), reverse engineering"
+          "title": "Languages",
+          "items": [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "Kotlin",
+            "SQL",
+            "PowerShell"
+          ]
         },
         {
-          "date": "2024 - 2026",
-          "company": "Samsic",
-          "role": "Temporary Worker",
-          "desc": "Warehouse operative, farm worker, seasonal laborer"
+          "title": "Back end and data",
+          "items": [
+            "Node.js",
+            "Express",
+            "REST API",
+            "WebSocket",
+            "PostgreSQL",
+            "SQLite"
+          ]
         },
         {
-          "date": "2021 - 2022",
-          "company": "Burographic",
-          "role": "Apprentice Developer",
-          "desc": "Client-side development (Python) with extensive use of the SNMP protocol, technical support, project management, on-site assistance"
+          "title": "Front end and mobile",
+          "items": [
+            "React",
+            "Next.js",
+            "Android",
+            "Jetpack Compose"
+          ]
         },
         {
-          "date": "2021",
-          "company": "Burographic",
-          "role": "Intern Developer",
-          "desc": "VBA development, business process automation, technical documentation"
+          "title": "DevOps",
+          "items": [
+            "Linux",
+            "Docker",
+            "Nginx",
+            "PM2",
+            "GitHub Actions",
+            "Cloudflare"
+          ]
+        },
+        {
+          "title": "AI",
+          "items": [
+            "Claude Code",
+            "Anthropic API",
+            "RAG",
+            "MCP server",
+            "AI agents"
+          ]
+        },
+        {
+          "title": "Reverse engineering",
+          "items": [
+            "Frida",
+            "Unity IL2CPP",
+            "Tampermonkey",
+            "dnSpy"
+          ]
+        },
+        {
+          "title": "Support",
+          "items": [
+            "TeamViewer",
+            "AnyDesk",
+            "Ticketing",
+            "PC repair"
+          ]
         }
       ],
-      "studies_title": "Education",
-      "studies": [
-        {
-          "date": "2021 - 2022",
-          "degree": "Advanced Programming Bachelor's Degree",
-          "school": "IUT of Bayonne and the Basque Country",
-          "location": "Anglet, 64600 FRANCE"
-        },
-        {
-          "date": "2019 - 2021",
-          "degree": "Computer Science Associate Degree",
-          "school": "IUT of Bayonne and the Basque Country",
-          "location": "Anglet, 64600 FRANCE"
-        },
-        {
-          "date": "2016 - 2019",
-          "degree": "Technological Baccalaureate (Mechanical Option)",
-          "school": "Louis-de-Foix High School",
-          "location": "Bayonne, 64100 FRANCE"
-        }
-      ]
-    },
-    "skills": [
-      {
-        "key": "html",
-        "title": "HTML / CSS",
-        "desc": "Structure and styling of web pages"
-      },
-      {
-        "key": "javascript",
-        "title": "JavaScript",
-        "desc": "Programming language for the Web"
-      },
-      {
-        "key": "reactjs",
-        "title": "React.js",
-        "desc": "Library for building web interfaces"
-      },
-      {
-        "key": "nextjs",
-        "title": "Next.js",
-        "desc": "Framework for server-rendered React apps"
-      },
-      {
-        "key": "nodejs",
-        "title": "Node.js",
-        "desc": "JavaScript runtime for server-side"
-      },
-      {
-        "key": "python",
-        "title": "Python",
-        "desc": "High-level, interpreted programming language"
-      },
-      {
-        "key": "csharp",
-        "title": "C#",
-        "desc": "Object-oriented programming language"
-      },
-      {
-        "key": "tampermonkey",
-        "title": "Tampermonkey",
-        "desc": "User scripts for web automation"
-      },
-      {
-        "key": "dnSpy",
-        "title": "dnSpy",
-        "desc": "Debugger and .NET assembly editor for reverse engineering"
-      },
-      {
-        "key": "postgresql",
-        "title": "PostgreSQL",
-        "desc": "Relational database management system"
-      }
-    ],
     "projects": {
       "mayaya": {
         "title": "Mayaya — From a personal idea to an essential tool",
@@ -1164,6 +1195,11 @@
       "architecture": "🔧 Technical architecture of the project",
       "viewSite": "View the site"
     },
+    "projectCard": {
+      "featured": "Main project",
+      "details": "View project",
+      "source": "Source code"
+    },
     "lightbox": {
       "open": "Enlarge image",
       "close": "Close",
@@ -1171,10 +1207,13 @@
       "next": "Next image"
     }
   },
-  "sidebar": {
+  "nav": {
+    "label": "Main navigation",
     "home": "Home",
-    "translate": "Translate [FR]",
-    "chatbot": "Chatbot"
+    "tools": "Tools",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "chat": {
     "launcher": "Got a question?",
@@ -1193,7 +1232,6 @@
     "placeholder": "Ask your question…",
     "send": "Send",
     "stop": "Stop",
-    "disclaimer": "AI-generated answers (Claude), double-check with Romann.",
     "viewProject": "View project",
     "github": "GitHub",
     "site": "Website",

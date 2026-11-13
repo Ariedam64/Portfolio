@@ -11,8 +11,8 @@ export default function About() {
   const { t, i18n } = useTranslation("common");
   const cvHref =
     i18n.language?.startsWith("fr")
-      ? "https://drive.google.com/file/d/1KR3GVRGmUCH37WHmdCveIKzYkLiTLrRZ/view?usp=sharing"
-      : "https://drive.google.com/file/d/17I2Vy9KzhkyuxIzHEjNCUH5HVgnL8CVj/view?usp=sharing";
+      ? "/cv/Romann-Madeira-CV-FR.pdf"
+      : "/cv/Romann-Madeira-CV-EN.pdf";
 
   return (
     <>

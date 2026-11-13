@@ -1,101 +1,149 @@
-// src/components/portfolio/Experiences.tsx
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Bot, CodeXml } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { experiencesData, studiesData } from "../../data/experiencesData";
-import TimelineItem from "./TimelineItem";
-import { motion } from "framer-motion";
+import { studyEntries, workEntries, type TimelineEntry } from "@/app/data/experiencesData";
+import { tList } from "@/utils/i18n";
+import { cn } from "@/app/lib/utils";
 import TranslateAnimation from "../TranslateAnimation";
+
+type Tab = "work" | "studies";
+
+type EntryText = { title: string; org: string; place: string; period: string; intro?: string; points?: string[] };
+
+/** Pastille posée sur la ligne de temps : logo de l'organisme, ou icône pour les projets indépendants. */
+function Marker({ icon, label }: { icon: TimelineEntry["icon"]; label: string }) {
+  if (icon === "code" || icon === "bot") {
+    const Icon = icon === "code" ? CodeXml : Bot;
+    return (
+      <span className="grid size-9 place-items-center rounded-full border-2 border-[#3E304F] bg-[#1f1a27] text-[#c4b5fd] md:size-11">
+        <Icon className="size-4 md:size-5" />
+      </span>
+    );
+  }
+  return (
+    <span className="grid size-9 place-items-center overflow-hidden rounded-full border-2 border-[#3E304F] bg-white md:size-11">
+      <Image src={icon} alt={label} width={44} height={44} className="size-full object-cover" />
+    </span>
+  );
+}
 
 export default function Experiences() {
   const { t } = useTranslation("common");
-  const [activeTab, setActiveTab] = useState<"experiences" | "studies">("experiences");
+  const reduceMotion = useReducedMotion();
+  const [tab, setTab] = useState<Tab>("work");
 
-  const selectedData = activeTab === "experiences" ? experiencesData : studiesData;
-
-  const listVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-    exit: {
-      opacity: 0,
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    },
-  };
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
+  const entries = tab === "work" ? workEntries : studyEntries;
+  const texts = tList<EntryText>(t, `portfolio.experiences.${tab}`);
 
   return (
     <>
-      {/* Titre */}
-      <p className="text-3xl md:text-5xl font-light text-[#d4d4d4] mb-5 tracking-widest text-center">
+      <p className="mb-6 text-center text-3xl font-light tracking-widest text-[#d4d4d4] md:text-5xl">
         <TranslateAnimation text={t("portfolio.navigation.career")} />
       </p>
 
-      {/* Onglets */}
-      <div
-        role="tablist"
-        aria-orientation="horizontal"
-        className="
-          grid grid-cols-1 md:grid-cols-2
-          w-full max-w-[1000px]
-          bg-[#9233ea1e] text-gray-400 mb-2
-          gap-2
-          rounded-md
-        "
-      >
-        {(["experiences", "studies"] as const).map((tab) => (
+      <div role="tablist" aria-label={t("portfolio.navigation.career")} className="mb-8 inline-flex rounded-full border border-[#3E304F] bg-[#18181be1] p-1">
+        {(["work", "studies"] as const).map((key) => (
           <button
-            key={tab}
+            key={key}
             role="tab"
-            aria-selected={activeTab === tab}
-            onClick={() => setActiveTab(tab)}
-            className={`
-              inline-flex items-center justify-center whitespace-nowrap rounded-md border-none font-semibold
-              transition-all duration-200 ease cursor-pointer
-              text-lg md:text-2xl py-2 md:py-1 px-4 md:px-3 w-full md:w-auto
-              ${
-                activeTab === tab
-                  ? "bg-[#9333ea33] text-[#a56fd8]"
-                  : "bg-transparent text-[#a3a3a3] hover:text-[#ffffffcb]"
-              }
-            `}
+            type="button"
+            aria-selected={tab === key}
+            onClick={() => setTab(key)}
+            className={cn(
+              "cursor-pointer rounded-full px-5 py-2 text-base font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-[#9333ea] md:px-7 md:text-lg",
+              tab === key ? "bg-[#9333ea33] text-[#c084fc]" : "text-[#a3a3a3] hover:text-white",
+            )}
           >
-            <TranslateAnimation
-              text={
-                tab === "experiences"
-                  ? t("portfolio.experiences.work_title")
-                  : t("portfolio.experiences.studies_title")
-              }
-            />
+            <TranslateAnimation text={t(`portfolio.experiences.${key === "work" ? "work_title" : "studies_title"}`)} />
           </button>
         ))}
       </div>
 
-      {/* Contenu de la timeline */}
-      <div
-        role="tabpanel"
-        key={activeTab}
-        className="w-full max-w-[1000px] mt-2 p-4 rounded-md border-2 border-[#3E304F] bg-[#18181be1] text-white outline-none"
-      >
-        <motion.ul
-          key={activeTab}
-          className="list-none border-l border-[#ffffff66] ml-4 pl-4 md:border-[#ffffffa1] md:ml-10 md:pl-0"
-          variants={listVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
-          {selectedData.map((item, idx) => (
-            <TimelineItem key={idx} item={item} t={t} variants={itemVariants} />
-          ))}
-        </motion.ul>
+      <div role="tabpanel" className="w-full max-w-[900px] text-left">
+        <AnimatePresence mode="wait">
+          <motion.ol
+            key={tab}
+            className="relative space-y-6 before:absolute before:top-2 before:bottom-2 before:left-[17px] md:before:left-[21px] before:w-px before:bg-gradient-to-b before:from-[#9333ea] before:via-[#3E304F] before:to-transparent"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={{ visible: { transition: { staggerChildren: reduceMotion ? 0 : 0.08 } } }}
+          >
+            {entries.map((entry, i) => {
+              const text = texts[i];
+              if (!text) return null;
+              return (
+                <motion.li
+                  key={i}
+                  className="relative pl-12 md:pl-16"
+                  variants={{
+                    hidden: { opacity: 0, y: reduceMotion ? 0 : 16 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                  }}
+                >
+                  <div className="absolute top-4 left-0">
+                    <Marker icon={entry.icon} label={text.org} />
+                  </div>
+
+                  <article className="rounded-2xl border-2 border-[#3E304F] bg-[#18181be1] p-4 shadow-md sm:p-5 transition-colors hover:border-[#9333ea]/60 md:p-6">
+                    <header className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                      <div className="min-w-0">
+                        <h3 className="text-lg font-bold text-white md:text-xl">
+                          <TranslateAnimation text={text.title} />
+                        </h3>
+                        <p className="mt-0.5 text-sm text-[#a1a1aa]">
+                          <TranslateAnimation text={`${text.org} · ${text.place}`} />
+                        </p>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-2">
+                        {entry.current && (
+                          <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#c4b5fd]">
+                            <span className="size-1.5 animate-pulse rounded-full bg-[#a855f7]" />
+                            <TranslateAnimation text={t("portfolio.experiences.current")} />
+                          </span>
+                        )}
+                        <span className="rounded-full bg-[#9333ea26] px-3 py-1 text-xs font-semibold whitespace-nowrap text-[#c084fc]">
+                          <TranslateAnimation text={text.period} />
+                        </span>
+                      </div>
+                    </header>
+
+                    {text.intro && (
+                      <p className="mt-3 text-sm text-[#d4d4d8] italic">
+                        <TranslateAnimation text={text.intro} />
+                      </p>
+                    )}
+
+                    {text.points && text.points.length > 0 && (
+                      <ul className="mt-3 space-y-1.5">
+                        {text.points.map((point, j) => (
+                          <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-[#d4d4d8]">
+                            <span aria-hidden className="mt-[0.6em] h-px w-2.5 shrink-0 bg-[#a855f7]" />
+                            <TranslateAnimation text={point} />
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {entry.tags && (
+                      <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
+                        {entry.tags.map((tag) => (
+                          <li key={tag} className="rounded-full border border-[#3E304F] bg-[#27272A] px-2.5 py-0.5 text-xs text-gray-200">
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                </motion.li>
+              );
+            })}
+          </motion.ol>
+        </AnimatePresence>
       </div>
     </>
   );

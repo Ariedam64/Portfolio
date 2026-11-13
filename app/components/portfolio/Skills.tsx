@@ -1,44 +1,62 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { skillCategories, type SkillIcon } from "@/app/data/skillsData";
+import { tList } from "@/utils/i18n";
+import { cn } from "@/app/lib/utils";
 import TranslateAnimation from "../TranslateAnimation";
-import { skillsData } from "@/app/data/skillsData";
+
+type CategoryText = { title: string; items: string[] };
+
+function TechLogo({ icon }: { icon: SkillIcon }) {
+  if ("lucide" in icon) {
+    const Icon = icon.lucide;
+    return <Icon aria-hidden className="size-4 text-[#c4b5fd]" />;
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element -- petits logos SVG locaux, rien à optimiser
+    <img src={icon.src} alt="" width={16} height={16} loading="lazy" className={cn("size-4 object-contain", icon.invert && "invert")} />
+  );
+}
 
 export default function Skills() {
   const { t } = useTranslation("common");
+  const texts = tList<CategoryText>(t, "portfolio.skills");
 
-return (
-  <>
-    <p className="text-3xl sm:text-4xl md:text-5xl font-light text-[#d4d4d4] tracking-[0.05em] sm:tracking-widest text-center pb-3 sm:pb-4">
-      <TranslateAnimation text={t("portfolio.navigation.skills")} />
-    </p>
+  return (
+    <>
+      <p className="pb-6 text-center text-3xl font-light tracking-[0.05em] text-[#d4d4d4] sm:pb-8 sm:text-4xl sm:tracking-widest md:text-5xl">
+        <TranslateAnimation text={t("portfolio.navigation.skills")} />
+      </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skillsData.map(({ key, icon, titleKey, descriptionKey }) => (
-        <div
-          key={key}
-          className="relative overflow-hidden bg-[#18181be1] text-[#222] box-border shadow-md rounded-2xl transition-transform duration-200 ease-in-out hover:-translate-y-1 border-2 border-[#3E304F] flex items-center p-4 min-h-[120px] focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9333ea]"
-        >
-          <button
-            type="button"
-            aria-label={`${titleKey} Logo`}
-            className="inline-flex items-center justify-center w-24 h-16 mr-4 p-2 bg-[#27272C] rounded-2xl pointer-events-none"
-          >
-            <img src={icon} alt={titleKey} width="40" height="40" className="object-contain" />
-          </button>
-
-          <div className="flex-1">
-            <h3 className="text-base font-extrabold text-[#d4d4d4] mb-1 text-left">
-              <TranslateAnimation text={t(titleKey)}/>
-            </h3>
-            <p className="text-sm text-[#a1a1aa] text-left m-0">
-              <TranslateAnimation text={t(descriptionKey)} />
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </>
-)
-
+      {/* Flex plutôt que grille : la dernière ligne (7 cartes sur 3 colonnes) reste centrée. */}
+      <div className="flex w-full max-w-[1100px] flex-wrap justify-center gap-5 text-left">
+        {skillCategories.map(({ key, icon: CategoryIcon, items }, i) => {
+          const text = texts[i];
+          if (!text) return null;
+          return (
+            <section
+              key={key}
+              className="w-full rounded-2xl border-2 border-[#3E304F] bg-[#18181be1] p-5 shadow-md transition-colors hover:border-[#9333ea]/60 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
+            >
+              <h3 className="flex items-center gap-3 text-lg font-bold text-white">
+                <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-[#9333ea26] text-[#c084fc]">
+                  <CategoryIcon className="size-[18px]" />
+                </span>
+                <TranslateAnimation text={text.title} />
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {items.map((icon, j) => (
+                  <li key={j} className="inline-flex items-center gap-1.5 rounded-full border border-[#3E304F] bg-[#27272A] py-1 pr-3 pl-2 text-sm text-gray-200">
+                    <TechLogo icon={icon} />
+                    <TranslateAnimation text={text.items[j] ?? ""} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </div>
+    </>
+  );
 }

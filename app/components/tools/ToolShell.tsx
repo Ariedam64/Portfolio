@@ -43,7 +43,7 @@ export default function ToolShell({ slug }: { slug: ToolSlug }) {
   return (
     <>
       <Background />
-      <main className="mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-10 pb-24 text-[#ece9f1] sm:px-12 lg:px-16">
+      <main className="mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-24 pb-24 text-[#ece9f1] sm:px-12 lg:px-16">
         <Link
           href="/outils"
           className="inline-flex w-fit items-center gap-1.5 rounded-lg text-sm text-[#a49fb0] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b5cf6]"

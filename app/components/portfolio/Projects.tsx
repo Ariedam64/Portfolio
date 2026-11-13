@@ -7,11 +7,12 @@ import TranslateAnimation from "../TranslateAnimation";
 import { ProjectCard } from "../portfolio/ProjectCard";
 
 // Imports statiques : Next connaît la taille de chaque capture et les sert redimensionnées.
-import img_ariesmod1 from "@/public/img/ariesmod1.png";
-import img_ariesmod2 from "@/public/img/ariesmod2.png";
-import img_ariesmod3 from "@/public/img/ariesmod3.png";
-import img_ariesmod4 from "@/public/img/ariesmod4.png";
-import img_ariesmod5 from "@/public/img/ariesmod5.png";
+import img_ariesmod1 from "@/public/img/ariesmod1.webp";
+import img_ariesmod2 from "@/public/img/ariesmod2.webp";
+import img_ariesmod3 from "@/public/img/ariesmod3.webp";
+import img_ariesmod4 from "@/public/img/ariesmod4.webp";
+import img_ariesmod5 from "@/public/img/ariesmod5.webp";
+import img_ariesmod6 from "@/public/img/ariesmod6.webp";
 import img_frida1 from "@/public/img/frida1.png";
 import img_frida2 from "@/public/img/frida2.png";
 import img_dofus1 from "@/public/img/dofus1.png";
@@ -32,11 +33,11 @@ export default function Projects() {
 
   const projects = [
   {
-    images: [img_ariesmod1, img_ariesmod2, img_ariesmod3, img_ariesmod4, img_ariesmod5],
+    images: [img_ariesmod1, img_ariesmod2, img_ariesmod3, img_ariesmod4, img_ariesmod5, img_ariesmod6],
     title: t("portfolio.projects.ariesmod.title"),
     description: t("portfolio.projects.ariesmod.description"),
-    technologies: ['Tampermonkey','TypeScript','JavaScript','HTML','CSS'],
-    detailsUrl: 'portfolio/projects/ariesmod',
+    technologies: ['TypeScript', 'Node.js', 'PostgreSQL', 'SQLite', 'Kotlin', 'Claude Code', 'Tampermonkey'],
+    detailsUrl: '/portfolio/projects/ariesmod',
     sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
   },
   {
@@ -44,7 +45,7 @@ export default function Projects() {
     title: t("portfolio.projects.frida.title"),
     description: t("portfolio.projects.frida.description"),
     technologies: ['TypeScript','Frida','frida-il2cpp-bridge','Node.js'],
-    detailsUrl: 'portfolio/projects/frida',
+    detailsUrl: '/portfolio/projects/frida',
     sourceUrl: 'https://github.com/Ariedam64/FridaIL2CPPToolkit'
   },
   {
@@ -52,7 +53,7 @@ export default function Projects() {
     title: 'SnapScore+',
     description: t("portfolio.projects.snapscore.description"),
     technologies: ['JavaScript','Node.js','Puppeteer','Tampermonkey','MacroDroid'],
-    detailsUrl: 'portfolio/projects/snapscore',
+    detailsUrl: '/portfolio/projects/snapscore',
     sourceUrl: 'https://github.com/Ariedam64/SnapScore-V2'
   },
   {
@@ -60,7 +61,7 @@ export default function Projects() {
     title: 'Mayaya',
     description: t("portfolio.projects.mayaya.description"),
     technologies: ['Node.js', 'JavaScript', 'Python', 'PostgreSQL', 'jQuery', 'Socket.IO','OpenAI API'],
-    detailsUrl: 'portfolio/projects/mayaya',
+    detailsUrl: '/portfolio/projects/mayaya',
     sourceUrl: 'https://github.com/Ariedam64/Bombparty-Bot'
   },
   {
@@ -68,7 +69,7 @@ export default function Projects() {
     title: 'Arie',
     description: t("portfolio.projects.arie.description"),
     technologies: ['Node.js', 'Discord.js', 'Express', 'PostgreSQL', 'YTDL-Core', 'OpenAI', 'DALL-E', 'Heroku'],
-    detailsUrl: 'portfolio/projects/arie',
+    detailsUrl: '/portfolio/projects/arie',
     sourceUrl: 'https://github.com/Ariedam64/Discord-Bot'
   },
   ];
@@ -79,20 +80,14 @@ export default function Projects() {
         <TranslateAnimation text={t("portfolio.navigation.projects")} />
       </p>
 
-      <div className={`
-        w-full lg:max-w-7xl mx-auto
-        grid grid-cols-1
-        md:grid-cols-2 
-        xl:grid-cols-3 
-        gap-y-7 gap-x-40
-        justify-center justify-items-center
-      `}>
-        {projects.map((proj, i) => (
-          <div key={i}>
-            <ProjectCard {...proj} />
-          </div>
-        ))}
-
+      {/* Le projet principal en grand, les autres en grille de deux. */}
+      <div className="mt-6 flex w-full max-w-[1100px] flex-col gap-6">
+        <ProjectCard {...projects[0]} featured />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {projects.slice(1).map((proj) => (
+            <ProjectCard key={proj.detailsUrl} {...proj} />
+          ))}
+        </div>
       </div>
       <div className="col-span-full h-16" />
     </>

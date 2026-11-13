@@ -25,7 +25,7 @@ export default function ToolsIndex() {
   return (
     <>
       <Background />
-      <main className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pt-14 pb-24 text-[#ece9f1] sm:px-12 lg:px-16">
+      <main className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pt-24 pb-24 text-[#ece9f1] sm:px-12 lg:px-16">
         <header className="flex flex-col gap-3 text-center">
           <h1 className="text-3xl font-bold text-white sm:text-4xl">{t("index.title")}</h1>
           <p className="mx-auto max-w-2xl text-[#a49fb0]">{t("index.subtitle")}</p>

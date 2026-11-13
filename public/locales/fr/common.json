@@ -23,108 +23,139 @@
       "cvLink": "Consulter le CV",
       "description": "Développeur de 25 ans situé en France, passionné de code depuis 8 ans. Ce que j'adore ? Automatiser, optimiser, et coder des projets qui me passionnent"
     },
-    "experiences": {
-      "work_title": "Expériences",
-      "work": [
+      "experiences": {
+        "work_title": "Expériences",
+        "studies_title": "Formations",
+        "current": "En cours",
+        "work": [
+          {
+            "title": "Développeur Full-Stack",
+            "org": "Projets indépendants",
+            "place": "Télétravail",
+            "period": "2022 – aujourd'hui",
+            "intro": "Des bots et des outils, puis tout un écosystème autour d'un jeu web multijoueur.",
+            "points": [
+              "Mod d'un jeu web en TypeScript, sur PC, mobile et Discord",
+              "API publique (Node.js, Express, SQLite, SSE), couverte par des tests automatisés",
+              "Back-end temps réel (Node.js, PostgreSQL, WebSocket), optimisé pour alléger la charge",
+              "Application Android publiée (Kotlin, Jetpack Compose)"
+            ]
+          },
+          {
+            "title": "Supervision et maintenance assistées par IA",
+            "org": "Projets indépendants",
+            "place": "Télétravail",
+            "period": "2025 – aujourd'hui",
+            "intro": "",
+            "points": [
+              "Workflow d'agents IA spécialisés pour chaque projet : mod, API et application Android",
+              "Surveillance d'une API, avec réparation encadrée et retour arrière automatique",
+              "Tri par IA des bugs signalés, chaque correctif prouvé par un test",
+              "Superviseur conversationnel (serveur MCP sur mesure), chaque livraison validée par moi",
+              "Support et modération d'une communauté de joueurs"
+            ]
+          },
+          {
+            "title": "Développeur informatique",
+            "org": "Burographic",
+            "place": "Anglet (64) · stage puis alternance",
+            "period": "2021 – 2022",
+            "intro": "",
+            "points": [
+              "BuroSNMP, supervision d'un parc de copieurs : analyse du besoin et client Python (SNMP)",
+              "Support client à distance par ticketing (TeamViewer, AnyDesk)",
+              "Réparation de PC et de copieurs, en atelier et chez les clients",
+              "Automatisation avec des macros VBA et des scripts PowerShell et Batch"
+            ]
+          }
+        ],
+        "studies": [
+          {
+            "title": "Licence pro Programmation avancée",
+            "org": "IUT de Bayonne",
+            "place": "En alternance",
+            "period": "2021 – 2022"
+          },
+          {
+            "title": "DUT Informatique",
+            "org": "IUT de Bayonne",
+            "place": "Anglet (64)",
+            "period": "2019 – 2021"
+          }
+        ]
+      },
+      "skills": [
         {
-          "date": "2024 - présent",
-          "company": "Projets personnels & communautaires",
-          "role": "Développeur indépendant",
-          "desc": "Développement client (JS & C#), automatisation web (puppeteer, selenium, Tampermonkey), reverse engineering"
+          "title": "Langages",
+          "items": [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "Kotlin",
+            "SQL",
+            "PowerShell"
+          ]
         },
         {
-          "date": "2024 - 2026",
-          "company": "Samsic",
-          "role": "Intérimaire",
-          "desc": "Manutentionnaire, ouvrier agricole, ouvrier saisonnier"
+          "title": "Back-end et données",
+          "items": [
+            "Node.js",
+            "Express",
+            "API REST",
+            "WebSocket",
+            "PostgreSQL",
+            "SQLite"
+          ]
         },
         {
-          "date": "2021 - 2022",
-          "company": "Burographic",
-          "role": "Apprenti Développeur",
-          "desc": "Développement client (Python) avec usage intensif du protocole SNMP, support technique, gestion de projet, assistance sur site"
+          "title": "Front-end et mobile",
+          "items": [
+            "React",
+            "Next.js",
+            "Android",
+            "Jetpack Compose"
+          ]
         },
         {
-          "date": "2021",
-          "company": "Burographic",
-          "role": "Développeur stagiaire",
-          "desc": "Développement VBA, automatisation de tâches métier, documentation technique"
+          "title": "DevOps",
+          "items": [
+            "Linux",
+            "Docker",
+            "Nginx",
+            "PM2",
+            "GitHub Actions",
+            "Cloudflare"
+          ]
+        },
+        {
+          "title": "IA",
+          "items": [
+            "Claude Code",
+            "API Anthropic",
+            "RAG",
+            "Serveur MCP",
+            "Agents IA"
+          ]
+        },
+        {
+          "title": "Rétro-ingénierie",
+          "items": [
+            "Frida",
+            "Unity IL2CPP",
+            "Tampermonkey",
+            "dnSpy"
+          ]
+        },
+        {
+          "title": "Support",
+          "items": [
+            "TeamViewer",
+            "AnyDesk",
+            "Ticketing",
+            "Dépannage PC"
+          ]
         }
       ],
-      "studies_title": "Formations",
-      "studies": [
-        {
-          "date": "2021 - 2022",
-          "degree": "LP Programmation Avancée",
-          "school": "IUT de Bayonne et du Pays Basques",
-          "location": "Anglet, 64600 FRANCE"
-        },
-        {
-          "date": "2019 - 2021",
-          "degree": "DUT Informatique",
-          "school": "IUT de Bayonne et du Pays Basques",
-          "location": "Anglet, 64600 FRANCE"
-        },
-        {
-          "date": "2016 - 2019",
-          "degree": "Baccalauréat Technologique (Option mécanique)",
-          "school": "Lycée Louis-de-Foix",
-          "location": "Bayonne, 64100 FRANCE"
-        }
-      ]
-    },
-    "skills": [
-      {
-        "key": "html",
-        "title": "HTML / CSS",
-        "desc": "Structure et style des pages Web"
-      },
-      {
-        "key": "javascript",
-        "title": "JavaScript",
-        "desc": "Langage de programmation pour le Web"
-      },
-      {
-        "key": "reactjs",
-        "title": "React.js",
-        "desc": "Bibliothèque pour créer des interfaces web"
-      },
-      {
-        "key": "nextjs",
-        "title": "Next.js",
-        "desc": "Framework pour applications React rendues côté serveur"
-      },
-      {
-        "key": "nodejs",
-        "title": "Node.js",
-        "desc": "Environnement d’exécution JavaScript côté serveur"
-      },
-      {
-        "key": "python",
-        "title": "Python",
-        "desc": "Langage de programmation interprété de haut niveau"
-      },
-      {
-        "key": "csharp",
-        "title": "C#",
-        "desc": "Langage de programmation orienté objet"
-      },
-      {
-        "key": "tampermonkey",
-        "title": "Tampermonkey",
-        "desc": "Scripts utilisateurs pour automatisation web"
-      },
-      {
-        "key": "dnSpy",
-        "title": "dnSpy",
-        "desc": "Débogueur et éditeur d’assemblages .NET pour le reverse engineering"
-      },
-      {
-        "key": "postgresql",
-        "title": "PostgreSQL",
-        "desc": "Système de gestion de base de données relationnelle"
-      }
-    ],
     "projects": {
       "mayaya": {
         "title": "Mayaya — De l'idée perso à l'outil incontournable",
@@ -1164,6 +1195,11 @@
       "architecture": "🔧 Architecture technique du projet",
       "viewSite": "Voir le site"
     },
+    "projectCard": {
+      "featured": "Projet principal",
+      "details": "Voir le projet",
+      "source": "Code source"
+    },
     "lightbox": {
       "open": "Agrandir l'image",
       "close": "Fermer",
@@ -1171,10 +1207,13 @@
       "next": "Image suivante"
     }
   },
-  "sidebar": {
+  "nav": {
+    "label": "Navigation principale",
     "home": "Accueil",
-    "translate": "Traduire [EN]",
-    "chatbot": "Assistant"
+    "tools": "Outils",
+    "language": "Langue",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
   },
   "chat": {
     "launcher": "Une question ?",
@@ -1193,7 +1232,6 @@
     "placeholder": "Posez votre question…",
     "send": "Envoyer",
     "stop": "Arrêter",
-    "disclaimer": "Réponses générées par IA (Claude), à vérifier auprès de Romann.",
     "viewProject": "Voir le projet",
     "github": "GitHub",
     "site": "Site",

@@ -4,6 +4,10 @@ export default function useActiveSection(sectionIds: string[]) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
+    if (sectionIds.length === 0) {
+      setActive(null);
+      return;
+    }
     const handleScroll = () => {
       const offsets = sectionIds.map((id) => {
         const el = document.getElementById(id);

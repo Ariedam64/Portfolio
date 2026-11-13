@@ -6,7 +6,7 @@ import type { Swiper as SwiperInstance } from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import Lightbox from "./Lightbox";
+import Lightbox, { isVideo } from "./Lightbox";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -103,14 +103,26 @@ export default function Caroussel({
               className="relative block w-full cursor-zoom-in rounded-xl focus-visible:outline-2 focus-visible:outline-[#BB86FC]"
               style={{ height: FRAME_HEIGHTS[frameHeight] }}
             >
-              <Image
-                src={src}
-                alt={`Illustration ${index + 1}`}
-                fill
-                quality={QUALITY}
-                sizes={IMAGE_SIZES[frameHeight]}
-                className="rounded-xl object-contain"
-              />
+              {isVideo(src) ? (
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label={`Illustration ${index + 1}`}
+                  className="absolute inset-0 h-full w-full rounded-xl object-contain"
+                />
+              ) : (
+                <Image
+                  src={src}
+                  alt={`Illustration ${index + 1}`}
+                  fill
+                  quality={QUALITY}
+                  sizes={IMAGE_SIZES[frameHeight]}
+                  className="rounded-xl object-contain"
+                />
+              )}
             </button>
           </SwiperSlide>
         ))}

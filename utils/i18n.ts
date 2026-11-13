@@ -104,19 +104,4 @@ export function tList<T = string>(t: TFunction, key: string): T[] {
   return [];
 }
 
-export function getAlternateLang(current: 'fr' | 'en'): 'fr' | 'en' {
-  return current === 'fr' ? 'en' : 'fr';
-}
-
-export async function switchLanguage(
-  i18n: { changeLanguage: (l: string) => Promise<any> },
-  current: 'fr' | 'en',
-  setCurrent: (l: 'fr' | 'en') => void
-): Promise<'fr' | 'en'> {
-  const next = getAlternateLang(current);
-  await i18n.changeLanguage(next);
-  setCurrent(next);
-  return next;
-}
-
 export default i18n;

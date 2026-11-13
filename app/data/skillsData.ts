@@ -1,79 +1,71 @@
-export interface SkillData {
-  key: string;
-  icon: string;
-  titleKey: string;
-  descriptionKey: string;
-}
+import {
+  Bot,
+  Braces,
+  Brain,
+  Cable,
+  Code2,
+  Database,
+  Headset,
+  MonitorSmartphone,
+  Plug,
+  ScreenShare,
+  ScanSearch,
+  Server,
+  ServerCog,
+  Sparkles,
+  Ticket,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 
-export const skillsData: SkillData[] = [
-  // 0 - HTML / CSS
+/**
+ * Compétences regroupées comme sur le CV. Les libellés sont dans
+ * public/locales/{fr,en}/common.json (portfolio.skills), dans le même ordre.
+ *
+ * Logo d'une techno : un SVG Devicon 2.18.0 hébergé dans public/img/skills, une
+ * image locale, ou une icône lucide quand aucun logo n'existe. `invert` éclaircit
+ * les logos noirs, illisibles sur le fond sombre.
+ */
+export type SkillIcon = { src: string; invert?: boolean } | { lucide: LucideIcon };
+
+export type SkillCategory = { key: string; icon: LucideIcon; items: SkillIcon[] };
+
+const devicon = (name: string, invert = false): SkillIcon => ({ src: `/img/skills/${name}.svg`, invert });
+
+export const skillCategories: SkillCategory[] = [
   {
-    key: "html",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-    titleKey: "portfolio.skills.0.title",
-    descriptionKey: "portfolio.skills.0.desc",
+    key: "languages",
+    icon: Code2,
+    items: [devicon("typescript"), devicon("javascript"), devicon("python"), devicon("kotlin"), { lucide: Database }, devicon("powershell")],
   },
-  // 1 - JavaScript
   {
-    key: "javascript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg",
-    titleKey: "portfolio.skills.1.title",
-    descriptionKey: "portfolio.skills.1.desc",
+    key: "backend",
+    icon: Server,
+    items: [devicon("nodejs"), devicon("express", true), { lucide: Braces }, { lucide: Cable }, devicon("postgresql"), devicon("sqlite")],
   },
-  // 2 - React.js
   {
-    key: "reactjs",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    titleKey: "portfolio.skills.2.title",
-    descriptionKey: "portfolio.skills.2.desc",
+    key: "frontend",
+    icon: MonitorSmartphone,
+    items: [devicon("react"), devicon("nextjs"), devicon("android"), devicon("jetpackcompose")],
   },
-  // 3 - Next.js
   {
-    key: "nextjs",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-    titleKey: "portfolio.skills.3.title",
-    descriptionKey: "portfolio.skills.3.desc",
+    key: "devops",
+    icon: ServerCog,
+    items: [devicon("linux", true), devicon("docker"), devicon("nginx"), devicon("pm2", true), devicon("githubactions"), devicon("cloudflare")],
   },
-  // 4 - Node.js
   {
-    key: "nodejs",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-    titleKey: "portfolio.skills.4.title",
-    descriptionKey: "portfolio.skills.4.desc",
+    key: "ai",
+    icon: Sparkles,
+    items: [devicon("claude"), devicon("claude"), { lucide: Brain }, { lucide: Plug }, { lucide: Bot }],
   },
-  // 5 - Python
   {
-    key: "python",
-    icon: "/img/python.png",
-    titleKey: "portfolio.skills.5.title",
-    descriptionKey: "portfolio.skills.5.desc",
+    key: "reverse",
+    icon: ScanSearch,
+    items: [{ lucide: ScanSearch }, devicon("unity", true), { src: "/img/tampermonkey.webp" }, { src: "/img/dnSpy.webp" }],
   },
-  // 6 - C#
   {
-    key: "csharp",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
-    titleKey: "portfolio.skills.6.title",
-    descriptionKey: "portfolio.skills.6.desc",
-  },
-  // 7 - Tampermonkey
-  {
-    key: "tampermonkey",
-    icon: "/img/tampermonkey.webp",
-    titleKey: "portfolio.skills.7.title",
-    descriptionKey: "portfolio.skills.7.desc",
-  },
-  // 8 - dnSpy
-  {
-    key: "dnSpy",
-    icon: "/img/dnSpy.webp",
-    titleKey: "portfolio.skills.8.title",
-    descriptionKey: "portfolio.skills.8.desc",
-  },
-  // 9 - PostgreSQL
-  {
-    key: "postgresql",
-    icon: "/img/postgresql.png",
-    titleKey: "portfolio.skills.9.title",
-    descriptionKey: "portfolio.skills.9.desc",
+    key: "support",
+    icon: Headset,
+    items: [{ lucide: ScreenShare }, { lucide: ScreenShare }, { lucide: Ticket }, { lucide: Wrench }],
   },
 ];

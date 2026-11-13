@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import { I18nProvider } from '../utils/i18n-provider';
-import Sidebar from "./components/ui/Sidebar";
+import SiteNav from "./components/ui/SiteNav";
 import ChatWidget from "./components/chat/ChatWidget";
 import { SITE_URL } from "./lib/site";
 import "./styles/globals.css";
@@ -45,8 +45,8 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
   return (
     <html lang="fr" className={comfortaa.variable}>
       <body>
-        <Sidebar />
         <I18nProvider>
+          <SiteNav />
           {children}
           <ChatWidget />
         </I18nProvider>

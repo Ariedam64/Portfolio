@@ -4,6 +4,9 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
+/** Les anciens GIF animés sont servis en MP4, 10 fois plus légers. */
+export const isVideo = (src: string) => src.endsWith(".mp4");
+
 interface LightboxProps {
   images: readonly string[];
   index: number;
@@ -55,13 +58,27 @@ export default function Lightbox({ images, index, onIndexChange, onClose, labels
       className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 p-2 backdrop-blur-sm sm:p-6"
       onClick={onClose}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- fichier d'origine voulu, sans optimisation */}
-      <img
-        src={images[index]}
-        alt={`Illustration ${index + 1}`}
-        className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      />
+      {isVideo(images[index]) ? (
+        <video
+          key={images[index]}
+          src={images[index]}
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-label={`Illustration ${index + 1}`}
+          className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- fichier d'origine voulu, sans optimisation
+        <img
+          src={images[index]}
+          alt={`Illustration ${index + 1}`}
+          className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+      )}
 
       <button
         ref={closeButton}

@@ -225,7 +225,6 @@ export default function ChatWidget() {
                   )}
                 </form>
               )}
-              <p className="mt-2 text-center text-[11px] text-[#7d778a]">{t("chat.disclaimer")}</p>
             </footer>
           </motion.section>
         )}
