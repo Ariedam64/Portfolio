@@ -41,6 +41,25 @@ export default function ChatWidget() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, close]);
 
+  // Sur mobile, la bulle recouvre le bas du contenu (boutons, texte) pendant la
+  // lecture : on la range quand le visiteur descend, et elle revient dès qu'il
+  // remonte, ou en bas de page où il n'y a plus rien à cacher.
+  const [tucked, setTucked] = useState(false);
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 639px)");
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const nearBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 80;
+      if (!mobile.matches || y < 120 || nearBottom) setTucked(false);
+      else if (y > lastY + 6) setTucked(true);
+      else if (y < lastY - 6) setTucked(false);
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // À l'ouverture, focus sur la saisie ; à la fermeture, retour sur le bouton.
   useEffect(() => {
     if (open) input.current?.focus();
@@ -110,9 +129,12 @@ export default function ChatWidget() {
             aria-label={t("chat.open")}
             aria-expanded={false}
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={tucked ? { opacity: 0, y: reduceMotion ? 0 : 80 } : { opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
             transition={{ duration: 0.2 }}
+            tabIndex={tucked ? -1 : undefined}
+            aria-hidden={tucked || undefined}
+            style={{ pointerEvents: tucked ? "none" : undefined }}
             className="fixed bottom-5 right-5 z-[60] flex items-center gap-2.5 rounded-full border border-[#3a2f4c] bg-[#121016]/90 p-1.5 pr-1.5 text-[#ece9f1] shadow-[0_12px_40px_-12px_rgba(139,92,246,0.55)] backdrop-blur-md transition-colors hover:border-[#8b5cf6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b5cf6] cursor-pointer sm:pr-4"
           >
             <span className="relative">

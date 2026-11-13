@@ -86,7 +86,9 @@ export default function Caroussel({
         centeredSlides
         grabCursor
         onSwiper={setSwiper}
-        className="w-full rounded-2xl"
+        // Sur mobile, les flèches recouvrent la capture : on navigue au doigt
+        // et les points de pagination suffisent.
+        className="w-full rounded-2xl max-sm:[&_.swiper-button-next]:hidden! max-sm:[&_.swiper-button-prev]:hidden!"
         style={{
           "--swiper-navigation-color": "#BB86FC",
           "--swiper-pagination-color": "#BB86FC",

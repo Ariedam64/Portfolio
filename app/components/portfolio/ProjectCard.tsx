@@ -33,7 +33,7 @@ function Carousel({ images, title, featured }: { images: ProjectCardProps["image
       pagination={{ dynamicBullets: true, clickable: true }}
       observer
       observeParents
-      className={cn("w-full overflow-hidden rounded-xl bg-[#0e0c12]", featured ? "aspect-[2/1]" : "aspect-[16/10]")}
+      className={cn("w-full overflow-hidden rounded-xl bg-[#0e0c12] max-sm:[&_.swiper-button-next]:hidden! max-sm:[&_.swiper-button-prev]:hidden!", featured ? "aspect-[2/1]" : "aspect-[16/10]")}
       style={
         {
           "--swiper-navigation-color": "#c084fc",
