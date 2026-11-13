@@ -6,12 +6,33 @@ import { useTranslation } from "react-i18next";
 import TranslateAnimation from "../TranslateAnimation";
 import { ProjectCard } from "../portfolio/ProjectCard";
 
+// Imports statiques : Next connaît la taille de chaque capture et les sert redimensionnées.
+import img_ariesmod1 from "@/public/img/ariesmod1.png";
+import img_ariesmod2 from "@/public/img/ariesmod2.png";
+import img_ariesmod3 from "@/public/img/ariesmod3.png";
+import img_ariesmod4 from "@/public/img/ariesmod4.png";
+import img_ariesmod5 from "@/public/img/ariesmod5.png";
+import img_frida1 from "@/public/img/frida1.png";
+import img_frida2 from "@/public/img/frida2.png";
+import img_dofus1 from "@/public/img/dofus1.png";
+import img_snapchat2 from "@/public/img/snapchat2.png";
+import img_snapchat1 from "@/public/img/snapchat1.png";
+import img_mayaya_python1 from "@/public/img/mayaya_python1.png";
+import img_mayaya_node1 from "@/public/img/mayaya_node1.png";
+import img_mayaya_overlay3 from "@/public/img/mayaya_overlay3.png";
+import img_mayaya_python5 from "@/public/img/mayaya_python5.png";
+import img_arie1 from "@/public/img/arie1.png";
+import img_arie2 from "@/public/img/arie2.png";
+import img_arie3 from "@/public/img/arie3.png";
+import img_arie4 from "@/public/img/arie4.png";
+import img_arie5 from "@/public/img/arie5.png";
+
 export default function Projects() {
   const { t } = useTranslation("common");
 
   const projects = [
   {
-    images: ['/img/ariesmod1.png','/img/ariesmod2.png','/img/ariesmod3.png','/img/ariesmod4.png','/img/ariesmod5.png'],
+    images: [img_ariesmod1, img_ariesmod2, img_ariesmod3, img_ariesmod4, img_ariesmod5],
     title: t("portfolio.projects.ariesmod.title"),
     description: t("portfolio.projects.ariesmod.description"),
     technologies: ['Tampermonkey','TypeScript','JavaScript','HTML','CSS'],
@@ -19,7 +40,7 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/MG-AriesMod'
   },
   {
-    images: ['/img/frida1.png','/img/frida2.png','/img/dofus1.png'],
+    images: [img_frida1, img_frida2, img_dofus1],
     title: t("portfolio.projects.frida.title"),
     description: t("portfolio.projects.frida.description"),
     technologies: ['TypeScript','Frida','frida-il2cpp-bridge','Node.js'],
@@ -27,7 +48,7 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/FridaIL2CPPToolkit'
   },
   {
-    images: ['/img/snapchat2.png','/img/snapchat1.png'],
+    images: [img_snapchat2, img_snapchat1],
     title: 'SnapScore+',
     description: t("portfolio.projects.snapscore.description"),
     technologies: ['JavaScript','Node.js','Puppeteer','Tampermonkey','MacroDroid'],
@@ -35,7 +56,7 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/SnapScore-V2'
   },
   {
-    images: ['/img/mayaya_nodegif.gif','/img/mayaya_python1.png','/img/mayaya_node1.png','/img/mayaya_overlay3.png','/img/mayaya_python5.png'],
+    images: ["/img/mayaya_nodegif.mp4", img_mayaya_python1, img_mayaya_node1, img_mayaya_overlay3, img_mayaya_python5],
     title: 'Mayaya',
     description: t("portfolio.projects.mayaya.description"),
     technologies: ['Node.js', 'JavaScript', 'Python', 'PostgreSQL', 'jQuery', 'Socket.IO','OpenAI API'],
@@ -43,7 +64,7 @@ export default function Projects() {
     sourceUrl: 'https://github.com/Ariedam64/Bombparty-Bot'
   },
   {
-    images: ["/img/arie.gif","/img/arie1.png","/img/arie2.png","/img/arie3.png","/img/arie4.png","/img/arie5.png"],
+    images: ["/img/arie.mp4", img_arie1, img_arie2, img_arie3, img_arie4, img_arie5],
     title: 'Arie',
     description: t("portfolio.projects.arie.description"),
     technologies: ['Node.js', 'Discord.js', 'Express', 'PostgreSQL', 'YTDL-Core', 'OpenAI', 'DALL-E', 'Heroku'],

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { FC, useEffect, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
+import Image, { type StaticImageData } from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Navigation,Pagination,} from 'swiper/modules';
 import { Github, SquareTerminal  } from "lucide-react";
@@ -8,7 +9,8 @@ import TranslateAnimation from "../TranslateAnimation";
 import { useTranslation } from "react-i18next";
 
 export interface ProjectCardProps {
-  images: string[];
+  /** Captures, ou chemin d'une vidéo .mp4 (plus légère qu'un GIF animé). */
+  images: (StaticImageData | string)[];
   title: string;
   description: string;
   technologies: string[];
@@ -81,13 +83,6 @@ export const ProjectCard: FC<ProjectCardProps> = ({
   sourceUrl,
 }) => {
 
-  useEffect(() => {
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, [images]);
-
   const { t } = useTranslation("common");
   
   return (
@@ -111,12 +106,29 @@ export const ProjectCard: FC<ProjectCardProps> = ({
             
           {images.map((src, i) => (
             <SwiperSlide key={i} className="w-full">
-              <img
-                src={src}
-                alt={`${title} : capture ${i + 1}`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                loading="lazy"
-              />
+              {typeof src === 'string' ? (
+                // Ancien GIF animé converti en MP4 : 10 fois plus léger, même rendu.
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label={`${title} : capture ${i + 1}`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              ) : (
+                // La carte affiche les captures sur ~320 px : Next sert une version à
+                // cette taille (640 px sur écran haute densité) au lieu du PNG 1920 px.
+                // Qualité 90 pour garder le texte des captures net.
+                <Image
+                  src={src}
+                  alt={`${title} : capture ${i + 1}`}
+                  sizes="(max-width: 768px) calc(100vw - 6rem), 340px"
+                  quality={90}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              )}
             </SwiperSlide>
           ))}
         </Swiper>

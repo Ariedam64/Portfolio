@@ -2,6 +2,8 @@
 
 import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import React from "react";
+import Image from "next/image";
+import avatar from "@/public/img/avatar.png";
 import { useTranslation } from "react-i18next";
 import TranslateAnimation from "../TranslateAnimation";
 
@@ -27,9 +29,11 @@ export default function About() {
         {/* Photo */}
         <span className="relative inline-block group mb-6
                         w-40 h-40 md:w-56 md:h-56">
-          <img
-            src="/img/avatar.png"
+          <Image
+            src={avatar}
             alt="Avatar"
+            sizes="(min-width: 768px) 224px, 160px"
+            priority
             className="
               block
               w-full h-full

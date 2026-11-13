@@ -3,13 +3,14 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowUp, RotateCcw, Square, X } from "lucide-react";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import type { Locale } from "@/app/lib/chat/catalog";
 import { LIMITS } from "@/app/lib/chat/protocol";
 import { ContactLinks, Markdown, MetricTiles, ProjectCards, Suggestions } from "./ChatParts";
 import { useChatSession, type DisplayMessage } from "./useChatSession";
 
-const AVATAR = "/img/avatar.png";
+import AVATAR from "@/public/img/avatar.png";
 
 export default function ChatWidget() {
   const { t, i18n } = useTranslation("common");
@@ -115,8 +116,7 @@ export default function ChatWidget() {
             className="fixed bottom-5 right-5 z-[60] flex items-center gap-2.5 rounded-full border border-[#3a2f4c] bg-[#121016]/90 p-1.5 pr-1.5 text-[#ece9f1] shadow-[0_12px_40px_-12px_rgba(139,92,246,0.55)] backdrop-blur-md transition-colors hover:border-[#8b5cf6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b5cf6] cursor-pointer sm:pr-4"
           >
             <span className="relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={AVATAR} alt="" className="size-10 rounded-full object-cover" />
+              <Image src={AVATAR} alt="" width={40} height={40} className="size-10 rounded-full object-cover" />
               <span className="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-[#121016] bg-emerald-400" />
             </span>
             <span className="hidden font-[family-name:var(--font-comfortaa)] text-sm font-bold sm:inline">{t("chat.launcher")}</span>
@@ -138,8 +138,7 @@ export default function ChatWidget() {
             className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-[#121016] font-sans text-[#ece9f1] sm:inset-auto sm:bottom-5 sm:right-5 sm:h-[min(660px,calc(100dvh-2.5rem))] sm:w-[420px] sm:rounded-2xl sm:border sm:border-[#3a2f4c] sm:shadow-[0_24px_80px_-20px_rgba(139,92,246,0.45)]"
           >
             <header className="flex items-center gap-3 border-b border-[#2a2335] px-4 py-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={AVATAR} alt="" className="size-9 rounded-full object-cover" />
+              <Image src={AVATAR} alt="" width={36} height={36} className="size-9 rounded-full object-cover" />
               <div className="min-w-0 flex-1">
                 <h2 className="font-[family-name:var(--font-comfortaa)] text-[15px] font-bold leading-tight text-white">{t("chat.title")}</h2>
                 <p className="truncate text-xs text-[#a49fb0]">{t("chat.subtitle")}</p>
